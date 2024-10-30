@@ -42,4 +42,8 @@ class AccesoController extends Controller
         return view('coordinador.estatus-alumno');
     }
 
+    public function plantilla(){
+        return view('layouts.app');
+    }
+
 }

@@ -6,7 +6,17 @@
     <title>Registro Empresa</title>
 </head>
 <body>
-    <h2>Registra la empresa en la que tendras tu residencia</h2>
+
+
+@extends('layouts.app')
+@section('title', 'Registro Empresa')
+@section('meta-description', 'Registro de la Empresa')
+@section('header')
+@endsection
+@section('content')
+
+
+    <p>Registra la empresa en la que tendras tu residencia</p>
 
     <form action="{{route("empresas.store")}}" method="POST" enctype="application/x-www-form-urlencoded">
         @csrf
@@ -66,6 +76,8 @@
        
         <input type='submit'>
     </form>
-
+    @endsection
+@section('footer')
+@endsection
 </body>
 </html>

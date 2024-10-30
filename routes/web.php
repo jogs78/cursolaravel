@@ -41,6 +41,7 @@ Route::get('/login',[AccesoController::class,'login'])->name('login');
 //Route::get('/periodo',[AccesoController::class,'periodo'])->name('periodo');
 Route::get('/reporte',[AccesoController::class,'reporte'])->name('reporte');
 Route::get('/estatus',[AccesoController::class,'estatus'])->name('estatus');
+Route::get('/plantilla',[AccesoController::class,'plantilla'])->name('plantilla');
 
 //rutas de los CRUD 
 Route::resource('proyectos',ProyectoController::class);
