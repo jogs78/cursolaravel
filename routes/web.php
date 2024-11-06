@@ -41,6 +41,7 @@ Route::get('/login',[AccesoController::class,'login'])->name('login');
 //Route::get('/periodo',[AccesoController::class,'periodo'])->name('periodo');
 Route::get('/reporte',[AccesoController::class,'reporte'])->name('reporte');
 Route::get('/estatus',[AccesoController::class,'estatus'])->name('estatus');
+Route::get('/plantilla',[AccesoController::class,'plantilla'])->name('plantilla');
 
 //rutas de los CRUD 
 Route::resource('proyectos',ProyectoController::class);
@@ -56,5 +57,7 @@ Route::resource('actividades',ActividadController::class);
 Route::get('/asesores/{pagina}', [AsesorController::class, 'mostrar']);
 Route::get('/carreras/{pagina}', [CarreraController::class, 'mostrar']);
 Route::get('/estudiantes/{pagina}', [EstudianteController::class, 'mostrar']);
+Route::post('/generar-pdf', EmpresaController::class)->name('generar.pdf');
+
 
 //Route::post('/subir', [EstudianteController::class, 'subirPDF'])->name('subir.pdf');
