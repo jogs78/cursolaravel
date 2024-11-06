@@ -14,7 +14,9 @@ class AccesoController extends Controller
     }
 
     public function salida(){
-        return view('acceso.adios');
+        Auth::logout();
+        return redirect('/');
+//        return view('acceso.adios');
     }
 
     public function cambio(){

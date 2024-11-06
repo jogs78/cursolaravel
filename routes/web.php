@@ -6,11 +6,12 @@ use App\Http\Controllers\AccesoController;
 use App\Http\Controllers\PeriodoController;
 use App\Http\Controllers\EstudianteController;
 use App\Http\Controllers\ProyectoController;
-use App\Http\Controllers\PrimeroController;
+use App\Http\Controllers\ParcialController;
 use App\Http\Controllers\AsesorController;
 use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\ActividadController;
+use App\Http\Controllers\CoordinadorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,21 +44,28 @@ Route::get('/reporte',[AccesoController::class,'reporte'])->name('reporte');
 Route::get('/estatus',[AccesoController::class,'estatus'])->name('estatus');
 Route::get('/plantilla',[AccesoController::class,'plantilla'])->name('plantilla');
 
+//rutas especificas del coordinador
+Route::get('tabla',[CoordinadorController::class,'tabla'])->middleware('auth')->name('coordinadores.tabla');
+Route::get('asignar-asesores',[CoordinadorController::class,'asignarAsesor1'])->middleware('auth')->name('coordinadores.asignarAsesor1');
+Route::post('asignar-asesores',[CoordinadorController::class,'asignarAsesor2'])->middleware('auth')->name('coordinadores.asignarAsesor2');
+Route::put('asignar-asesores/{proyecto_id}',[CoordinadorController::class,'asignarAsesor3'])->middleware('auth')->name('coordinadores.asignarAsesor3');
+
+
 //rutas de los CRUD 
 Route::resource('proyectos',ProyectoController::class);
 Route::resource('periodos',PeriodoController::class);
 Route::resource('estudiantes',EstudianteController::class)->except(['show']);
-Route::resource('primeros',PrimeroController::class);
-Route::resource('asesores',AsesorController::class)->except(['show']);
+Route::resource('parciales',ParcialController::class);
+Route::resource('asesores',AsesorController::class)->except(['show'])->middleware('auth');
 Route::resource('carreras',CarreraController::class)->except(['show']);
 Route::resource('empresas',EmpresaController::class);
 Route::resource('actividades',ActividadController::class);
 
 //rutas de vistas para aviso o Extras al CRUD
-Route::get('/asesores/{pagina}', [AsesorController::class, 'mostrar']);
+Route::get('/asesores/{pagina}', [AsesorController::class, 'mostrar'])->middleware('auth');
 Route::get('/carreras/{pagina}', [CarreraController::class, 'mostrar']);
 Route::get('/estudiantes/{pagina}', [EstudianteController::class, 'mostrar']);
-Route::post('/generar-pdf', EmpresaController::class)->name('generar.pdf');
+Route::post('/generar-pdf', [EmpresaController::class,'generarPdf'])->name('generar.pdf');
 
 
 //Route::post('/subir', [EstudianteController::class, 'subirPDF'])->name('subir.pdf');

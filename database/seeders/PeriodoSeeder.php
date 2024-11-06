@@ -14,6 +14,7 @@ class PeriodoSeeder extends Seeder
     public function run(): void 
     {
         $periodo = new Periodo();
+        $periodo->id = 1;
         $periodo->nombre = "Agosto - Diciembre 2024";
         $periodo->fecha_inicio = "2024-08-26";
         $periodo->fecha_final = "2024-12-15";

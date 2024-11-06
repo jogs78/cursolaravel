@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <title>Document</title>
-</head>
-<body>
- <form action="">
-  <label for='contraseña'>Contraseña Anterior</label>
-  <input type='text' name='nombre' id='nombre'><br>
-  <label for='contra'>Contraseña Nueva</label>
-  <input type='text' name='contra' id='contra'><br>
- </form>
-</body>
-</html>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
+<form action="">
+ <label for='contraseña'>Contraseña Anterior</label>
+ <input type='text' name='nombre' id='nombre'><br>
+ <label for='contra'>Contraseña Nueva</label>
+ <input type='text' name='contra' id='contra'><br>
+</form>
+@endsection

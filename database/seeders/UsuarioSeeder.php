@@ -15,22 +15,22 @@ class UsuarioSeeder extends Seeder
     public function run(): void
     {
         $nuevo = new Usuario();
-        $nuevo->nombre_usuario = "jorge.gs1@tuxtla.tecnm.mx";
+        $nuevo->nombre_usuario = "octavio";
         $nuevo->contraseña = Hash::make('1234');
         $nuevo->usa_id=1;
         $nuevo->usa_type = "App\Models\Asesor";
         $nuevo->save();
         $nuevo = new Usuario();
-        $nuevo->nombre_usuario = "L20270264@tuxtla.tecnm.mx";
+        $nuevo->nombre_usuario = "omner";
         $nuevo->contraseña = Hash::make('1234');
         $nuevo->usa_id=1;
         $nuevo->usa_type = "App\Models\Estudiante";
         $nuevo->save();
         $nuevo = new Usuario();
-        $nuevo->nombre_usuario = "mario.padilla@tuxtla.tecnm.mx";
+        $nuevo->nombre_usuario = "mario";
         $nuevo->contraseña = Hash::make('1234');
         $nuevo->usa_id=1;
-        $nuevo->usa_type = "App\Models\Carrera";
+        $nuevo->usa_type = "App\Models\Coordinador";
         $nuevo->save();
 
     }

@@ -14,7 +14,7 @@ class AsesorController extends Controller
      */
     public function index()
     {
-        //
+        echo "mostar el listado de asesores";
     }
 
     /**

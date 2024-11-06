@@ -30,8 +30,8 @@ class ConfiguracionSeeder extends Seeder
         $nueva->save();
 
         $nueva = new Configuracion();
-        $nueva->variable = "semestre";
-        $nueva->valor = "agosto - diciembre 2024";
+        $nueva->variable = "periodo";
+        $nueva->valor = "1";
         $nueva->save();
 
     }

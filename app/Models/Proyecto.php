@@ -17,7 +17,7 @@ class Proyecto extends Model
 
     public function asesor()
     {
-        return $this->belongsTo(Asesor::class);
+        return $this->belongsTo(Asesor::class)->withDefault(['nombre'=>'No asignado']);
     }
 
     public function seguimiento()

@@ -21,7 +21,7 @@ class ProyectoSeeder extends Seeder
         $proyecto->informacion = "contacto@ittg.edu.mx";
         $proyecto->justificacion = "El desarrollo de un sistema para el control del proceso administrativo de seguimiento a las 
 residencias en el departamento de ingenierías en el Instituto Tecnológico de Tuxtla Gutiérrez";
-        $proyecto->asesor_id = 1;
+//        $proyecto->asesor_id = 1;
         $proyecto->empresa_id = 1;
         $proyecto->periodo_id = 1;
         $proyecto->save(); 
