@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Empresa;
 use App\Http\Requests\StoreEmpresaRequest;
 use App\Http\Requests\UpdateEmpresaRequest;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class EmpresaController extends Controller
 {
@@ -83,5 +84,17 @@ class EmpresaController extends Controller
             //borrar la empresa 
         }
         return redirect()->route("empresas.index");
+    }
+    public function generarPdf(Request $request)
+    {
+        // Recoge los datos del formulario
+        $data = $request->all();
+    
+        // Genera el PDF usando una vista
+        $pdf = Pdf::loadView('empresa.formulario', compact('data'));
+    
+        // Retorna el PDF como descarga o como vista en el navegador
+        return $pdf->download('archivo.pdf'); // Para descargar
+        // return $pdf->stream(); // Para visualizar en el navegador
     }
 }

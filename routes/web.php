@@ -57,5 +57,7 @@ Route::resource('actividades',ActividadController::class);
 Route::get('/asesores/{pagina}', [AsesorController::class, 'mostrar']);
 Route::get('/carreras/{pagina}', [CarreraController::class, 'mostrar']);
 Route::get('/estudiantes/{pagina}', [EstudianteController::class, 'mostrar']);
+Route::post('/generar-pdf', EmpresaController::class)->name('generar.pdf');
+
 
 //Route::post('/subir', [EstudianteController::class, 'subirPDF'])->name('subir.pdf');
