@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>@yield('title')</title>
     <style>
         .encabezado {
             background-color: rgb(145, 202, 221);
@@ -40,17 +40,26 @@
                             
                             <li><a href="{{route('coordinadores.tabla')}}">CONOCER LA TABLA</a></li>
                             <li><a href="{{route('coordinadores.asignarAsesor1')}}">ASIGANR ASESORES</a></li>
-                            <li></li>
+                            
 
                         </ul>
                     @break
 
                     @case("App\Models\Estudiante")
-                        opciones del Estudiante
+                    <ul>
+                            
+                            <li><a href="{{route('estudiante.crear')}}">REGISTRA TUS DATOS</a></li>
+                            <li><a href="{{route('estudiante.impresiones.solicitud')}}">IMPRIMIR SOLICITUD</a></li>
+
+                        </ul>
                     @break
                         
                     @case("App\Models\Asesor")
-                        opciones del Asesor
+                    <ul>
+                            
+                            <li><a href="{{route('asesor.listar-proyecto')}}">PROYECTOS ASIGNADOS</a></li>
+
+                        </ul>
                     @break
 
                     @default

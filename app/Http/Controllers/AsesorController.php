@@ -84,4 +84,9 @@ public function mostrar($pagina)
         }
     }
 
+    public function proyecto()
+    {
+        return view('asesor.listar-proyecto'); 
+    }
+
 }

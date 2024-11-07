@@ -27,6 +27,7 @@ class EstudianteController extends Controller
         //MOSTRAR FORMULARIO PARA CREAR
         $carreras = Carrera::all();
         return view('estudiante.crear',compact('carreras'));
+        
     }
 
     /**
@@ -90,6 +91,8 @@ class EstudianteController extends Controller
         return redirect()->route("estudiante.index");
     }
 
+
+
     public function mostrar($pagina)
     {
         // Logica para determinar qué vista devolver
@@ -98,10 +101,10 @@ class EstudianteController extends Controller
         }/*
         elseif ($pagina == 'asignar') {
             return view('coordinador.asignar-asesor');
-        }*/
-        elseif ($pagina == 'imprimir-solicitud') {
-            return view('estudiante.impresiones.solicitud');
         }
+        elseif ($pagina == 'solicitud') {//imprimir-solicitud
+            return view('estudiante.impresiones.solicitud');
+        }*/
         elseif ($pagina == 'imprimir-anteproyecto') {
             return view('estudiante.impresiones.anteproyecto');
         } 
@@ -126,6 +129,11 @@ class EstudianteController extends Controller
         else {
             return abort(404); // Si la página no existe, lanzamos un 404
         }
+    }
+
+    public function solicitud()
+    {
+        return view('estudiante.impresiones.solicitud'); 
     }
 
     public function pdf(Request $request)

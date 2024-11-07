@@ -50,6 +50,12 @@ Route::get('asignar-asesores',[CoordinadorController::class,'asignarAsesor1'])->
 Route::post('asignar-asesores',[CoordinadorController::class,'asignarAsesor2'])->middleware('auth')->name('coordinadores.asignarAsesor2');
 Route::put('asignar-asesores/{proyecto_id}',[CoordinadorController::class,'asignarAsesor3'])->middleware('auth')->name('coordinadores.asignarAsesor3');
 
+//rutas especificas del estudiante
+Route::get('create',[EstudianteController::class,'create'])->middleware('auth')->name('estudiante.crear');
+Route::get('solicitud',[EstudianteController::class,'solicitud'])->middleware('auth')->name('estudiante.impresiones.solicitud');
+
+//rutas especificas del asesor
+Route::get('listar-proyecto',[AsesorController::class,'proyecto'])->middleware('auth')->name('asesor.listar-proyecto');
 
 //rutas de los CRUD 
 Route::resource('proyectos',ProyectoController::class);
