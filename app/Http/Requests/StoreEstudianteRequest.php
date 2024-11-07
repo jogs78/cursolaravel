@@ -44,7 +44,7 @@ class StoreEstudianteRequest extends FormRequest
             "apellido_paterno.required"=>"Es necesario llenar este campo",
             "apellido_materno.required"=>"Es necesario llenar este campo",
             "correo_electronico.required"=>"Es necesario llenar este campo",
-            'correo_electronico.email' => 'Por favor, introduce un correo electrónico válido.',
+            "correo_electronico.email" => "Por favor, introduce un correo electrónico válido.",
             "numero_de_control.required"=>"Es necesario llenar este campo",
             "numero_de_control.numeric"=>"Este Campo debe ser un Numero",
             "numero_de_control.max_digits"=>"Este Campo admite maximo 8 digitos",
