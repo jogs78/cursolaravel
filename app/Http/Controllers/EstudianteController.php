@@ -7,6 +7,8 @@ use App\Http\Requests\UpdateEstudianteRequest;
 use App\Models\Estudiante;
 use App\Models\Carrera;
 use App\Models\Proyecto;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 class EstudianteController extends Controller
 {
     /**
@@ -133,8 +135,8 @@ class EstudianteController extends Controller
 
     public function solicitud()
     {
-
-        
+        $pdf = Pdf::loadview('estudiante.impresiones.solicitud'); 
+        return $pdf->download('solicitud.pdf');
         return view('estudiante.impresiones.solicitud'); 
     }
 

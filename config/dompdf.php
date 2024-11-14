@@ -13,7 +13,7 @@ return [
     */
     'show_warnings' => false,   // Throw an Exception on warnings from dompdf
 
-    'public_path' => storage_pat('app/public/'),
+    'public_path' => storage_path('app/public/'),
 
 
     /*
