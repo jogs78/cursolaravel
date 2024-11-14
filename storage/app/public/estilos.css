@@ -1,0 +1,58 @@
+* {/*toda la vista*/
+	margin: 0;
+	padding: 0;
+}
+.horizontal {
+    display: flex; justify-content: center; width: 100%;
+}
+.hderecho {
+    display: flex; justify-content: right; 
+}
+.centrar {
+    text-align: center; /* Centra el texto dentro del div */
+    margin-top: 20px;
+}
+   
+.logo {
+    /*background-color: #4caf50;  quitar */
+    padding-right: 5%; 
+}
+.titulo {
+    align-self: top, center;
+    /*background-color: #af4c4c; quitar */
+    text-align: center; 
+}
+.cuadro{/*p*/
+    border: 1px solid black;
+    
+}
+.bold{
+    font-weight: bold; margin-right: 10px;
+}
+.tabla{/*div*/
+    border: 3px solid black; 
+}
+.contenido{/*div*/
+    display: flex;
+    
+}
+
+.marriba{
+    margin-top: 15px;
+}
+.subrayado{
+    text-decoration: underline;
+}
+.nsemanas{
+    width: 10%;
+}
+.medioa{
+    width: 50%; text-align: center;
+}
+.marginr{
+    margin-right: 3%;
+}
+.margen{
+    margin: 5%;
+}
+

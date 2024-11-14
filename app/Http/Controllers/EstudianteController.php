@@ -133,6 +133,8 @@ class EstudianteController extends Controller
 
     public function solicitud()
     {
+
+        
         return view('estudiante.impresiones.solicitud'); 
     }
 
