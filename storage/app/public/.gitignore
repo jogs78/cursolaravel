@@ -1,2 +1,4 @@
 *
 !.gitignore
+!estilos.css
+!/img/*
