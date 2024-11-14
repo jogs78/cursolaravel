@@ -8,6 +8,10 @@ use App\Models\Estudiante;
 use App\Models\Carrera;
 use App\Models\Proyecto;
 use Barryvdh\DomPDF\Facade\Pdf;
+use App\Providers\ConfiguracionServiceProvider;
+use App\Models\Periodo;
+use Illuminate\Support\Facades\Auth;
+
 
 class EstudianteController extends Controller
 {
@@ -135,7 +139,11 @@ class EstudianteController extends Controller
 
     public function solicitud()
     {
-        $pdf = Pdf::loadview('estudiante.impresiones.solicitud'); 
+        $estudiante = Auth::getUser()->usa;
+        $jefe = ConfiguracionServiceProvider::get('jefe_division');
+//        $periodo = Periodo::find(ConfiguracionServiceProvider::get('periodo_id'))->nombre;
+
+        $pdf = Pdf::loadview('estudiante.impresiones.solicitud',compact('jefe','estudiante')); 
         return $pdf->download('solicitud.pdf');
         return view('estudiante.impresiones.solicitud'); 
     }

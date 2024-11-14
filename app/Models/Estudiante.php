@@ -16,7 +16,7 @@ class Estudiante extends Model
 
     public function proyecto()
     {
-        return $this->hasOne(Proyecto::class);
+        return $this->belongsTo(Proyecto::class);
     }
 
     public function carrera()

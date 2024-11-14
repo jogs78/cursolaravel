@@ -20,6 +20,6 @@ class Carrera extends Model
 
     public function coordinador()
     {
-        return $this->belongsTo(Coordinador::class);
+        return $this->hasOne(Coordinador::class);
     }
 }

@@ -23,6 +23,8 @@ class EstudianteSeeder extends Seeder
         $estudiante->direccion = "Paseo de las Gargolas Edif 380 B";
         $estudiante->institucion_seguridad_social = "IMSS";
         $estudiante->numero_de_seguridad_social = "1999";
+        $estudiante->proyecto_id=1;
+        $estudiante->carrera_id = 1;
         $estudiante->save();
 
         $estudiante = new Estudiante();

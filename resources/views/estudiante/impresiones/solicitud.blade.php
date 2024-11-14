@@ -32,7 +32,7 @@
         </div>
         <div class="horizontal marriba">
             <div class="medioa">
-            <p>C. DR. FCO.ALEXANDER RINCON MOLINA</p> <!--Cambiar-->
+            <p>{{$jefe}}</p> <!--Cambiar-->
             <p>Jefe de la Div. de Estudios Profesionales</p>
             </div>
             <div class="medioa">
@@ -43,8 +43,7 @@
     </div>
         <div class="horizontal marriba">
             <p class="bold cuadro marginr">NOMBRE DEL PROYECTO: </p>
-            <p>Sistematización del seguimiento de los procesos de residencia profesional en el 
-                departamento de ingenierías </p><!--Cambiar-->
+            <p>{{$estudiante->proyecto->nombre}}</p><!--Cambiar-->
         </div>
         <div class="horizontal marriba">
             <p class="bold cuadro marginr">OPCION ELEGIDA: </p>
