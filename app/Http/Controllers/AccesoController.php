@@ -22,7 +22,9 @@ class AccesoController extends Controller
     public function cambio(){
         return view('acceso.cambiar-contraseña');
     }
-
+    public function home(){
+        return view('acceso.adentro');
+    }
     public function adentro(Request $peticion){
 /*
         echo "<br>N:" . $peticion->input("nombre");
@@ -46,7 +48,7 @@ class AccesoController extends Controller
                 //IGUALES
                 //guardar el usuario
                 Auth::login($encontrado);
-                return view('acceso.adentro');
+                return redirect(route('home'));
             }else{
                 //DIFIERENTES
                 return redirect()->back();
