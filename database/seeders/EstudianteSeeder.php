@@ -37,6 +37,7 @@ class EstudianteSeeder extends Seeder
         $estudiante->direccion = "4ta norte y 2da poniente Edif 4 A";
         $estudiante->institucion_seguridad_social = "IMSS";
         $estudiante->numero_de_seguridad_social = "2001";
+        $estudiante->proyecto_id=1;
         $estudiante->save(); 
     }
 

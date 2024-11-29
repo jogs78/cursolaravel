@@ -20,21 +20,23 @@
       <form action="{{route('coordinadores.asignarAsesor3',$proyecto->id)}}" method="post" style="display:flex " >
         @method('PUT')
         <select name="asesor_id" id="" style="display:flex ">
+          <option value="" disabled selected>Elige un asesor...</option>
           @foreach ($asesores as $asesor)
+          
             <option value="{{$asesor->id}}" 
               @if ($proyecto->asesor_id == $asesor->id)
                 selected  
               @endif
-
               >{{$asesor->nombre}}</option>
-            
           @endforeach
-  
         </select>
-
         <input type="hidden" name="proyecto_id" value="{{$proyecto->id}}">
         @csrf
-        <input type="submit" value="ASIGNAR"  >
+        @if( is_null($proyecto->asesor_id) )
+          <input type="submit" value="ASIGNAR.">          
+        @else
+          <input type="submit" value="CAMBIAR.">          
+        @endif
       </form>
 
     </td>

@@ -56,7 +56,7 @@ Route::get('create',[EstudianteController::class,'create'])->middleware('auth')-
 Route::get('solicitud',[EstudianteController::class,'solicitud'])->middleware('auth')->name('estudiante.impresiones.solicitud');
 
 //rutas especificas del asesor
-Route::get('listar-proyecto',[AsesorController::class,'proyecto'])->middleware('auth')->name('asesor.listar-proyecto');
+Route::get('listar-proyectos',[AsesorController::class,'proyecto'])->middleware('auth')->name('asesor.listar-proyectos');
 
 //rutas de los CRUD 
 Route::resource('proyectos',ProyectoController::class);

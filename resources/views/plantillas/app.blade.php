@@ -57,7 +57,7 @@
                     @case("App\Models\Asesor")
                     <ul>
                             
-                            <li><a href="{{route('asesor.listar-proyecto')}}">PROYECTOS ASIGNADOS</a></li>
+                            <li><a href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
 
                         </ul>
                     @break

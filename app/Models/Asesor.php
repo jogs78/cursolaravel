@@ -10,8 +10,8 @@ class Asesor extends Model
     use HasFactory;
     protected $table = "asesores";
 
-    public function proyectos()
+    public function proyectos($periodo_id)
     {
-        return $this->hasMany(Proyecto::class);
+        return $this->hasMany(Proyecto::class)->where('periodo_id', $periodo_id);
     }
 }
