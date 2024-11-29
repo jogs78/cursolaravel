@@ -7,44 +7,48 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="horizontal" style="margin-top: 1%;">
-        <div class="logo">
-            <img src="img/logo.png" width="200" title="logo" alt="logo" style="width: 90px; height: 80px;"/>
-            
-        </div>
-        <div class="titulo">
-            <h3>INSTITUTO TECNOLÓGICO DE TUXTLA GUTIÉRREZ </h3>
+        <table style="justify-content: center; width: 100%;">
+        <thead>
+            <th>
+            <img src="img/logo.png" style="width: 90px; height: 80px;"/>
+            </th>
+            <th>
+            <h3>INSTITUTO TECNOLÓGICO DE TUXTLA GUTIÉRREZ</h3>
             <h3>DIVISIÓN DE ESTUDIOS PROFESIONALES</h3>
             <h3>SOLICITUD DE RESIDENCIA PROFESIONAL</h3>
-        </div>
-    </div>
-<div class="margen">
-    <div>
-        <div class="horizontal marriba">
-            <div class="horizontal">
-            <p class="marginr">Lugar: </p>
-            <p class="subrayado">Tuxtla Gutiérrez, Chiapas</p><!--Cambiar-->
-            </div>
-            <div class="horizontal">
-            <p class="marginr">Fecha: </p>
-            <p class="subrayado">09 de Agosto del 2024</p><!--Cambiar-->
-            </div>
-        </div>
-        <div class="horizontal marriba">
-            <div class="medioa">
-            <p>{{$jefe}}</p> <!--Cambiar-->
-            <p>Jefe de la Div. de Estudios Profesionales</p>
-            </div>
-            <div class="medioa">
-            <p>AT’N: C. MTRA. OBDULIA RIOS COUTIÑO</p><!--Cambiar-->
-            <p>Coord. de la Carrera de Ing. En Sistemas Computacionales </p>
-            </div>
-        </div>
-    </div>
-        <div class="horizontal marriba">
-            <p class="bold cuadro marginr">NOMBRE DEL PROYECTO: </p>
-            <p>{{$estudiante->proyecto->nombre}}</p><!--Cambiar-->
-        </div>
+            </th>
+        </thead>
+        </table>
+        
+
+    <table class="marriba" style="width: 100%;">
+            <tr>
+                <th style="width: 20%;">Lugar: </th>
+                <td style="width: 30%;" class="subrayado">Tuxtla Gutiérrez, Chiapas</th><!--Cambiar-->
+                <th style="width: 20%;">Fecha: </th>
+                <td style="width: 30%;"  class="subrayado">09 de Agosto del 2024</td>
+            </tr>
+    </table>
+    <table class="marriba" style="width: 100%;">
+        <tr>
+            <th style="width: 50%;">{{$jefe}}</th>
+            <th style="width: 50%;">AT’N: C. MTRA. OBDULIA RIOS COUTIÑO</th>
+        </tr>
+    </table>
+    <table style="width: 100%;">
+        <tr>
+            <td class="centro" style="width: 50%;">Jefe de la Div. de Estudios Profesionales</td>
+            <td class="centro" style="width: 50%;">Coord. de la Carrera de Ing. En Sistemas Computacionales</td>
+        </tr>
+    </table>
+
+        <table class="marriba" style="width: 100%;">
+            <tr>
+            <th class="cuadro" style="width: 25%;">NOMBRE DEL PROYECTO: </th>
+            <th style="width: 5%;"></th>
+            <td class="cuadro" style="width: 70%;">{{$estudiante->proyecto->nombre}}</td><!--Cambiar-->
+            </tr>
+        </table>
         <div class="horizontal marriba">
             <p class="bold cuadro marginr">OPCION ELEGIDA: </p>
             <p class="marginr">Banco de Proyecto</p>
@@ -59,93 +63,110 @@
         </div>
         <div>
             <p class="bold marriba">Datos de la Empresa: </p>
-            <div class="tabla">
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Nombre: </p>
-                    <p class="cuadro" style="width: 90%;">Tecnológico Nacional de México Campus Tuxtla Gutiérrez</p><!--Cambiar-->
-                </div>
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Giro, Ramo o Sector: </p>
-                    <p class="cuadro" style="width: 50%;">Industrial (   ) Servicios (   ) Otro  (   )  Público (  x ) Privado (    ) </p><!--Cambiar-->
-                    <p class="cuadro nsemanas">R.F.C. </p>
-                    <p class="cuadro" style="width: 30%;">TNM140723GFA </p>
-                </div>
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Dirección: </p>
-                    <div style="width: 90%;">
-                        <div class="contenido">
-                            <div class="cuadro contenido" style="width: 50%;"> <p class="bold">Calle:</p> <p> Carretera Panamericana, Boulevares. KM 1080 </p> <!--Cambiar--></div>
-                            <div class="cuadro contenido" style="width: 50%;"> <p class="bold">Número:</p> <p> S/N</p> <!--Cambiar--></div>
-                        </div>
-                        <div class="contenido">
-                            <div class="cuadro contenido" style="width: 50%;"> <p class="bold">Código postal:</p> <p>29050</p> <!--Cambiar--></div>
-                            <div class="cuadro contenido" style="width: 50%;"> <p class="bold">Ciudad/Estado:</p> <p>Tuxtla Gutiérrez, Chiapas</p> <!--Cambiar--></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Teléfono / Fax </p>
-                    <p class="cuadro" style="width: 40%;">96161500461 </p><!--Cambiar-->
-                    <p class="cuadro nsemanas">Email </p>
-                    <p class="cuadro" style="width: 40%;">contacto@ittg.edu.mx </p><!--Cambiar-->
-                </div>
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Nombre del Titular de la empresa: </p>
-                    <p class="cuadro" style="width: 40%;">José Manuel Rosado Pérez</p><!--Cambiar-->
-                    <p class="cuadro nsemanas">Puesto: </p>
-                    <p class="cuadro" style="width: 40%;">Director del ITTG  </p><!--Cambiar-->
-                </div>
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Nombre del Asesor Externo:  </p>
-                    <p class="cuadro" style="width: 40%;">Gabriela Alejandra Ríos Zúñiga</p><!--Cambiar-->
-                    <p class="cuadro nsemanas">Puesto: </p>
-                    <p class="cuadro" style="width: 40%;">Jefa del Departamento de Departamento de Ingenierías</p><!--Cambiar-->
-                </div>
+            <table class="tabla">
+                <tr>
+                    <th style="width: 10%; border: 1px solid black;">Nombre: </th>
+                    <th style="width: 90%; border: 1px solid black;" >Tecnológico Nacional de México Campus Tuxtla Gutiérrez</th><!--Cambiar-->
+                </tr>
+            </table>
+                <table class="tabla">
+                    <tr>
+                        <th class="cuadro" style="width: 20%;">Giro, Ramo o Sector: </th>
+                        <th class="cuadro" style="width: 50%;">Industrial (   ) Servicios (   ) Otro  (   )  Público (  x ) Privado (    ) </th><!--Cambiar-->
+                        <th class="cuadro" style="width: 40%;">R.F.C. </th>
+                        <th class="cuadro" style="width: 30%;">TNM140723GFA </th>
+                    </tr>
+                </table>
+                <table class="tabla">
+                    <tr>
+                        <th style="width: 15%;">Dirección: </th>
+                        <th class="cuadro nsemanas">Calle: </th>
+                        <th class="cuadro" style="width: 35%;">Carretera Panamericana, Boulevares. KM 1080 </th> <!-- Cambiar -->
+                        <th class="cuadro nsemanas">Número: </th>
+                        <th class="cuadro" style="width: 30%;">S/N </th> <!-- Cambiar -->
+                    </tr>
+                </table>
+                <table class="tabla">
+                    <tr>
+                        <th class="cuadro" style="width: 20%;">Código Postal: </th>
+                        <th class="cuadro" style="width: 30%;">29050</th> <!-- Cambiar -->
+                        <th class="cuadro" style="width: 20%;">Ciudad/Estado: </th>
+                        <th class="cuadro" style="width: 30%;">Tuxtla Gutiérrez, Chiapas  </th> <!-- Cambiar -->
+                    </tr>
+                </table>
+                <table class="tabla">
+                    <tr>
+                    <th class="cuadro nsemanas">Teléfono / Fax </th>
+                    <th class="cuadro" style="width: 40%;">96161500461 </th><!--Cambiar-->
+                    <th class="cuadro nsemanas">Email </th>
+                    <th class="cuadro" style="width: 40%;">contacto@ittg.edu.mx </th><!--Cambiar-->
+                    </tr>
+                </table>
+                <table class="tabla">
+                    <tr>
+                    <th class="cuadro nsemanas">Nombre del Titular de la empresa: </th>
+                    <th class="cuadro" style="width: 40%;">José Manuel Rosado Pérez</th><!--Cambiar-->
+                    <th class="cuadro nsemanas">Puesto: </th>
+                    <th class="cuadro" style="width: 40%;">Director del ITTG  </th><!--Cambiar-->
+                    </tr>
+                </table>
+                <table class="tabla">
+                    <tr>
+                    <th class="cuadro nsemanas">Nombre del Asesor Externo:  </th>
+                    <th class="cuadro" style="width: 40%;">Gabriela Alejandra Ríos Zúñiga</th><!--Cambiar-->
+                    <th class="cuadro nsemanas">Puesto: </th>
+                    <th class="cuadro" style="width: 40%;">Jefa del Departamento de Departamento de Ingenierías</th><!--Cambiar-->
+                    </tr>
+                </table>
 
-            </div>
+            
         </div>
-        <br>
-        <p class="bold">Datos del Residente: </p>
-            <div class="tabla">
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Nombre: </p>
-                    <p class="cuadro" style="width: 40%;">Jorge Omner Arias Olea</p><!--Cambiar-->
-                    <p class="cuadro nsemanas">Telefono: </p>
-                    <p class="cuadro" style="width: 40%;">9613599215</p><!--Cambiar-->
-                </div>
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Carrera: </p>
-                    <p class="cuadro" style="width: 40%;">Ingenieria en Sistemas Computacionales </p><!--Cambiar-->
-                    <p class="cuadro nsemanas">No. de Control: </p>
-                    <p class="cuadro" style="width: 40%;">20270264</p><!--Cambiar-->
-                </div>
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Direccion:  </p>
-                    <p class="cuadro" style="width: 90%;">Blvd. Paseo de las Gargolas Edif. 380 – B</p><!--Cambiar-->
-                </div>
-                <div class="contenido">
-                    <p class="cuadro nsemanas">Email: </p>
-                    <p class="cuadro" style="width: 40%;">L20270264@tuxtla.tecnm.mx</p><!--Cambiar-->
-                    <p class="cuadro nsemanas">Para Seguridad <br>Social Acudir: </p>
-                    <div style="width: 40%;">
-                        <div class="contenido">
-                            <p class="cuadro" style="width: 33%;">IMSS (x)</p><!--Cambiar-->
-                            <p class="cuadro" style="width: 33%;">ISSSTE ( )</p><!--Cambiar-->
-                            <p class="cuadro" style="width: 33%;"> OTROS( )</p><!--Cambiar-->
-                        </div>
-                        <p class="cuadro" >No. :  25169967004 </p><!--Cambiar-->
-
-                    </div>
-                </div>
-
-            </div>
+        <div>
+        <p class="bold marriba">Datos del Residente: </p>
+                <table class="tabla">
+                    <tr>
+                    <th class="cuadro nsemanas">Nombre: </th>
+                    <th class="cuadro" style="width: 40%;">Jorge Omner Arias Olea</th><!--Cambiar-->
+                    <th class="cuadro nsemanas">Telefono: </th>
+                    <th class="cuadro" style="width: 40%;">9613599215</th><!--Cambiar-->
+                    </tr>
+                </table>
+                <table class="tabla">
+                    <tr>
+                    <th class="cuadro nsemanas">Carrera: </th>
+                    <th class="cuadro" style="width: 40%;">Ingenieria en Sistemas Computacionales </th><!--Cambiar-->
+                    <th class="cuadro nsemanas">No. de Control: </th>
+                    <th class="cuadro" style="width: 40%;">20270264</th><!--Cambiar-->
+                    </tr>
+                </table>
+                <table class="tabla">
+                    <tr>
+                        <th class="cuadro nsemanas">Direccion:  </th>
+                        <th class="cuadro" style="width: 90%;">Blvd. Paseo de las Gargolas Edif. 380 – B</th><!--Cambiar-->
+                    </tr>
+                </table>
+                <table class="tabla">
+                    <tr>
+                    <th class="cuadro nsemanas">Email: </th>
+                    <th class="cuadro" style="width: 40%;">L20270264@tuxtla.tecnm.mx</th><!--Cambiar-->
+                    </tr>
+                </table>
+                    <table class="tabla">
+                        <tr>
+                        <th class="cuadro nsemanas">Para Seguridad <br>Social Acudir: </th>
+                            <th class="cuadro" style="width: 25%;">IMSS <p>(X)</p></th><!--Cambiar-->
+                            <th class="cuadro" style="width: 25%;">ISSSTE <p>( )</p></th><!--Cambiar-->
+                            <th class="cuadro" style="width: 25%;"> OTROS <p>( )</p></th><!--Cambiar-->
+                            <th class="cuadro" style="width: 25%;">No. :  <p>25169967004</p> </th><!--Cambiar-->
+                        </tr>
+                    </table> 
         </div>
 
         <div class="centrar">
             <p>______________________</p>
             <p>Firma del alumno</p>
         </div>
-</div>
+
    
 </body>
 </html>

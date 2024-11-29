@@ -1,10 +1,15 @@
-* {/*toda la vista*/
+/** {toda la vista
 	margin: 0;
 	padding: 0;
     box-sizing: border-box;
+}*/
+h3{
+    margin: 0;
+	padding: 0;
 }
 .horizontal {
     display: flex; justify-content: center; width: 100%;
+    
 }
 .hderecho {
     display: flex; justify-content: right; 
@@ -14,10 +19,6 @@
     margin-top: 20px;
 }
    
-.logo {
-    /*background-color: #4caf50;  quitar */
-    padding-right: 5%; 
-}
 .titulo {
     align-self: top, center;
     /*background-color: #af4c4c; quitar */
@@ -31,10 +32,11 @@
     font-weight: bold; margin-right: 10px;
 }
 .tabla{/*div*/
-    border: 3px solid black; 
+    border: 2px solid black; width: 100%;
 }
 .contenido{
     display: flex;
+
 }
 
 .marriba{
@@ -46,13 +48,10 @@
 .nsemanas{
     width: 10%;
 }
-.medioa{
-    width: 50%; text-align: center;
+.centro{
+    text-align: center;
 }
-.marginr{
-    margin-right: 3%;
-}
+/*
 .margen{
     margin: 5%;
-}
-
+}*/
