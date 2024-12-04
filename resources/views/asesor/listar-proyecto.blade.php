@@ -3,8 +3,9 @@
     
 @endsection
 @section('contenido')
-    <p>Lista de Proyectos Asignados</p>
-    <table border="1">
+  
+  <p>Lista de Proyectos Asignados</p>
+  <table border="1">
   <thead>
    <th>Nombre proyecto</th>
    <th>Nombre empresa</th>
@@ -19,10 +20,14 @@
     
     <td>
     {{$proyecto->empresa->nombre}}
+    <br>
+    {{$proyecto->periodo_id}}
     </td>
 
     <td>
-    {{$proyecto->estudiantes->nombre}}
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li>{{$estudiante->nombre}}</li>
+      @endforeach
     </td>
    </tr>
  @endforeach

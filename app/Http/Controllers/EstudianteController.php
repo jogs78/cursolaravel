@@ -110,10 +110,10 @@ class EstudianteController extends Controller
         }
         elseif ($pagina == 'solicitud') {//imprimir-solicitud
             return view('estudiante.impresiones.solicitud');
-        }*/
+        }
         elseif ($pagina == 'imprimir-anteproyecto') {
             return view('estudiante.impresiones.anteproyecto');
-        } 
+        }*/ 
         elseif ($pagina == 'fuera-periodo') {
             return view('asesor.avisos.fuera-periodo');
         }
@@ -144,8 +144,17 @@ class EstudianteController extends Controller
 //        $periodo = Periodo::find(ConfiguracionServiceProvider::get('periodo_id'))->nombre;
 
         $pdf = Pdf::loadview('estudiante.impresiones.solicitud',compact('jefe','estudiante')); 
-        return $pdf->download('solicitud.pdf');
+        return $pdf->download('Solicitud.pdf');
         return view('estudiante.impresiones.solicitud'); 
+    }
+
+    public function anteproyecto()
+    {
+        $estudiante = Auth::getUser()->usa;
+       // $jefe = ConfiguracionServiceProvider::get('jefe_division');
+        $pdf = Pdf::loadview('estudiante.impresiones.anteproyecto',compact('estudiante')); 
+        return $pdf->download('Anteproyecto.pdf');
+        return view('estudiante.impresiones.anteproyecto'); 
     }
 
     public function pdf(Request $request)

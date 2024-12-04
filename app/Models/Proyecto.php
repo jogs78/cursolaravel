@@ -30,9 +30,9 @@ class Proyecto extends Model
         return $this->belongsTo(Periodo::class);
     }
 
-    public function estudiante()
+    public function estudiantes()
     {
-        return $this->belongsTo(Estudiante::class);
+        return $this->hasMany(Estudiante::class);
     }
 
     public function actividades()

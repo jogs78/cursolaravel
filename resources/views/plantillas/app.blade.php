@@ -39,7 +39,9 @@
                         <ul>
                             
                             <li><a href="{{route('coordinadores.tabla')}}">CONOCER LA TABLA</a></li>
-                            <li><a href="{{route('coordinadores.asignarAsesor1')}}">ASIGANR ASESORES</a></li>
+                           <!-- <li><a href="{{route('coordinadores.asignarAsesor1')}}">ASIGANR ASESORES</a></li>-->
+                            <li><a href="#">LISTA DE ESTUDIANTES</a></li>
+                            <li><a href="#">GESTIONAR PERIODO</a></li>
                             
 
                         </ul>
@@ -49,16 +51,19 @@
                     <ul>
                             
                             <li><a href="{{route('estudiante.crear')}}">REGISTRA TUS DATOS</a></li>
+                            <li><a href="#">REGISTRA TU PROYECTO</a></li>
                             <li><a href="{{route('estudiante.impresiones.solicitud')}}">IMPRIMIR SOLICITUD</a></li>
-
+                            <li><a href="{{route('estudiante.impresiones.anteproyecto')}}">IMPRIMIR ANTEPROYECTO</a></li>
+                            <li><a href="#">CAPTURAS LAS ACTIVIDADES DE TU PROYECTO</a></li>
+                            <li><a href="#">VERIFICA TUS SEGUIMIENTOS</a></li>
                         </ul>
                     @break
                         
                     @case("App\Models\Asesor")
                     <ul>
                             
-                            <li><a href="{{route('asesor.listar-proyecto')}}">PROYECTOS ASIGNADOS</a></li>
-
+                            <li><a href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
+                            <li><a href="#">DAR SEGUIMIENTO A UN PROYECTO</a></li>
                         </ul>
                     @break
 

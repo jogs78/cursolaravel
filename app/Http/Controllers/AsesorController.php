@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Asesor;
 use App\Http\Requests\StoreAsesorRequest;
 use App\Http\Requests\UpdateAsesorRequest;
+use App\Providers\ConfiguracionServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AsesorController extends Controller
 {
@@ -86,7 +88,12 @@ public function mostrar($pagina)
 
     public function proyecto()
     {
-        return view('asesor.listar-proyecto'); 
+        $asesor = Auth::getUser()->usa;
+        $periodo_id = ConfiguracionServiceProvider::get('periodo_id');
+
+        $proyectos= $asesor->proyectos($periodo_id)->get();
+
+        return view('asesor.listar-proyecto',compact('proyectos')); 
     }
 
 }

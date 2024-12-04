@@ -51,9 +51,9 @@
         </table>
         <div class="horizontal marriba">
             <p class="bold cuadro marginr">OPCION ELEGIDA: </p>
-            <p class="marginr">Banco de Proyecto</p>
-            <p class="marginr">Propuesta propia</p>
-            <p class="marginr">Trabajador</p>
+            <p class="marginr">Banco de Proyecto ( )</p>
+            <p class="marginr">Propuesta propia ( )</p>
+            <p class="marginr">Trabajador ( )</p> 
         </div>
         <div class="horizontal marriba">
             <p class="bold cuadro marginr">PERIODO PROYECTADO: </p>

@@ -6,23 +6,26 @@ use App\Models\Coordinador;
 use App\Http\Requests\StoreCoordinadorRequest;
 use App\Http\Requests\UpdateCoordinadorRequest;
 use App\Models\Proyecto;
+use App\Providers\ConfiguracionServiceProvider;
 use App\Models\Configuracion;
 use App\Models\Asesor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CoordinadorController extends Controller
 {
 
 
     public function tabla(){
-        $periodo_id = Configuracion::where('variable','periodo')->first()->valor;
+        $coordinador = Auth::getUser()->usa;
+        $periodo_id = ConfiguracionServiceProvider::get('periodo_id');
+
         $proyectos = Proyecto::where('periodo_id', $periodo_id)->get();
         $asesores = Asesor::all();
-
         return view ('coordinador.tabla', compact('proyectos','asesores'));
     }
     public function asignarAsesor1(){
-        $periodo_id = Configuracion::where('variable','periodo')->first()->valor;
+        $periodo_id = ConfiguracionServiceProvider::get('periodo_id');
         $proyectos = Proyecto::where('periodo_id', $periodo_id)->get();
         return view ('coordinador.asignar-asesor1', compact('proyectos'));
     }
