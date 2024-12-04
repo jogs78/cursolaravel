@@ -12,6 +12,7 @@ use App\Http\Controllers\CarreraController;
 use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\ActividadController;
 use App\Http\Controllers\CoordinadorController;
+use App\Http\Controllers\SeguimientoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,8 @@ Route::get('anteproyecto',[EstudianteController::class,'anteproyecto'])->middlew
 
 //rutas especificas del asesor
 Route::get('listar-proyectos',[AsesorController::class,'proyecto'])->middleware('auth')->name('asesor.listar-proyectos');
+Route::get('realizar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoController::class,'create'])->name('asesor.realizar-seguimientos');
+Route::post('guardar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoController::class,'store'])->name('asesor.guardar-seguimientos');
 
 //rutas de los CRUD 
 Route::resource('proyectos',ProyectoController::class);

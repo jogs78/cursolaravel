@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('parciales', function (Blueprint $table) {
             $table->id();
+            $table->integer('consecutivo');
             $table->integer('puntualidad');
             $table->integer('conocimiento');
             $table->integer('equipo');
             $table->integer('dedicado'); 
             $table->integer('orden'); 
             $table->integer('mejoras'); 
-            $table->string('ruta'); 
+            $table->string('ruta')->nullable()->default(null); 
             $table->timestamps();
         });
     }

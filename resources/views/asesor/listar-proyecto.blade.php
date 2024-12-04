@@ -10,6 +10,8 @@
    <th>Nombre proyecto</th>
    <th>Nombre empresa</th>
    <th>Nombre Estudiante</th>
+   <th>Primer Seguimiento</th>
+
   </thead>
   <tbody>
  @foreach ($proyectos as $proyecto)
@@ -21,12 +23,17 @@
     <td>
     {{$proyecto->empresa->nombre}}
     <br>
-    {{$proyecto->periodo_id}}
+    <!--{{$proyecto->periodo_id}}-->
     </td>
 
     <td>
       @foreach ($proyecto->estudiantes as $estudiante)
           <li>{{$estudiante->nombre}}</li>
+      @endforeach
+    </td>
+    <td>
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li><a href="{{route('asesor.realizar-seguimientos',[$estudiante->id,1])}}">Realizar</a></li>
       @endforeach
     </td>
    </tr>
