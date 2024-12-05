@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('seguimientos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('estudiante_id')->nullable()->default(null)->constrained('estudiantes');
             $table->unsignedBigInteger('desglose_id')->nullable();
             $table->string('desglose_type')->nullable();
             //$table->morphs('formato');

@@ -18,15 +18,15 @@ class Seguimiento extends Model
     {
         //return $this->morphMany(Seguimiento::class, 'desglose');
         //return $this->morphToMany(Seguimiento::class,'desglose',"tabla");
-        return $this->morphTo(Seguimiento::class, 'desglose');
+        return $this->morphMany(Parcial::class, 'desglose');
     }
 
-    public function desgloses()//model
+/*    public function desgloses()//model
     {
         return $this->morphMany(Parcial::class);
     }
 
-
+*/
     public function ultimos(){
         return $this->hasMany(Ultimo::class);
     }

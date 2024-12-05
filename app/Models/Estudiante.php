@@ -21,8 +21,13 @@ class Estudiante extends Model
 
     public function carrera()
     {
+        //Estudiante tiene carrera_id
         return $this->belongsTo(Carrera::class);
     }
 
+    public function parciales(){
+        //Parcial tiene estudiante_id
+        return $this->hasMany(Parcial::class);
+    }
     
 }

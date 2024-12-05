@@ -13,13 +13,26 @@ return new class extends Migration
     {
         Schema::create('parciales', function (Blueprint $table) {
             $table->id();
-            $table->integer('consecutivo');
-            $table->integer('puntualidad');
-            $table->integer('conocimiento');
-            $table->integer('equipo');
-            $table->integer('dedicado'); 
-            $table->integer('orden'); 
-            $table->integer('mejoras'); 
+            $table->foreignId('estudiante_id')->nullable()->default(null)->constrained('estudiantes');
+            $table->float  ('promedio_parcial')->nullable()->default(null); 
+            $table->integer('consecutivo')->nullable()->default(null);
+
+            $table->integer('puntualidad_interno')->nullable()->default(null);
+            $table->integer('conocimiento_interno')->nullable()->default(null);
+            $table->integer('equipo_interno')->nullable()->default(null);
+            $table->integer('dedicado_interno')->nullable()->default(null); 
+            $table->integer('orden_interno')->nullable()->default(null); 
+            $table->integer('mejoras_interno')->nullable()->default(null); 
+            $table->float  ('promedio_interno')->nullable()->default(null); 
+
+            $table->integer('puntualidad_externo')->nullable()->default(null);
+            $table->integer('conocimiento_externo')->nullable()->default(null);
+            $table->integer('equipo_externo')->nullable()->default(null);
+            $table->integer('dedicado_externo')->nullable()->default(null); 
+            $table->integer('orden_externo')->nullable()->default(null); 
+            $table->integer('mejoras_externo')->nullable()->default(null); 
+            $table->float  ('promedio_externo')->nullable()->default(null); 
+
             //$table->morphs('parciales');
             $table->string('ruta')->nullable()->default(null); 
             $table->timestamps();
