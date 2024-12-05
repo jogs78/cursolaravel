@@ -24,45 +24,38 @@ class SeguimientoController extends Controller
      */
     public function create(Estudiante $estudiante,$consecutivo)
     {
-        return view('seguimientos.parcial',compact('estudiante','consecutivo'));
+
+        //ahorita solo estamos trabajando con parciales no con ultimo
+        return view('seguimientos.parcial.crear',compact('estudiante','consecutivo'));
        // echo "le vamos a hacer su seguimiento $consecutivo al estudiante $estudiante->nombre"; 
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreSeguimientoRequest $request, Estudiante $estudiante,$consecutivo)
+    public function store(StoreSeguimientoRequest $request, Estudiante $estudiante, $consecutivo)
     {
         echo "guardando los datos";
         //dump($request->all());
         DB::beginTransaction();
         try {
-        echo "guardando parciales";
-        $seguimiento= new Parcial();
-        $seguimiento-> consecutivo=$consecutivo;
-        $seguimiento-> puntualidad=$request->puntualidad;
-        $seguimiento-> conocimiento=$request->conocimiento;
-        $seguimiento-> equipo=$request->equipo;
-        $seguimiento-> dedicado=$request->dedicado;
-        $seguimiento-> dedicado=$request->dedicado;
-        $seguimiento-> orden=$request->orden;
-        $seguimiento-> mejoras=$request->mejoras;
-        echo "antes de save";
-        $seguimiento-> save();
-        echo "despues de save";
-        $nuevo = new Seguimiento();
-        echo "guardando seguimiento";
-        $nuevo->desglose_id=$seguimiento->id;
-        $nuevo->desglose_type="App\Models\Parcial";
-        $nuevo-> save();
-        DB::commit();
-        echo "guardado";
+            $parcial = new Parcial();
+            $parcial->estudiante_id = 1;
+            $parcial-> consecutivo=$consecutivo;
+            $parcial-> puntualidad_interno=$request->puntualidad;
+            $parcial-> conocimiento_interno=$request->conocimiento;
+            $parcial-> equipo_interno=$request->equipo;
+            $parcial-> dedicado_interno=$request->dedicado;
+            $parcial-> orden_interno=$request->orden;
+            $parcial-> mejoras_interno=$request->mejoras;
+            $parcial-> save();
+            DB::commit();
         } catch (\Throwable $th) {
             //throw $th;
             echo "error $th";
             DB::rollBack();
         }
-        //return redirect()->route("home");
+        return redirect()->route("home");
     }
 
     /**
@@ -84,9 +77,17 @@ class SeguimientoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateSeguimientoRequest $request, Seguimiento $seguimiento)
+    public function update(UpdateSeguimientoRequest $request, Estudiante $estudiante, $consecutivo)
     {
-        //
+        //encontrar ese parcial
+        $parcial = Parcial::where('estudiante_id', $estudiante->id)
+                          ->where('consecutivo',$consecutivo)
+                          ->first();
+
+        $parcial->promedio_parcial = $request->promedio;
+        //guardar el archivo
+        $parcial->save(); 
+                                            
     }
 
     /**
