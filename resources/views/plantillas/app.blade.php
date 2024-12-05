@@ -63,7 +63,7 @@
                     <ul>
                             
                             <li><a href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
-                            <li><a href="#">DAR SEGUIMIENTO A UN PROYECTO</a></li>
+                            <!-- <li><a href="#">CALIFICAR PROYECTO</a></li> -->
                         </ul>
                     @break
 
