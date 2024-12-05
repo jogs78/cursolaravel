@@ -10,9 +10,14 @@ class Parcial extends Model
     use HasFactory;
 
     protected $table = "parciales";
-
+   /*
     public function seguimiento()
     {
         return $this->belongsTo(Seguimiento::class);
+    }*/
+
+    public function seguimiento()
+    {
+        return $this->morphTo();
     }
 }

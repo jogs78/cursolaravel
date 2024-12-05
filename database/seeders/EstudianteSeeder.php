@@ -49,7 +49,7 @@ class EstudianteSeeder extends Seeder
         $estudiante->numero_de_control = "20270269";
         $estudiante->telefono = "9615369953";
         $estudiante->direccion = "1ra norte y 3ra oriente Edif 1 B";
-        $estudiante->institucion_seguridad_social = "ISSTE";
+        $estudiante->institucion_seguridad_social = "ISSSTE";
         $estudiante->numero_de_seguridad_social = "2002";
         $estudiante->proyecto_id=2;
         $estudiante->carrera_id = 2;
@@ -63,7 +63,7 @@ class EstudianteSeeder extends Seeder
         $estudiante->numero_de_control = "20270360";
         $estudiante->telefono = "9615398512";
         $estudiante->direccion = "10ma sur y 10ma oriente Edif 10 A";
-        $estudiante->institucion_seguridad_social = "ISSTE";
+        $estudiante->institucion_seguridad_social = "ISSSTE";
         $estudiante->numero_de_seguridad_social = "2003";
         $estudiante->proyecto_id=2;
         $estudiante->carrera_id = 2;
@@ -91,7 +91,7 @@ class EstudianteSeeder extends Seeder
         $estudiante->numero_de_control = "20270270";
         $estudiante->telefono = "9614950001";
         $estudiante->direccion = "4ta sur y 4ta oriente";
-        $estudiante->institucion_seguridad_social = "ISSTE";
+        $estudiante->institucion_seguridad_social = "ISSSTE";
         $estudiante->numero_de_seguridad_social = "2000";
         $estudiante->proyecto_id=4;
         $estudiante->carrera_id = 1;
@@ -105,7 +105,7 @@ class EstudianteSeeder extends Seeder
         $estudiante->numero_de_control = "20270760";
         $estudiante->telefono = "9611118512";
         $estudiante->direccion = "3ra sur y 3ra oriente Edif 3 A";
-        $estudiante->institucion_seguridad_social = "ISSTE";
+        $estudiante->institucion_seguridad_social = "ISSSTE";
         $estudiante->numero_de_seguridad_social = "2007";
         $estudiante->proyecto_id=5;
         $estudiante->carrera_id = 2;

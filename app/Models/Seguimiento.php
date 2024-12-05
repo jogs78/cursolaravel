@@ -10,9 +10,20 @@ class Seguimiento extends Model
     use HasFactory;
 
     
-
+    /*
     public function parciales(){
         return $this->hasMany(Parcial::class);
+    }*/
+    public function parciales()//model
+    {
+        //return $this->morphMany(Seguimiento::class, 'desglose');
+        //return $this->morphToMany(Seguimiento::class,'desglose',"tabla");
+        return $this->morphTo(Seguimiento::class, 'desglose');
+    }
+
+    public function desgloses()//model
+    {
+        return $this->morphMany(Parcial::class);
     }
 
 

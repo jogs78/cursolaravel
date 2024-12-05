@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('dedicado'); 
             $table->integer('orden'); 
             $table->integer('mejoras'); 
+            //$table->morphs('parciales');
             $table->string('ruta')->nullable()->default(null); 
             $table->timestamps();
         });

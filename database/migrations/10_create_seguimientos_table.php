@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('desglose_id')->nullable();
             $table->string('desglose_type')->nullable();
+            //$table->morphs('formato');
             $table->double('calificacion')->nullable()->default(null);
             $table->timestamps();
         });
