@@ -17,6 +17,20 @@ return new class extends Migration
             $table->float  ('promedio_parcial')->nullable()->default(null); 
             $table->enum('consecutivo',['primer','segundo'])->nullable()->default(null);
 
+            $table->integer('puntualidad_externo')->nullable()->default(null);
+            $table->integer('equipo_externo')->nullable()->default(null);
+            $table->integer('iniciativa_externo')->nullable()->default(null);
+            $table->integer('mejoras_externo')->nullable()->default(null); 
+            $table->integer('objetivos_externo')->nullable()->default(null); 
+            $table->integer('orden_externo')->nullable()->default(null); 
+            $table->integer('liderazgo_externo')->nullable()->default(null); 
+            $table->integer('conocimiento_externo')->nullable()->default(null);
+            $table->integer('etico_externo')->nullable()->default(null); 
+            $table->float  ('promedio_externo')->nullable()->default(null);
+            $table->text('comentarios_externo')->nullable()->default(null);
+
+
+
             $table->integer('puntualidad_interno')->nullable()->default(null);
             $table->integer('conocimiento_interno')->nullable()->default(null);
             $table->integer('equipo_interno')->nullable()->default(null);
@@ -26,15 +40,6 @@ return new class extends Migration
             $table->float  ('promedio_interno')->nullable()->default(null); 
             $table->text('comentarios_interno')->nullable()->default(null);
 
-
-            $table->integer('puntualidad_externo')->nullable()->default(null);
-            $table->integer('conocimiento_externo')->nullable()->default(null);
-            $table->integer('equipo_externo')->nullable()->default(null);
-            $table->integer('dedicado_externo')->nullable()->default(null); 
-            $table->integer('orden_externo')->nullable()->default(null); 
-            $table->integer('mejoras_externo')->nullable()->default(null); 
-            $table->float  ('promedio_externo')->nullable()->default(null);
-            $table->text('comentarios_externo')->nullable()->default(null);
 
             //$table->morphs('parciales');
             $table->string('ruta')->nullable()->default(null); 

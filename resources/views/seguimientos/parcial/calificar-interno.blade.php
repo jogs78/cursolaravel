@@ -14,55 +14,48 @@
         <thead>
             <th>Criterios a Evaluar</th>
             <th>Valor</th>
-            <th>Evaluacion</th>
         </thead>
         <tbody>
             <tr>
-                <td>Asistió puntualmente a las reuniones de asesoría.</td>
+                <td>Asiste puntualmente en el horario establecido.</td>
                 <td>{{$parcial->puntualidad_externo}}</td>
-                <td> 
-                    <input type="range" class="rangeInput" max="5" disabled value="{{$parcial->puntualidad_externo}}"> <br>
-                </td>
-            </tr>
-            <tr>
-                <td>Demuestra conocimiento en el área de su especialidad.</td>
-                <td>{{$parcial->conocimiento_externo}}</td>
-                <td> 
-                    <input type="range" class="rangeInput" max="10" disabled value="{{$parcial->conocimiento_externo}}"> <br>
-                </td>
             </tr>
             <tr>
                 <td>Trabaja en equipo y se comunica de forma efectiva (oral y escrita).</td>
                 <td>{{$parcial->equipo_externo}}</td>
-                <td> 
-                    <input type="range" class="rangeInput" max="5" disabled value="{{$parcial->equipo_externo}}"> <br>
-                </td>
             </tr>
             <tr>
-                <td>Es dedicado y proactivo en las actividades encomendadas.</td>
-                <td>{{$parcial->dedicado_externo}}</td>
-                <td> 
-                    <input type="range" class="rangeInput" max="10" disabled value="{{$parcial->dedicado_externo}}"><br>
-                </td>
+                <td>Tiene iniciativa para colaborar.</td>
+                <td>{{$parcial->iniciativa_externo}}</td>
+            </tr>
+            <tr>
+                <td>Propone mejoras al proyecto.</td>
+                <td>{{$parcial->mejoras_externo}}</td>
+            </tr>
+            <tr>
+                <td>Cumple con los objetivos correspondientes al proyecto.</td>
+                <td>{{$parcial->objetivos_externo}}</td>
             </tr>
             <tr>
                 <td>Es ordenado y cumple satisfactoriamente con las actividades encomendadas en los tiempos 
                 establecidos en el cronograma.</td>
                 <td>{{$parcial->orden_externo}}</td>
-                <td> 
-                    <input type="range" class="rangeInput" max="15" disabled value="{{$parcial->orden_externo}}"><br>
-                </td>
             </tr>
             <tr>
-                <td>Propone mejoras al proyecto.</td>
-                <td>{{$parcial->mejoras_externo}}</td>
-                <td> 
-                    <input type="range" class="rangeInput" max="15" disabled value="{{$parcial->mejoras_externo}}"><br>
-                </td>
+                <td>Demuestra liderazgo en su actuar.</td>
+                <td>{{$parcial->liderazgo_externo}}</td>
+            </tr>
+            <tr>
+                <td>Demuestra conocimiento en el área de su especialidad.</td>
+                <td>{{$parcial->conocimiento_externo}}</td>
+            </tr>
+            <tr>
+                <td>Demuestra un comportamiento ético (es disciplinado, acata órdenes, respeta a sus compañeros de trabajo, entre otros).</td>
+                <td>{{$parcial->etico_externo}}</td>
             </tr>
             <tr>
                 <td>Observaciones</td>
-                <td colspan="2">
+                <td>
                     {{$parcial->comentarios_externo}}
                 </td>
             </tr>

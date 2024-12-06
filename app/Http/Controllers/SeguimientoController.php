@@ -85,7 +85,19 @@ class SeguimientoController extends Controller
                 break;
             
             case 'App\Models\Externo':
-                $campos = ['puntualidad_externo','conocimiento_externo','equipo_externo','dedicado_externo','orden_externo','mejoras_externo','comentarios_externo'];
+                $campos = [
+                    'puntualidad_externo',
+                    'equipo_externo',
+                    'iniciativa_externo',
+                    'mejoras_externo', 
+                    'objetivos_externo', 
+                    'orden_externo', 
+                    'liderazgo_externo', 
+                    'conocimiento_externo',
+                    'etico_externo', 
+                    'promedio_externo',
+                    'comentarios_externo',                    
+                ];
                 break;
             case 'App\Models\Estudiante':
                 # code...

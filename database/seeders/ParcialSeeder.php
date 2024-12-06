@@ -17,6 +17,7 @@ class ParcialSeeder extends Seeder
         $parcial->estudiante_id = 1;
         $parcial->promedio_parcial = 100;
         $parcial->consecutivo = 1;
+
         $parcial->puntualidad_interno = 10;
         $parcial->conocimiento_interno = 20;
         $parcial->equipo_interno = 15;
