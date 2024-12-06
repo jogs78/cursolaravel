@@ -23,6 +23,7 @@ class ProyectoSeeder extends Seeder
 residencias en el departamento de ingenierías en el Instituto Tecnológico de Tuxtla Gutiérrez";
         $proyecto->asesor_id = 1;
         $proyecto->empresa_id = 1;
+        $proyecto->externo_id = 1;
         $proyecto->periodo_id = 1;
         $proyecto->save(); 
 
@@ -35,6 +36,7 @@ residencias en el departamento de ingenierías en el Instituto Tecnológico de T
         $proyecto->informacion = "InstitutoDeCiencia@gmail.com";
         $proyecto->justificacion = "Agilizacion de los tramites del estado de chiapas";
         //$proyecto->asesor_id = 2;
+        $proyecto->externo_id = 2;
         $proyecto->empresa_id = 2;
         $proyecto->periodo_id = 1;
         $proyecto->save(); 
@@ -47,6 +49,7 @@ residencias en el departamento de ingenierías en el Instituto Tecnológico de T
         $proyecto->informacion = "CfeTransmision@gmail.com";
         $proyecto->justificacion = "Mejorar los procesos de tranmision, atraves de un modulo de monitoreo";
         $proyecto->asesor_id = 1;
+        $proyecto->externo_id=3;
         $proyecto->empresa_id = 3;
         $proyecto->periodo_id = 1;
         $proyecto->save(); 
@@ -59,6 +62,7 @@ residencias en el departamento de ingenierías en el Instituto Tecnológico de T
         $proyecto->informacion = "SecDeInfraestrutura@gmail.com";
         $proyecto->justificacion = "Crear modulos para la seguridad de los empleados y la proyecto";
         $proyecto->asesor_id = 3;
+        $proyecto->externo_id = 4;
         $proyecto->empresa_id = 4;
         $proyecto->periodo_id = 1;
         $proyecto->save(); 

@@ -63,8 +63,8 @@ Route::get('listar-proyectos',[AsesorController::class,'proyecto'])->middleware(
 
 //rutas especificas de los segumientos (pueden entrar asesor, estudiante, coordinador)
 //faltan dos tipos de Read en el crud
-Route::get('realizar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoController::class,'create'])->name('realizar-seguimientos'); //Crud
-Route::post('guardar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoController::class,'asesorInterno'])->name('guardar-seguimientos'); //Crud
+Route::get('realizar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoController::class,'create'])->middleware('auth')->name('realizar-seguimientos'); //Crud
+Route::post('guardar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoController::class,'asesorInterno'])->middleware('auth')->name('guardar-seguimientos'); //Crud
 
 Route::get('modificar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoController::class,'edit'])->name('modificar-seguimientos'); //crUd
 Route::put('actualizar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoController::class,'update'])->name('actualizar-seguimientos'); //crUd

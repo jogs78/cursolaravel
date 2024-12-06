@@ -20,17 +20,26 @@ class UsuarioSeeder extends Seeder
         $nuevo->usa_id=1;
         $nuevo->usa_type = "App\Models\Asesor";
         $nuevo->save();
+
         $nuevo = new Usuario();
         $nuevo->nombre_usuario = "omner";
         $nuevo->contraseña = Hash::make('1234');
         $nuevo->usa_id=1;
         $nuevo->usa_type = "App\Models\Estudiante";
         $nuevo->save();
+
         $nuevo = new Usuario();
         $nuevo->nombre_usuario = "mario";
         $nuevo->contraseña = Hash::make('1234');
         $nuevo->usa_id=1;
         $nuevo->usa_type = "App\Models\Coordinador";
+        $nuevo->save();
+
+        $nuevo = new Usuario();
+        $nuevo->nombre_usuario = "gabriela";
+        $nuevo->contraseña = Hash::make('1234');
+        $nuevo->usa_id=1;
+        $nuevo->usa_type = "App\Models\Externo";
         $nuevo->save();
 
     }

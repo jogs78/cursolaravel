@@ -23,8 +23,6 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "contacto@ittg.edu.mx";
         $empresa->titular = "José Manuel Rosado Pérez";
         $empresa->puesto_titular = "Director del ITTG";
-        $empresa->asesor_externo = "Gabriela Alejandra Ríos Zúñiga ";
-        $empresa->puesto_asesor = "Jefa del Departamento de Departamento de Ingenierías ";
         $empresa->informacion = "Ser una Institución de Excelencia en la Educación Superior Tecnológica del Sureste, comprometida con el desarrollo socioeconómico sustentable de la región.";
         $empresa->save(); 
 
@@ -38,8 +36,6 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "InstitutoDeCiencia@gmail.com";
         $empresa->titular = "Manuel Miguel Mortinez Mora";
         $empresa->puesto_titular = "Presidente del Instituto";
-        $empresa->asesor_externo = "Alberto Gomez Gonzales";
-        $empresa->puesto_asesor = "Secretario Administrativo";
         $empresa->informacion = "Llevar la ciencia y tecnologia al alcanze de los chiapanecos";
         $empresa->save(); 
 
@@ -53,8 +49,6 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "CfeTransmision@gmail.com";
         $empresa->titular = "Karla Perez Estrada";
         $empresa->puesto_titular = "Jefa de operaciones";
-        $empresa->asesor_externo = "Mauruicio Montes Becerra";
-        $empresa->puesto_asesor = "Asistente de operaciones";
         $empresa->informacion = "Monitorear y regular la transmision de energia";
         $empresa->save(); 
 
@@ -68,8 +62,6 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "SecDeInfraestrutura@gmail.com";
         $empresa->titular = "Juan Carlos Pérez Martínez";
         $empresa->puesto_titular = "Director general";
-        $empresa->asesor_externo = "María Fernanda López Díaz";
-        $empresa->puesto_asesor = "Secretaria asistente";
         $empresa->informacion = "Movilidad, seguridad y eficiencia es el lema";
         $empresa->save(); 
 
@@ -83,8 +75,8 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "Cosmos71@gmail.com";
         $empresa->titular = "Luis Miguel Torres García";
         $empresa->puesto_titular = "Dueño";
-        $empresa->asesor_externo = "Ana Paula Ramírez Morales";
-        $empresa->puesto_asesor = "Asistente de Desarrollo";
+//        $empresa->asesor_externo = "Ana Paula Ramírez Morales";
+//        $empresa->puesto_asesor = "Asistente de Desarrollo";
         $empresa->informacion = "Investigacion del espacio y cuerpos celestes";
         $empresa->save(); 
 
@@ -98,8 +90,8 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "CFE@hotmail.com";
         $empresa->titular = "Sofía Alejandra Gómez Ríos";
         $empresa->puesto_titular = "Presidenta General";
-        $empresa->asesor_externo = "Javier Eduardo Salazar Pérez";
-        $empresa->puesto_asesor = "Tesorero";
+//        $empresa->asesor_externo = "Javier Eduardo Salazar Pérez";
+//        $empresa->puesto_asesor = "Tesorero";
         $empresa->informacion = "Consolidarnos como la empresa de energía líder en México, con solvencia técnica y financiera, que procura el fortalecimiento de nuestro capital humano y garantiza el servicio de energía eléctrica con calidad y sentido social";
         $empresa->save(); 
 
@@ -113,8 +105,8 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "IEPC@hotmail.com";
         $empresa->titular = "Valeria Cristina Castro López";
         $empresa->puesto_titular = "Directora Ejecutiva";
-        $empresa->asesor_externo = "Nicolás Alejandro Fernández Ruiz";
-        $empresa->puesto_asesor = "Asistente Admistrativo";
+//        $empresa->asesor_externo = "Nicolás Alejandro Fernández Ruiz";
+//        $empresa->puesto_asesor = "Asistente Admistrativo";
         $empresa->informacion = "Ser un referente a nivel nacional en la gestión de procesos electorales e implementación de mecanismos de participación ciudadana a nivel local, garantizando inclusión, igualdad y participación informada de la ciudadanía";
         $empresa->save(); 
 
@@ -128,8 +120,8 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "ConsejoJudicatura@hotmail.com";
         $empresa->titular = "Guillermo Ramos Pérez";
         $empresa->puesto_titular = "Presidente del Consejo";
-        $empresa->asesor_externo = "José Francisco Trujillo Ochoa";
-        $empresa->puesto_asesor = "Consejero Asistente";
+//        $empresa->asesor_externo = "José Francisco Trujillo Ochoa";
+//        $empresa->puesto_asesor = "Consejero Asistente";
         $empresa->informacion = "Ser un referente a nivel nacional en la gestión de procesos electorales e implementación de mecanismos de participación ciudadana a nivel local, garantizando inclusión, igualdad y participación informada de la ciudadanía";
         $empresa->save(); 
 
@@ -143,8 +135,8 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "Torre_Roca_SA@gmail.com";
         $empresa->titular = "Marcos Alcantara Solis";
         $empresa->puesto_titular = "Representante legal de la Sociedad";
-        $empresa->asesor_externo = "Daniela Robles Cruz";
-        $empresa->puesto_asesor = "Asesora financiera";
+//        $empresa->asesor_externo = "Daniela Robles Cruz";
+//        $empresa->puesto_asesor = "Asesora financiera";
         $empresa->informacion = "Somos una empresa encargada de almecenar productos alimienticios";
         $empresa->save(); 
 
@@ -158,8 +150,8 @@ class EmpresaSeeder extends Seeder
         $empresa->correo = "ElRancherito@gmail.com";
         $empresa->titular = "Fernando Vazques Sol";
         $empresa->puesto_titular = "Dueño de la marca";
-        $empresa->asesor_externo = "Alfonso Mena Becerra";
-        $empresa->puesto_asesor = "Asesor de Ventas e imagen";
+//        $empresa->asesor_externo = "Alfonso Mena Becerra";
+//        $empresa->puesto_asesor = "Asesor de Ventas e imagen";
         $empresa->informacion = "Somos una empresa productora y distribuidora de productos fritos";
         $empresa->save(); 
     }

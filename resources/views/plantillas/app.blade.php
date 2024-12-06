@@ -31,6 +31,10 @@
             <a href="{{route('Cambiar_Contraseña')}}">Cambiar la Contraseña</a>
             <a href="{{route('salida')}}">Salir</a>
 
+            <div style="text-align: right">{{Auth::user()->usa->nombre}}</div>
+            
+
+
         </div>
         <div class="cuerpo">
             <div class="menu">
@@ -60,6 +64,14 @@
                     @break
                         
                     @case("App\Models\Asesor")
+                    <ul>
+                            
+                            <li><a href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
+                            <!-- <li><a href="#">CALIFICAR PROYECTO</a></li> -->
+                        </ul>
+                    @break
+
+                    @case("App\Models\Externo")
                     <ul>
                             
                             <li><a href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>

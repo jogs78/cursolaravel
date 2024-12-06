@@ -6,7 +6,6 @@ use App\Models\Seguimiento;
 use App\Http\Requests\SeguimientoRequest;
 use App\Models\Estudiante;
 use App\Models\Parcial;
-
 use Illuminate\Support\Facades\Auth;
 
 class SeguimientoController extends Controller
@@ -24,16 +23,45 @@ class SeguimientoController extends Controller
      */
     public function create(Estudiante $estudiante,$consecutivo)
     {
-        return view('seguimientos.parcial.calificar',compact('estudiante','consecutivo'));
         $usuario = Auth::getUser();
-        dd($usuario);
+//        dd($usuario->usa_type);
         switch ($usuario->usa_type) {
             case 'App\Models\Asesor':
-                if($consecutivo == 'primer' or $consecutivo == 'segundo')
-                    return view('seguimientos.parcial.calificar',compact('estudiante','consecutivo'));
-                if($consecutivo == 'ultimo' )
-                    return view('seguimientos.parcial.calificar',compact('estudiante','consecutivo'));
+                if($consecutivo == 'primer' or $consecutivo == 'segundo'){
+                    
+                    $parcial = Parcial::firstOrCreate(
+                        ['estudiante_id' => $estudiante->id ], 
+                        ['consecutivo' => $consecutivo ] 
+                    );
+                    return view('seguimientos.parcial.calificar-interno',compact('estudiante','consecutivo','parcial'));                    
+                }
+                
+                if($consecutivo == 'ultimo' ){
+                    $ultimo = Parcial::firstOrCreate(
+                        ['estudiante_id' => $estudiante->id ], 
+                    );
+                    return view('seguimientos.parcial.calificar-interno',compact('estudiante','consecutivo','ultimo'));
+
+                }
                 break;
+            
+            case 'App\Models\Externo':
+                if($consecutivo == 'primer' or $consecutivo == 'segundo'){
+                    
+                    $parcial = Parcial::firstOrCreate(
+                        ['estudiante_id' => $estudiante->id ], 
+                        ['consecutivo' => $consecutivo ] 
+                    );
+                    return view('seguimientos.parcial.calificar-externo',compact('estudiante','consecutivo','parcial'));                    
+                }
+                
+                if($consecutivo == 'ultimo' ){
+                    $ultimo = Parcial::firstOrCreate(
+                        ['estudiante_id' => $estudiante->id ], 
+                    );
+                    return view('seguimientos.parcial.calificar-externo',compact('estudiante','consecutivo','ultimo'));
+
+                }                break;
             
             case 'App\Models\Estudiante':
                 # code...
@@ -49,13 +77,31 @@ class SeguimientoController extends Controller
 
     public function asesorInterno(SeguimientoRequest $request, Estudiante $estudiante, $consecutivo)
     {
-        if($consecutivo==1 or $consecutivo==2){
+        $usuario = Auth::getUser();
+        //        dd($usuario->usa_type);
+        switch ($usuario->usa_type) {
+            case 'App\Models\Asesor':
+                $campos = ['promedio','puntualidad_interno','conocimiento_interno','equipo_interno','dedicado_interno','orden_interno','mejoras_interno','comentarios_interno'];
+                break;
+            
+            case 'App\Models\Externo':
+                $campos = ['puntualidad_externo','conocimiento_externo','equipo_externo','dedicado_externo','orden_externo','mejoras_externo','comentarios_externo'];
+                break;
+            case 'App\Models\Estudiante':
+                # code...
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+        if($consecutivo=='primer' or $consecutivo=='segundo'){
             $parcial = Parcial::firstOrCreate(
                 ['estudiante_id' => $estudiante->id ], 
                 ['consecutivo' => $consecutivo ] 
             );
             //dd($request->all());
-            $campos = ['promedio','puntualidad_interno','conocimiento_interno','equipo_interno','dedicado_interno','orden_interno','mejoras_interno','comentarios_interno'];
             foreach ($campos as $campo) {
                 if($request->has($campo))
                 $parcial->$campo=$request->input($campo);

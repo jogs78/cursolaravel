@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('ultimos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('estudiante_id')->nullable()->default(null)->constrained('estudiantes');
             $table->integer('portada');
             $table->integer('agradecimientos');
             $table->integer('resumen');

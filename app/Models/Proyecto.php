@@ -47,4 +47,11 @@ class Proyecto extends Model
     public function seguimientos(){
         return $this->hasMany(Seguimiento::class);
     }
+
+    public function externo(){
+        //porque tenemos externo_id
+        return $this->belongsTo(Externo::class);
+    }
+
+
 }

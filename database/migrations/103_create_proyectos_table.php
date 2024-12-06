@@ -21,6 +21,7 @@ return new class extends Migration
             //$table->string('asesor_externo');
             //$table->string('puesto_asesor');
             $table->foreignId('asesor_id')->nullable()->default(null)->constrained('asesores');
+            $table->foreignId('externo_id')->nullable()->default(null)->constrained('externos');
             $table->foreignId('empresa_id')->nullable()->default(null)->constrained('empresas');
             $table->foreignId('periodo_id')->nullable()->default(null)->constrained('periodos');
 //            $table->bigInteger("asesor_id")->unsinged();
