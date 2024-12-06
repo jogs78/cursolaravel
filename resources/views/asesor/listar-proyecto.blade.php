@@ -33,7 +33,7 @@
     </td>
     <td>
       @foreach ($proyecto->estudiantes as $estudiante)
-          <li><a href="{{route('asesor.realizar-seguimientos',[$estudiante->id,1])}}">Realizar</a></li>
+          <li><a href="{{route('realizar-seguimientos',[$estudiante->id,1])}}">Realizar</a></li>
       @endforeach
     </td>
    </tr>

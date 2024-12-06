@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Seguimiento;
-use App\Http\Requests\StoreSeguimientoRequest;
-use App\Http\Requests\UpdateSeguimientoRequest;
+use App\Http\Requests\SeguimientoRequest;
 use App\Models\Estudiante;
 use App\Models\Parcial;
-use Illuminate\Support\Facades\DB;
+
+use Illuminate\Support\Facades\Auth;
 
 class SeguimientoController extends Controller
 {
@@ -24,39 +24,47 @@ class SeguimientoController extends Controller
      */
     public function create(Estudiante $estudiante,$consecutivo)
     {
-
+        return view('seguimientos.parcial.calificar',compact('estudiante','consecutivo'));
+        $usuario = Auth::getUser();
+        dd($usuario);
+        switch ($usuario->usa_type) {
+            case 'App\Models\Asesor':
+                if($consecutivo == 'primer' or $consecutivo == 'segundo')
+                    return view('seguimientos.parcial.calificar',compact('estudiante','consecutivo'));
+                if($consecutivo == 'ultimo' )
+                    return view('seguimientos.parcial.calificar',compact('estudiante','consecutivo'));
+                break;
+            
+            case 'App\Models\Estudiante':
+                # code...
+                break;
+            
+            default:
+                # code...
+                break;
+        }
         //ahorita solo estamos trabajando con parciales no con ultimo
-        return view('seguimientos.parcial.crear',compact('estudiante','consecutivo'));
        // echo "le vamos a hacer su seguimiento $consecutivo al estudiante $estudiante->nombre"; 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreSeguimientoRequest $request, Estudiante $estudiante, $consecutivo)
+    public function asesorInterno(SeguimientoRequest $request, Estudiante $estudiante, $consecutivo)
     {
-        echo "guardando los datos";
-        //dump($request->all());
-        DB::beginTransaction();
-        try {
-            $parcial = new Parcial();
-            $parcial->estudiante_id = 1;
-            $parcial-> consecutivo=$consecutivo;
-            $parcial-> puntualidad_interno=$request->puntualidad;
-            $parcial-> conocimiento_interno=$request->conocimiento;
-            $parcial-> equipo_interno=$request->equipo;
-            $parcial-> dedicado_interno=$request->dedicado;
-            $parcial-> orden_interno=$request->orden;
-            $parcial-> mejoras_interno=$request->mejoras;
-            $parcial-> save();
-            DB::commit();
-        } catch (\Throwable $th) {
-            //throw $th;
-            echo "error $th";
-            DB::rollBack();
+        if($consecutivo==1 or $consecutivo==2){
+            $parcial = Parcial::firstOrCreate(
+                ['estudiante_id' => $estudiante->id ], 
+                ['consecutivo' => $consecutivo ] 
+            );
+            //dd($request->all());
+            $campos = ['promedio','puntualidad_interno','conocimiento_interno','equipo_interno','dedicado_interno','orden_interno','mejoras_interno','comentarios_interno'];
+            foreach ($campos as $campo) {
+                if($request->has($campo))
+                $parcial->$campo=$request->input($campo);
+            }
+            $parcial->save();
         }
         return redirect()->route("home");
     }
+
 
     /**
      * Display the specified resource.

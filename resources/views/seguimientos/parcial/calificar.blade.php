@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seguimiento Parcial</title>
-</head>
-<body>
-
+@extends('plantillas.app')
+@section('encabezado')
+    <a href="{{route('Cambiar_Contraseña')}}">Cambiar la Contraseña</a>
+@endsection
+@section('contenido')
     <p>Nombre del residente: {{$estudiante->nombre}}</p>
     <p>Nombre del Proyecto: {{$estudiante->proyecto->nombre}}</p>
     <p>Programa educativo: {{$estudiante->carrera->nombre}}</p>
     <p>Periodo de realizacion:</p>
     <p>Calificacion parcial: </p>
- 
-    <form action="{{route('asesor.guardar-seguimientos',[$estudiante->id,$consecutivo])}}" method="post">
+
+    <form action="{{route('guardar-seguimientos',[$estudiante->id,$consecutivo])}}" method="post">
         @csrf
 
     <table border="1">
@@ -27,7 +23,7 @@
                 <td>Asistió puntualmente a las reuniones de asesoría.</td>
                 <td>10</td>
                 <td> 
-                    <input type="range" name="puntualidad" class="rangeInput" id="rangeInput1" min="0" max="10" value="10" > <br>
+                    <input type="range" name="puntualidad_interno" class="rangeInput" id="rangeInput1" min="0" max="10" value="10" > <br>
                     <span id="rangeValue1">10</span>
                 </td>
             </tr>
@@ -35,7 +31,7 @@
                 <td>Demuestra conocimiento en el área de su especialidad.</td>
                 <td>20</td>
                 <td> 
-                    <input type="range" name="conocimiento" class="rangeInput" id="rangeInput2" min="0" max="20" value="20"> <br>
+                    <input type="range" name="conocimiento_interno" class="rangeInput" id="rangeInput2" min="0" max="20" value="20"> <br>
                     <span id="rangeValue2">20</span>
                 </td>
             </tr>
@@ -43,7 +39,7 @@
                 <td>Trabaja en equipo y se comunica de forma efectiva (oral y escrita).</td>
                 <td>15</td>
                 <td> 
-                    <input type="range" name="equipo" class="rangeInput" id="rangeInput3" min="0" max="15" value="15" > <br>
+                    <input type="range" name="equipo_interno" class="rangeInput" id="rangeInput3" min="0" max="15" value="15" > <br>
                     <span id="rangeValue3">15</span>
 
                 </td>
@@ -52,7 +48,7 @@
                 <td>Es dedicado y proactivo en las actividades encomendadas.</td>
                 <td>20</td>
                 <td> 
-                    <input type="range" name="dedicado" class="rangeInput" id="rangeInput4" min="0" max="20" value="20"><br>
+                    <input type="range" name="dedicado_interno" class="rangeInput" id="rangeInput4" min="0" max="20" value="20"><br>
                     <span id="rangeValue4">20</span>
                 </td>
             </tr>
@@ -61,7 +57,7 @@
                 establecidos en el cronograma.</td>
                 <td>10</td>
                 <td> 
-                    <input type="range" name="orden" class="rangeInput" id="rangeInput5" min="0" max="10" value="10"><br>
+                    <input type="range" name="orden_interno" class="rangeInput" id="rangeInput5" min="0" max="10" value="10"><br>
                     <span id="rangeValue5">10</span>
                 </td>
             </tr>
@@ -69,15 +65,17 @@
                 <td>Propone mejoras al proyecto.</td>
                 <td>15</td>
                 <td> 
-                    <input type="range" name="mejoras" class="rangeInput" id="rangeInput6" min="0" max="15" value="15"><br>
+                    <input type="range" name="mejoras_interno" class="rangeInput" id="rangeInput6" min="0" max="15" value="15"><br>
                     <span id="rangeValue6">15</span>
                 </td>
             </tr>
         </tbody>
     </table>
+    <label for='comentarios'>comentarios</label>
+    <textarea name="comentarios_interno" id="" cols="30" rows="10"></textarea>
     <input type='submit'>
     </form>
-    
+
 
 
     <script>
@@ -94,6 +92,4 @@
             valueDisplay.textContent = input.value;
         });
     </script>
-
-</body>
-</html>
+@endsection
