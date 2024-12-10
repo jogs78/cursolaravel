@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateProyectoRequest;
 use App\Models\Periodo;
 use App\Models\Asesor;
 use App\Models\Empresa;
+use Illuminate\Http\Request;
 
 class ProyectoController extends Controller
 {
@@ -83,4 +84,11 @@ class ProyectoController extends Controller
         $proyecto->delete();
         return redirect()->route("proyectos.index");
     }
+
+  public function registrarProyecto()
+    {
+        return view('proyecto.crear');
+
+    }
+
 }

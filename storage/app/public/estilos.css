@@ -1,8 +1,4 @@
-/** {toda la vista
-	margin: 0;
-	padding: 0;
-    box-sizing: border-box;
-}*/
+/** Impresiones*/
 h3{
     margin: 0;
 	padding: 0;
@@ -26,7 +22,6 @@ h3{
 }
 .cuadro{/*p*/
     border: 1px solid black;
-    
 }
 .bold{
     font-weight: bold; margin-right: 10px;
@@ -50,4 +45,15 @@ h3{
 }
 .inciso{
     font-weight: bold; margin-top: 12px;
+}
+
+/*login*/
+
+.amenor{
+    background-color: rgb(40, 95, 139);
+}
+
+.amayor{
+    background-color: rgb(19, 46, 68);
+    
 }

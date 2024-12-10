@@ -55,7 +55,7 @@
                     <ul>
                             
                             <li><a href="{{route('estudiante.crear')}}">REGISTRA TUS DATOS</a></li>
-                            <li><a href="#">REGISTRA TU PROYECTO</a></li>
+                            <li><a href="{{route('proyecto.crear')}}">REGISTRA TU PROYECTO</a></li>
                             <li><a href="{{route('estudiante.impresiones.solicitud')}}">IMPRIMIR SOLICITUD</a></li>
                             <li><a href="{{route('estudiante.impresiones.anteproyecto')}}">IMPRIMIR ANTEPROYECTO</a></li>
                             <li><a href="#">CAPTURAS LAS ACTIVIDADES DE TU PROYECTO</a></li>
