@@ -63,6 +63,7 @@
         </div>
         <div>
             <p class="bold marriba">Datos de la Empresa: </p>
+            <div class="cuadro">
             <table class="tabla">
                 <tr>
                     <th style="width: 10%; border: 1px solid black;">Nombre: </th>
@@ -79,7 +80,7 @@
                 </table>
                 <table class="tabla">
                     <tr>
-                        <th style="width: 15%;">Dirección: </th>
+                        <th class="cuadro" style="width: 15%;">Dirección: </th>
                         <th class="cuadro nsemanas">Calle: </th>
                         <th class="cuadro" style="width: 35%;">Carretera Panamericana, Boulevares. KM 1080 </th> <!-- Cambiar -->
                         <th class="cuadro nsemanas">Número: </th>
@@ -118,11 +119,12 @@
                     <th class="cuadro" style="width: 40%;">Jefa del Departamento de Departamento de Ingenierías</th><!--Cambiar-->
                     </tr>
                 </table>
-
+            </div>
             
         </div>
         <div>
         <p class="bold marriba">Datos del Residente: </p>
+                <div class="cuadro">
                 <table class="tabla">
                     <tr>
                     <th class="cuadro nsemanas">Nombre: </th>
@@ -160,6 +162,7 @@
                             <th class="cuadro" style="width: 25%;">No. :  <p>25169967004</p> </th><!--Cambiar-->
                         </tr>
                     </table> 
+                </div>
         </div>
 
         <div class="centrar">

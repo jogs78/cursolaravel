@@ -27,7 +27,7 @@ h3{
     font-weight: bold; margin-right: 10px;
 }
 .tabla{
-    border: 2px solid black; width: 100%;
+   /* border: 2px solid black;*/ width: 100%;
 }
 
 
@@ -39,6 +39,9 @@ h3{
 }
 .nsemanas{
     width: 10%;
+}
+.nactividad{
+    width: 5.3125%;  border: 1px solid black;
 }
 .centro{
     text-align: center;
@@ -55,5 +58,4 @@ h3{
 
 .amayor{
     background-color: rgb(19, 46, 68);
-    
 }
