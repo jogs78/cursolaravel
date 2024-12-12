@@ -60,10 +60,10 @@
                         <div>
                         <ul>
                             
-                            <li><a href="{{route('coordinadores.tabla')}}">CONOCER LA TABLA</a></li>
-                           <!-- <li><a href="{{route('coordinadores.asignarAsesor1')}}">ASIGANR ASESORES</a></li>-->
-                            <li><a href="#">LISTA DE ESTUDIANTES</a></li>
-                            <li><a href="#">GESTIONAR PERIODO</a></li>
+                            <li class="opcion"><a  style="text-decoration: none;" href="{{route('coordinadores.tabla')}}">CONOCER LA TABLA</a></li>
+                           <!-- <li class="opcion"><a  style="text-decoration: none;" href="{{route('coordinadores.asignarAsesor1')}}">ASIGANR ASESORES</a></li>-->
+                            <li class="opcion"><a  style="text-decoration: none;" href="#">LISTA DE ESTUDIANTES</a></li>
+                            <li class="opcion"><a  style="text-decoration: none;" href="#">GESTIONAR PERIODO</a></li>
                             
 
                         </ul>
@@ -73,11 +73,11 @@
                     @case("App\Models\Estudiante")
                     <ul>
                             
-                            <li class="opcion"><a style="text-decoration: none;" href="{{route('estudiante.crear')}}">REGISTRA TUS DATOS</a></li>
-                            <li class="opcion"><a style="text-decoration: none;" href="{{route('proyecto.crear')}}">REGISTRA TU PROYECTO</a></li>
+                            <li class="opcion"><a style="text-decoration: none;" href="{{route('estudiante.editar')}}">ACTULIALIZA TUS DATOS</a></li>
+                            <li class="opcion"><a style="text-decoration: none;" href="{{route('proyecto.crear')}}">PROYECTO</a></li>
                             <li class="opcion"><a style="text-decoration: none;" href="{{route('estudiante.impresiones.solicitud')}}">IMPRIMIR SOLICITUD</a></li>
                             <li class="opcion"><a style="text-decoration: none;" href="{{route('estudiante.impresiones.anteproyecto')}}">IMPRIMIR ANTEPROYECTO</a></li>
-                            <li class="opcion"><a style="text-decoration: none;" href="#">CAPTURAS LAS ACTIVIDADES DE TU PROYECTO</a></li>
+                            <!--<li class="opcion"><a style="text-decoration: none;" href="#">CAPTURAS LAS ACTIVIDADES DE TU PROYECTO</a></li>-->
                             <li class="opcion"><a style="text-decoration: none;" href="#">VERIFICA TUS SEGUIMIENTOS</a></li>
                         </ul>
                     @break
@@ -85,16 +85,16 @@
                     @case("App\Models\Asesor")
                     <ul>
                             
-                            <li><a href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
-                            <!-- <li><a href="#">CALIFICAR PROYECTO</a></li> -->
+                            <li class="opcion"><a  style="text-decoration: none;" href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
+                            <!-- <li class="opcion"><a  style="text-decoration: none;" href="#">CALIFICAR PROYECTO</a></li> -->
                         </ul>
                     @break
 
                     @case("App\Models\Externo")
                     <ul>
                             
-                            <li><a href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
-                            <!-- <li><a href="#">CALIFICAR PROYECTO</a></li> -->
+                            <li class="opcion"><a  style="text-decoration: none;" href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
+                            <!-- <li class="opcion"><a  style="text-decoration: none;" href="#">CALIFICAR PROYECTO</a></li> -->
                         </ul>
                     @break
 

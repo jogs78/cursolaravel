@@ -53,7 +53,7 @@ Route::post('asignar-asesores',[CoordinadorController::class,'asignarAsesor2'])-
 Route::put('asignar-asesores/{proyecto_id}',[CoordinadorController::class,'asignarAsesor3'])->middleware('auth')->name('coordinadores.asignarAsesor3');
 
 //rutas especificas del estudiante
-Route::get('create',[EstudianteController::class,'create'])->middleware('auth')->name('estudiante.crear');
+Route::get('update',[EstudianteController::class,'update'])->middleware('auth')->name('estudiante.editar');
 Route::get('solicitud',[EstudianteController::class,'solicitud'])->middleware('auth')->name('estudiante.impresiones.solicitud');
 Route::get('anteproyecto',[EstudianteController::class,'anteproyecto'])->middleware('auth')->name('estudiante.impresiones.anteproyecto');
 Route::get('/proyecto/crear', [ProyectoController::class, 'registrarProyecto'])->name('proyecto.crear');
