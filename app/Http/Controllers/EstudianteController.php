@@ -175,4 +175,11 @@ class EstudianteController extends Controller
 
         return back()->with('error', 'Hubo un problema al subir el archivo.');
     }
+    
+    public function mostrarPrimer(){
+        //checas si tiene calificaciones ....
+        
+        //generas el pdf...
+        //$pdf->down()
+    }
 }

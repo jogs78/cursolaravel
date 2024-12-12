@@ -33,29 +33,38 @@
 
         <label for='asesor_id'>Asesor</label>
         <select name="asesor_id" id="asesor_id">
-        {{$errors->first("asesor_id")}}
+         
             @foreach ($asesores as $asesor)
                 <option value="{{$asesor->id}}">{{$asesor->nombre}}</option>
             @endforeach
         </select>
         <br>
-
-        <label for='empresa_id'>Empresa</label>
-        <select name="empresa_id" id="empresa_id">
-        {{$errors->first("empresa_id")}}
-            @foreach ($empresas as $empresa)
-                <option value="{{$empresa->id}}">{{$empresa->nombre}}</option>
+        <label for='externo_id'>Asesor Externo</label>
+        <select name="asesor_externo" id="externo_id">
+ 
+            @foreach ($externos as $externo)
+                <option value="{{$externo->id}}">{{$externo->titulo}} {{$externo->nombre}}</option>
             @endforeach
+            <option value="-1">EL ASESOR EXTERNO NO ESTA DADA DE ALTA</option>
+
         </select>
         <br>
 
-        <label for='periodo_id'>Periodo</label>
-        <select name="periodo_id" id="Periodo_id">
-        {{$errors->first("periodo_id")}}
-            @foreach ($periodos as $periodo)
-                <option value="{{$periodo->id}}">{{$periodo->nombre}}</option>
+        
+
+        <label for='empresa_id'>Empresa</label>
+        <select name="empresa_id" id="empresa_id">
+         
+            @foreach ($empresas as $empresa)
+                <option value="{{$empresa->id}}">{{$empresa->nombre}}</option>
             @endforeach
+                <option value="-1">LA EMPRESA NO ESTA DADA DE ALTA</option>
         </select>
+        <br>
+
+        <label for='periodo_id'>Periodo:</label>
+        <input type="hidden" name="periodo_id" value="{{$periodo->id}}">
+        {{$periodo->nombre}}
         <br>
         
        
