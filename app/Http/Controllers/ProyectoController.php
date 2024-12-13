@@ -7,7 +7,10 @@ use App\Http\Requests\StoreProyectoRequest;
 use App\Http\Requests\UpdateProyectoRequest;
 use App\Models\Periodo;
 use App\Models\Asesor;
+use App\Models\Externo;
 use App\Models\Empresa;
+use App\Providers\ConfiguracionServiceProvider;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class ProyectoController extends Controller
@@ -22,30 +25,23 @@ class ProyectoController extends Controller
         return view('proyecto.listar',compact('todos'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-        $periodos = Periodo::all();
-        $empresas = Empresa::all();
-        $asesores = Asesor::all();
-        $proyectos = Proyecto::all();
-        return view('proyecto.crear',compact('periodos','empresas','asesores','proyectos'));
-    }
-    
+
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(StoreProyectoRequest $request)
     {
+        //esto debe esta en una transaccion
         //GUARDAR LOS DATOS QUE VIENEN DEL FORMULARIO DE CREAR
         $nuevo = new Proyecto;
         $nuevo->fill($request->all());
         $nuevo->save();
-        return redirect()->route("proyectos.index");
+
+        $estudiante = Auth::user()->usa;
+        $estudiante->proyecto_id = $nuevo->id;
+        $estudiante->save();
+        return redirect()->route("home");
     }
 
     /**
@@ -72,7 +68,7 @@ class ProyectoController extends Controller
         //ACTUALIZAR LA BASE DE DATOS CON LOS DATOS QUE VIENEN DEL FORMULARIO DE EDITAR UN PERIODO
         $proyecto->fill($request->all());
         $proyecto->save();
-        return redirect()->route("proyectos.index");
+        return redirect()->route("home");
     }
 
     /**
@@ -82,12 +78,24 @@ class ProyectoController extends Controller
     {
         //ELIMINAR EL PERIODO QUE ME DIGAN
         $proyecto->delete();
-        return redirect()->route("proyectos.index");
+        return redirect()->route("home");
     }
 
   public function registrarProyecto()
     {
-        return view('proyecto.crear');
+
+        $estudiante = Auth::user()->usa;
+        $proyecto = $estudiante->proyecto;
+        //debe verificar si tiene un proyecto ya creado 
+        if(! is_null( $proyecto )) return view ('proyecto.mostrar',compact('proyecto'));
+        //return view (vista que muestra el proyecto y con el enlace de "actividades del proyecto")
+        //si no entonces que cargue el registro
+        
+        $asesores = Asesor::all();
+        $empresas = Empresa::all();
+        $externos = Externo::all();
+        $periodo = Periodo::find(ConfiguracionServiceProvider::get('periodo_id'));
+        return view('proyecto.crear', compact('asesores','empresas','periodo','externos'));
 
     }
 

@@ -18,8 +18,6 @@ return new class extends Migration
             $table->string("lugar")->nullable()->default(null);
             $table->string("informacion")->nullable()->default(null);
             $table->string("justificacion")->nullable()->default(null);
-            //$table->string('asesor_externo');
-            //$table->string('puesto_asesor');
             $table->foreignId('asesor_id')->nullable()->default(null)->constrained('asesores');
             $table->foreignId('externo_id')->nullable()->default(null)->constrained('externos');
             $table->foreignId('empresa_id')->nullable()->default(null)->constrained('empresas');
