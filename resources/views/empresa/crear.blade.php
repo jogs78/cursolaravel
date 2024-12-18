@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Empresa</title>
-</head>
-<body>
-
-
-@extends('layouts.app')
-@section('title', 'Registro Empresa')
-@section('meta-description', 'Registro de la Empresa')
-@section('header')
+@extends('plantillas.app')
+@section('encabezado')
+    
 @endsection
-@section('content')
+@section('contenido')
 
 
     <p>Registra la empresa en la que tendras tu residencia</p>
@@ -77,7 +66,3 @@
         <input type='submit'>
     </form>
     @endsection
-@section('footer')
-@endsection
-</body>
-</html>

@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
-</head>
-<body>
-    <h2>Registro</h2>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
+    <h2>Actualiza tus datos</h2>
 
-    <form action="{{route(estudiantes.update)}}" method="POST" enctype="application/x-www-form-urlencoded">
+    <form action="{{route("estudiantes.update",$estudiante->id)}}" method="POST" enctype="application/x-www-form-urlencoded">
         @csrf
         @method('PUT')
         <label for='nombre'>Nombre/s</label>
@@ -36,5 +33,4 @@
         <input type='submit'>
     </form>
 
-</body>
-</html>
+    @endsection

@@ -15,4 +15,8 @@ class Usuario extends Authenticatable
         return $this->morphTo();
     }
 
+    public function estudiante(){
+        return$this->hasOne(Estudiante::class);
+    }
+
 }

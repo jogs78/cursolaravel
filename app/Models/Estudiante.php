@@ -19,6 +19,12 @@ class Estudiante extends Model
         return $this->belongsTo(Proyecto::class);
     }
 
+    public function usuario(){
+        return $this->belongsTo(Usuario::class);
+    }
+
+
+
     public function carrera()
     {
         //Estudiante tiene carrera_id

@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividades del proyecto</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
     <p>Haz una descripcion detallada de las actividades especificas que tienes planeadas</p><br>
     <form action="{{route("actividades.store")}}" method="POST" enctype="application/x-www-form-urlencoded">
         @csrf
@@ -15,7 +12,7 @@
         
         <label for='descripcion'>Describe como realizaras tal actividad </label>
         {{$errors->first("descripcion")}}
-        <textarea name='descripcion' id='descripcion' value="{{old('dexcripcion')}}"></textarea><br>
+        <textarea name='descripcion' id='descripcion' value="{{old('descripcion')}}"></textarea><br>
 
         <label for='semanas'>En cuantas semanas reliazaras tal actividad</label>
         {{$errors->first("semanas")}}
@@ -33,5 +30,4 @@
     </form>
 
 
-</body>
-</html>
+    @endsection

@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de empresa</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
     <h2>actualiza los datos de la empresa</h2>
 
     <form action="{{route("empresas.update",$empresa->id)}}" method="POST" enctype="application/x-www-form-urlencoded" >
@@ -49,5 +46,4 @@
         <input type='submit'>
     </form>
 
-</body>
-</html>
+    @endsection

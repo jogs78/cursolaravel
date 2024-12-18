@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busca tu Proyecto</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
     <p>Busca tu proyecto en la lista</p><br>
 
     
@@ -18,5 +15,4 @@
 
     <input type="submit">
 
-</body>
-</html>
+@endsection

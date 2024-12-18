@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>lista de estudiantes</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
     <h2>lista de alumnos registrados</h2>
 
     <table border="1">
@@ -38,5 +34,4 @@
     </table>
     <a href="{{route("estudiantes.create")}}">agregar un estudiante</a>
 
-</body>
-</html>
+    @endsection

@@ -25,7 +25,7 @@
         .boton{background-color: rgb(25, 118, 210); padding: 15px; border-radius: 5px; color: white; text-decoration: none; cursor: pointer; }
         .boton:hover{background-color: rgb(74, 139, 204);}
         .parrafo{font-size: 25px; margin-top: 10px;}
-        .opcion{ background-color: rgb(234, 245, 255); margin-top: 12px; margin-left: 10px; margin-right:10px; padding: 5px;border: 1px solid rgb(19, 46, 68); border-radius: 5px;}
+        .opcion{ background-color: rgb(234, 245, 255); margin-left: 10px; margin-right:10px; padding: 5px;border: 1px solid rgb(19, 46, 68); border-radius: 5px;}
         .opcion:hover{background-color: rgb(255, 255, 255);}
         *{margin: 0; padding: 0;}
     </style>        
@@ -58,44 +58,44 @@
                 @switch(Auth::user()->usa_type)
                     @case("App\Models\Coordinador")
                         <div>
-                        <ul>
+                        
                             
-                            <li class="opcion"><a  style="text-decoration: none;" href="{{route('coordinadores.tabla')}}">CONOCER LA TABLA</a></li>
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('coordinadores.tabla')}}">CONOCER LA TABLA</a></div>
                            <!-- <li class="opcion"><a  style="text-decoration: none;" href="{{route('coordinadores.asignarAsesor1')}}">ASIGANR ASESORES</a></li>-->
-                            <li class="opcion"><a  style="text-decoration: none;" href="#">LISTA DE ESTUDIANTES</a></li>
-                            <li class="opcion"><a  style="text-decoration: none;" href="#">GESTIONAR PERIODO</a></li>
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="#">LISTA DE ESTUDIANTES</a></div>
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="#">GESTIONAR PERIODO</a></div>
                             
 
-                        </ul>
+                        
                         </div>
                     @break
 
                     @case("App\Models\Estudiante")
-                    <ul>
+                    <div>
                             
-                            <li class="opcion"><a style="text-decoration: none;" href="{{route('estudiante.editar')}}">ACTULIALIZA TUS DATOS</a></li>
-                            <li class="opcion"><a style="text-decoration: none;" href="{{route('proyecto.crear')}}">PROYECTO</a></li>
-                            <li class="opcion"><a style="text-decoration: none;" href="{{route('estudiante.impresiones.solicitud')}}">IMPRIMIR SOLICITUD</a></li>
-                            <li class="opcion"><a style="text-decoration: none;" href="{{route('estudiante.impresiones.anteproyecto')}}">IMPRIMIR ANTEPROYECTO</a></li>
-                            <!--<li class="opcion"><a style="text-decoration: none;" href="#">CAPTURAS LAS ACTIVIDADES DE TU PROYECTO</a></li>-->
-                            <li class="opcion"><a style="text-decoration: none;" href="#">VERIFICA TUS SEGUIMIENTOS</a></li>
-                        </ul>
+                            <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('estudiante.editar')}}">ACTULIALIZA TUS DATOS</a></div>
+                            <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('proyecto.crear')}}">PROYECTO</a></div>
+                            <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('estudiante.impresiones.solicitud')}}">IMPRIMIR SOLICITUD</a></div>
+                            <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('estudiante.impresiones.anteproyecto')}}">IMPRIMIR ANTEPROYECTO</a></div>
+                            <!--<li><a style="text-decoration: none;" href="#">CAPTURAS LAS ACTIVIDADES DE TU PROYECTO</a></li>-->
+                            <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('estudiante.promedio')}}">VERIFICA TUS SEGUIMIENTOS</a></div>
+                    </div>
                     @break
                         
                     @case("App\Models\Asesor")
-                    <ul>
+                    <div>
                             
-                            <li class="opcion"><a  style="text-decoration: none;" href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></div>
                             <!-- <li class="opcion"><a  style="text-decoration: none;" href="#">CALIFICAR PROYECTO</a></li> -->
-                        </ul>
+                        </div>
                     @break
 
                     @case("App\Models\Externo")
-                    <ul>
+                    <div>
                             
-                            <li class="opcion"><a  style="text-decoration: none;" href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></li>
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></div>
                             <!-- <li class="opcion"><a  style="text-decoration: none;" href="#">CALIFICAR PROYECTO</a></li> -->
-                        </ul>
+                        </div>
                     @break
 
                     @default

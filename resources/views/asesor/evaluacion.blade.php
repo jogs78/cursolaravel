@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evaluacion del Reporte</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
+
     <h2>Evaluacion de Periodo</h2>
 
     <form action="">
@@ -29,5 +27,4 @@
 
     </form>
 
-</body>
-</html>
+    @endsection

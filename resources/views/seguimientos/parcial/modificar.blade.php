@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seguimiento Parcial</title>
-</head>
-<body>
-
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
     <p>Nombre del residente: {{$estudiante->nombre}}</p>
     <p>Nombre del Proyecto: {{$estudiante->proyecto->nombre}}</p>
     <p>Programa educativo: {{$estudiante->carrera->nombre}}</p>
@@ -95,5 +91,4 @@
         });
     </script>
 
-</body>
-</html>
+@endsection

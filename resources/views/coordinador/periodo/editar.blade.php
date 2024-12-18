@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creacion de periodo</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
+ lista de periodos
     <h2>Crear Periodos</h2>
 
     <form action="{{route("periodos.update",$periodo->id)}}" method="POST" enctype="application/x-www-form-urlencoded" >
@@ -40,5 +38,4 @@
         <input type='submit'>
     </form>
 
-</body>
-</html>
+    @endsection

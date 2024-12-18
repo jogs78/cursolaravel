@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta http-equiv="X-UA-Compatible" content="ie=edge">
- <title>Lista de Periodos</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
  lista de periodos
  <table border="1">
   <thead>
@@ -34,5 +30,4 @@
  </table>
 <a href="{{route("periodos.create")}}">agregar un periodo</a>
 
-</body>
-</html>
+@endsection

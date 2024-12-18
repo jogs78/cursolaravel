@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de proyectos</title>
-</head>
-<body>
-    <h2>actualiza los datos de la empresa</h2>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
+    <h2>actualiza los datos del proyecto</h2>
 
     <form action="{{route("proyectos.update",$proyecto->id)}}" method="POST" enctype="application/x-www-form-urlencoded" >
         @csrf
@@ -29,5 +26,4 @@
         <input type='submit'>
     </form>
 
-</body>
-</html>
+    @endsection

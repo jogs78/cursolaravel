@@ -3,7 +3,7 @@
     
 @endsection
 @section('contenido')
- mostrar la tabla de proyectos
+ <h2>mostrar la tabla de proyectos</h2>
  <table border="1">
   <thead>
    <th>Nombre proyecto</th>

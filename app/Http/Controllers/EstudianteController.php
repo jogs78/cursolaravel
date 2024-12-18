@@ -97,7 +97,9 @@ class EstudianteController extends Controller
         return redirect()->route("estudiante.index");
     }
 
-
+    public function promedio(){
+            return view('estudiante.promedio');
+    }
 
     public function mostrar($pagina)
     {
@@ -129,9 +131,6 @@ class EstudianteController extends Controller
         elseif ($pagina == 'si-promedio') {
             return view('estudiante.avisos.si-promedio');
         }
-        elseif ($pagina == 'promedio') {
-            return view('estudiante.promedio');
-        }
         else {
             return abort(404); // Si la página no existe, lanzamos un 404
         }
@@ -155,6 +154,30 @@ class EstudianteController extends Controller
         $pdf = Pdf::loadview('estudiante.impresiones.anteproyecto',compact('estudiante')); 
         return $pdf->download('Anteproyecto.pdf');
         return view('estudiante.impresiones.anteproyecto'); 
+    }
+
+    public function primer()
+    {
+        $estudiante = Auth::getUser()->usa;
+        $pdf = Pdf::loadview('estudiante.impresiones.seguimientos.primer',compact('estudiante')); 
+        return $pdf->download('Primer_Seguimiento.pdf');
+        return view('estudiante.impresiones.seguimientos.primer'); 
+    }
+
+    public function segundo()
+    {
+        $estudiante = Auth::getUser()->usa;
+        $pdf = Pdf::loadview('estudiante.impresiones.seguimientos.segundo',compact('estudiante')); 
+        return $pdf->download('Segundo_Seguimiento.pdf');
+        return view('estudiante.impresiones.seguimientos.segundo'); 
+    }
+
+    public function ultimo()
+    {
+        $estudiante = Auth::getUser()->usa;
+        $pdf = Pdf::loadview('estudiante.impresiones.seguimientos.ultimo',compact('estudiante')); 
+        return $pdf->download('Ultimo_Seguimiento.pdf');
+        return view('estudiante.impresiones.seguimientos.ultimo'); 
     }
 
     public function pdf(Request $request)

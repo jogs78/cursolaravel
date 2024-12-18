@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calificar</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
     <p>El asesor ya subio su calificacion</p>
     <a href="archivo.pdf" download="archivo.pdf">Descarga el PDF</a><p>imprimalo y que lo califique su empresa</p><br>
     <p>por ultimo escanea y subelo</p>
@@ -16,5 +13,4 @@
 
         <button type="submit">Subir PDF</button>
     <!--</form>-->
-</body>
-</html>
+    @endsection

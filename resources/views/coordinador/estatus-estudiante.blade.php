@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estatus de alumnos</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
     <p>Estatus de los Estudiantes</p>
     <table border="1">
         <thead>
@@ -24,5 +21,4 @@
         </tbody>
     </table>
 
-</body>
-</html>
+    @endsection

@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de Proyecto</title>
-</head>
-<body>
+@extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
     <h2>Reportes de Proyecto</h2>
 
     <form action="">
@@ -22,5 +19,8 @@
         <input type="submit">
     </form>
 
-</body>
-</html>
+    @extends('plantillas.app')
+@section('encabezado')
+    
+@endsection
+@section('contenido')
