@@ -64,6 +64,7 @@
                            <!-- <li class="opcion"><a  style="text-decoration: none;" href="{{route('coordinadores.asignarAsesor1')}}">ASIGANR ASESORES</a></li>-->
                             <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="#">LISTA DE ESTUDIANTES</a></div>
                             <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="#">GESTIONAR PERIODO</a></div>
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="#">GESTIONAR ASESORES INTERNOS (APARTE DE TENER LA OPCION DE AGREGAR, TENDRA LAS OPCIONES DE EXPORTAR e IMPORTAR)</a></div>
                             
 
                         
@@ -73,8 +74,8 @@
                     @case("App\Models\Estudiante")
                     <div>
                             
-                            <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('estudiante.editar')}}">ACTULIALIZA TUS DATOS</a></div>
-                            <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('proyecto.crear')}}">PROYECTO</a></div>
+                            <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('estudiantes.edit',Auth::user()->usa_id)}}">ACTULIALIZA TUS DATOS</a></div>
+                            <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('proyectos.create')}}">PROYECTO</a></div>
                             <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('estudiante.impresiones.solicitud')}}">IMPRIMIR SOLICITUD</a></div>
                             <div style="margin-top: 25px;"><a style="text-decoration: none;" class="opcion" href="{{route('estudiante.impresiones.anteproyecto')}}">IMPRIMIR ANTEPROYECTO</a></div>
                             <!--<li><a style="text-decoration: none;" href="#">CAPTURAS LAS ACTIVIDADES DE TU PROYECTO</a></li>-->

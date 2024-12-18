@@ -81,13 +81,16 @@ class ProyectoController extends Controller
         return redirect()->route("home");
     }
 
-  public function registrarProyecto()
+  public function create()
     {
 
         $estudiante = Auth::user()->usa;
         $proyecto = $estudiante->proyecto;
         //debe verificar si tiene un proyecto ya creado 
-        if(! is_null( $proyecto )) return view ('proyecto.mostrar',compact('proyecto'));
+        if(! is_null( $proyecto )){
+            return view ('proyecto.mostrar',compact('proyecto'));
+
+        } 
         //return view (vista que muestra el proyecto y con el enlace de "actividades del proyecto")
         //si no entonces que cargue el registro
         

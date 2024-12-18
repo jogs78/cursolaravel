@@ -51,7 +51,7 @@ class EstudianteSeeder extends Seeder
         $estudiante->direccion = "1ra norte y 3ra oriente Edif 1 B";
         $estudiante->institucion_seguridad_social = "ISSSTE";
         $estudiante->numero_de_seguridad_social = "2002";
-        $estudiante->proyecto_id=2;
+        $estudiante->proyecto_id=3;
         $estudiante->carrera_id = 2;
         $estudiante->save();
 
@@ -65,7 +65,7 @@ class EstudianteSeeder extends Seeder
         $estudiante->direccion = "10ma sur y 10ma oriente Edif 10 A";
         $estudiante->institucion_seguridad_social = "ISSSTE";
         $estudiante->numero_de_seguridad_social = "2003";
-        $estudiante->proyecto_id=2;
+        $estudiante->proyecto_id=4;
         $estudiante->carrera_id = 2;
         $estudiante->save();
         

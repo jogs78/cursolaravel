@@ -11,42 +11,47 @@ class ActividadSeeder extends Seeder
      * Run the database seeds.
      */
     public function run(): void
-    {/*
+    {
 
         $nueva = new Actividad();
         $nueva->orden = "1";
         $nueva->nombre = "analisis";
         $nueva->semanas = 2;
         $nueva->descripcion = "Identificar y contactar a los responsables.";
+        $nueva->proyecto_id = 1;
         $nueva->save();
+
         $nueva = new Actividad();
         $nueva->orden = "3";
         $nueva->nombre = "diseño";
-        $nueva->semanas = 2;
+        $nueva->semanas = 4;
         $nueva->descripcion = "Maquetar y graficar";
+        $nueva->proyecto_id = 1;
         $nueva->save();
+
         $nueva = new Actividad();
         $nueva->orden = "6";
         $nueva->nombre = "implementacion";
-        $nueva->semanas = 2;
+        $nueva->semanas = 6;
         $nueva->descripcion = "Desarollar la vista del log in";
+        $nueva->proyecto_id = 1;
         $nueva->save();
 
-        
-        $actividad = new Actividad();
-        $actividad->orden = "3";
-        $actividad->nombre = "Entrevistas";
-        $actividad->semanas = "1";
-        $actividad->descripcion = "Identificar y contactar a los responsables.";
-        $actividad->save(); 
+        $nueva = new Actividad();
+        $nueva->orden = "3";
+        $nueva->nombre = "Entrevistas";
+        $nueva->semanas = "1";
+        $nueva->descripcion = "Identificar y contactar a los responsables.";
+        $nueva->proyecto_id = 3;
+        $nueva->save(); 
 
-         $actividad = new Actividad();
-        $actividad->orden = "1";
-        $actividad->nombre = "Definir requisitos";
-        $actividad->semanas = "2";
-        $actividad->descripcion = "Analizar y registrar los requisitos funcionales y no funcionales del sistema.";
-        $actividad->save(); 
-        */
+        $nueva = new Actividad();
+        $nueva->orden = "1";
+        $nueva->nombre = "Definir requisitos";
+        $nueva->semanas = "2";
+        $nueva->descripcion = "Analizar y registrar los requisitos funcionales y no funcionales del sistema.";
+        $nueva->proyecto_id = 3;
+        $nueva->save(); 
 
 
     }

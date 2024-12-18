@@ -83,7 +83,8 @@ class EstudianteController extends Controller
         //ACTUALIZAR LA BASE DE DATOS CON LOS DATOS QUE VIENEN DEL FORMULARIO DE EDITAR UN PERIODO
         $estudiante->fill($request->all());
         $estudiante->save();
-        return redirect()->route("estudiante.index");
+        return redirect()->route("home");
+        //return redirect()->route("estudiantes.index");
 
     }
 

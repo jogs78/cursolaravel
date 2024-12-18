@@ -13,6 +13,6 @@ class Coordinador extends Model
 
     public function carrera()
     {
-        return $this->hasOne(Carrera::class);
+        return $this->belongsTo(Carrera::class);
     }
 }

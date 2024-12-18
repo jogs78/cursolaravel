@@ -55,14 +55,14 @@ Route::put('asignar-asesores/{proyecto_id}',[CoordinadorController::class,'asign
 //rutas especificas del estudiante
 Route::get('edit',[EstudianteController::class,'edit'])->middleware('auth')->name('estudiante.editar');
 //Route::put('update',[EstudianteController::class,'update'])->middleware('auth')->name('estudiante.update');
-Route::put('update/{estudiante}', [EstudianteController::class, 'update'])->name('estudiantes.update');
+//Route::put('update/{estudiante}', [EstudianteController::class, 'update'])->name('estudiantes.update');
 Route::get('solicitud',[EstudianteController::class,'solicitud'])->middleware('auth')->name('estudiante.impresiones.solicitud');
 Route::get('promedio',[EstudianteController::class,'promedio'])->middleware('auth')->name('estudiante.promedio');
 Route::get('anteproyecto',[EstudianteController::class,'anteproyecto'])->middleware('auth')->name('estudiante.impresiones.anteproyecto');
 Route::get('primer',[EstudianteController::class,'primer'])->middleware('auth')->name('estudiante.impresiones.seguimientos.primer');
 Route::get('segundo',[EstudianteController::class,'segundo'])->middleware('auth')->name('estudiante.impresiones.seguimientos.segundo');
 Route::get('ultimo',[EstudianteController::class,'ultimo'])->middleware('auth')->name('estudiante.impresiones.seguimientos.ultimo');
-Route::get('/proyecto/crear', [ProyectoController::class, 'registrarProyecto'])->name('proyecto.crear');
+//Route::get('/proyecto/crear', [ProyectoController::class, 'registrarProyecto'])->name('proyecto.crear');
 
 //rutas especificas del asesor
 Route::get('listar-proyectos',[AsesorController::class,'proyecto'])->middleware('auth')->name('asesor.listar-proyectos');
@@ -85,7 +85,7 @@ Route::resource('parciales',ParcialController::class);
 Route::resource('asesores',AsesorController::class)->except(['show'])->middleware('auth');
 Route::resource('carreras',CarreraController::class)->except(['show']);
 Route::resource('empresas',EmpresaController::class);
-Route::resource('actividades',ActividadController::class);
+Route::resource('proyectos.actividades',ActividadController::class);
 
 //rutas de vistas para aviso o Extras al CRUD
 Route::get('/asesores/{pagina}', [AsesorController::class, 'mostrar'])->middleware('auth');

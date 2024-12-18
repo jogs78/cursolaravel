@@ -2,51 +2,49 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Actividad;
-use App\Models\Proyecto;
-use Illuminate\Http\Request;
 use App\Http\Requests\StoreActividadRequest;
 use App\Http\Requests\UpdateActividadRequest;
-
+use App\Models\Actividad;
 
 class ActividadController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Proyecto $proyecto)
+    public function index()
     {
-        $todos = $proyecto->actividades;
+        //Listar
+        $todos = Actividad::all();
         return view('actividad.listar',compact('todos'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(Proyecto $proyecto)
+    public function create()
     {
         //MOSTRAR FORMULARIO PARA CREAR
         $actividades = Actividad::all();
-        return view('actividad.crear',compact('actividades','proyecto'));
+        return view('actividad.crear',compact('actividades'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request, Proyecto $proyecto)
+    public function store(StoreActividadRequest $request)
     {
-        //guardar las activides
-        $nueva = new Actividad;
-        $nueva->fill($request->all());
-        $nueva->proyecto_id = $proyecto->id;
+        //
+        $nueva = new Actividad();
+        $nueva->nombre = "mantenimiento";
+        $nueva->semanas = 2;
         $nueva->save();
-        return redirect(route('proyectos.create'));
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Proyecto $proyecto, Actividad $actividad)
+    public function show(Actividad $actividad)
     {
         //
     }
@@ -54,7 +52,7 @@ class ActividadController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Proyecto $proyecto, Actividad $actividad)
+    public function edit(Actividad $actividad)
     {
         //
     }
@@ -62,7 +60,7 @@ class ActividadController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Proyecto $proyecto, Actividad $actividad)
+    public function update(UpdateActividadRequest $request, Actividad $actividad)
     {
         //
     }
@@ -70,7 +68,7 @@ class ActividadController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Proyecto $proyecto, Actividad $actividad)
+    public function destroy(Actividad $actividad)
     {
         //
     }

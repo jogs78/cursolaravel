@@ -38,166 +38,56 @@
 
         <p class="inciso">d) Cronograma preliminar de actividades: </p>
 
+
+
         <div class="cuadro">
-            <table class="tabla">
-                <tr>
-                    <th style="width: 15%;"></th>
-                    <th  class="cuadro" style="width: 85%; " >Semana </th>
-                </tr>
-            </table>
-            <table class="tabla">
-                <tr>
-                    <th class="cuadro" style="width: 15%;">Actividad</th>
-                    <th class="nactividad">1</th>
-                    <th class="nactividad">2</th>
-                    <th class="nactividad">3</th>
-                    <th class="nactividad">4</th>
-                    <th class="nactividad">5</th>
-                    <th class="nactividad">6</th>
-                    <th class="nactividad">7</th>
-                    <th class="nactividad">8</th>
-                    <th class="nactividad">9</th>
-                    <th class="nactividad">10</th>
-                    <th class="nactividad">11</th>
-                    <th class="nactividad">12</th>
-                    <th class="nactividad">13</th>
-                    <th class="nactividad">14</th>
-                    <th class="nactividad">15</th>
-                    <th class="nactividad">16</th>
-                </tr>
-            </table>
-            <table class="tabla">
-                <tr>
-                    <th class="cuadro" style="width: 15%;">Definir requisitos</th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                </tr>
-            </table>
-            <table class="tabla">
-                <tr>
-                    <th class="cuadro" style="width: 15%;">Maquetación de la interfaz</th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                </tr>
-            </table>
-            <table class="tabla">
-                <tr>
-                    <th class="cuadro" style="width: 15%;">Desarrollo del sistema </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                </tr>
-            </table>
-            <table class="tabla">
-                <tr>
-                    <th class="cuadro" style="width: 15%;">Pruebas al programa</th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                </tr>
-            </table>
-            <table class="tabla">
-                <tr>
-                    <th class="cuadro" style="width: 15%;">Presentación de la web</th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                </tr>
-            </table>
-            <table class="tabla">
-                <tr>
-                    <th class="cuadro" style="width: 15%;">Pruebas finales al software implementado </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                    <th class="nactividad"> </th>
-                </tr>
-            </table>
+            <table  class="tabla" border="1">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;"></th>
+                        @for ($i = 1 ; $i <= 16; $i++)
+                            <th>{{$i}}</th>  
+                        @endfor
+                    </tr>
+                </thead>
+                <tbody>
+                @php
+                    $anterior = 0;
+                @endphp
+                @forelse ($estudiante->proyecto->actividades as $actividad)
+                    <tr>
+                        <td>{{$actividad->nombre}}</td>
+                        @for ($i = 0; $i < $anterior; $i++)
+                            <td> </td>                                                        
+                        @endfor
+                        @for ($i = 1 ; $i <= 16-$anterior; $i++)
+                            @if ($i <= $actividad->semanas)
+                                <td>X</td>
+                            @else
+                                <td> </td>                                
+                            @endif
+                        @endfor
+                        @php
+                        $anterior = $anterior + $actividad->semanas ;
+                    @endphp
+    
+                    </tr>
+                    @empty
+                        <tr>
+                            <th colspan="3">Sin actividades</th>
+                        </tr>
+                @endforelse 
+                </tbody>    
+                </table>
         </div>
         
         <p class="inciso">e) Descripción detallada de las actividades</p>
         <p class="bold" style="margin-left: 10px;">Definir requisitos:</p>
-        <li style="margin-left: 20px; margin-right: 20px;">Analizar y registrar los requisitos funcionales y no funcionales del sistema. </li>
-        <li style="margin-left: 20px; margin-right: 20px;">Especificar qué tipo de contenido tendrá el sistema en referencia al texto y elementos multimedia. </li>
+        <ul>
+            @foreach ($estudiante->proyecto->actividades as $actividad)
+            <li style="margin-left: 20px; margin-right: 20px;">{{$actividad->nombre}}: Durante {{$actividad->semanas}} semanas se realizara: {{$actividad->descripcion}}</li>
+            @endforeach
+        </ul>
 
         <table class="tabla" style="margin-top: 40px;">
             <tr>
