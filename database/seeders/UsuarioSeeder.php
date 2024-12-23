@@ -42,5 +42,33 @@ class UsuarioSeeder extends Seeder
         $nuevo->usa_type = "App\Models\Externo";
         $nuevo->save();
 
+        $nuevo = new Usuario();
+        $nuevo->nombre_usuario = "fco";
+        $nuevo->contraseña = Hash::make('1234');
+        $nuevo->usa_id=2;
+        $nuevo->usa_type = "App\Models\Estudiante";
+        $nuevo->save();
+
+        $nuevo = new Usuario();
+        $nuevo->nombre_usuario = "jaz";
+        $nuevo->contraseña = Hash::make('1234');
+        $nuevo->usa_id=3;
+        $nuevo->usa_type = "App\Models\Estudiante";
+        $nuevo->save();
+
+        $nuevo = new Usuario();
+        $nuevo->nombre_usuario = "seidy";
+        $nuevo->contraseña = Hash::make('1234');
+        $nuevo->usa_id=4;
+        $nuevo->usa_type = "App\Models\Estudiante";
+        $nuevo->save();
+
+        $nuevo = new Usuario();
+        $nuevo->nombre_usuario = "obdulia";
+        $nuevo->contraseña = Hash::make('1234');
+        $nuevo->usa_id=2;
+        $nuevo->usa_type = "App\Models\Coordinador";
+        $nuevo->save();
+
     }
 }
