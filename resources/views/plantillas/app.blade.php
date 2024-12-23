@@ -28,7 +28,7 @@
         .opcion{ background-color: rgb(234, 245, 255); margin-left: 10px; margin-right:10px; padding: 5px;border: 1px solid rgb(19, 46, 68); border-radius: 5px;}
         .opcion:hover{background-color: rgb(255, 255, 255);}
         *{margin: 0; padding: 0;}
-    </style>        
+    </style>       
 </head>
 <body>
     @auth

@@ -1,4 +1,5 @@
 @extends('plantillas.app')
+
 @section('encabezado')
     
 @endsection
