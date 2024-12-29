@@ -9,10 +9,14 @@ class Coordinador extends Model
 {
     use HasFactory;
 
-    protected $table = "coordinadores";
+    protected $table = "coordinadores"; 
 
     public function carrera()
     {
         return $this->belongsTo(Carrera::class);
+    }
+    public function periodos($periodo_id)
+    {
+        return $this->hasMany(Periodo::class)/*->where('periodo_id', $periodo_id)*/;
     }
 }

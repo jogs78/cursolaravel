@@ -67,6 +67,8 @@ Route::get('ultimo',[EstudianteController::class,'ultimo'])->middleware('auth')-
 //rutas especificas del asesor
 Route::get('listar-proyectos',[AsesorController::class,'proyecto'])->middleware('auth')->name('asesor.listar-proyectos');
 
+//rutas especificas del coordinador
+Route::get('gestionar-periodos',[PeriodoController::class,'periodos'])->middleware('auth')->name('coordinador.periodo.gestionar-periodos');
 
 //rutas especificas de los segumientos (pueden entrar asesor, estudiante, coordinador)
 //faltan dos tipos de Read en el crud

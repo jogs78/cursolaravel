@@ -1,14 +1,34 @@
 @extends('plantillas.app')
+<style>
+.cmenor{background-color: rgb(40, 95, 139);}
+.cmayor{background-color: rgb(19, 46, 68);}
+.linea{background-color: rgb(10, 105, 163); height: 4px; border-radius: 2px; width: 90%;} 
+.hderecho {display: flex; justify-content: right; }
+.horizontal {display: flex; justify-content: center; width: 100%;}
+.centro{display: flex; justify-content: center;}
+.titulo{text-align:center; font-size: 50px; font-weight: bold;}
+.subtitulo{text-align:center; font-size: 45px; font-weight: bold;}
+.parrafo{font-size: 20px;  font-weight: bold;}
+.boton{background-color: rgb(25, 118, 210); color: white; border: none; cursor: pointer; margin-top:10px;margin-bottom:10px; margin-left:5px;  margin-right:5px;}
+.boton:hover{background-color: rgb(74, 139, 204);}
+.llenar{margin-top:16px; font-size: 18px; margin-left:12px;}
+table{border: 2px solid rgb(19, 46, 68); border-collapse: collapse; margin-top:20px; }
+th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
+.thcontenido{font-weight: normal;}
+.thfondo{background-color: rgb(204, 216, 228);}
+.bodydiv{margin-left: 20px; margin-right: 20px;}
+</style>
 @section('encabezado')
     
 @endsection
 @section('contenido')
- <h2>mostrar la tabla de proyectos</h2>
+ 
+ <div class="horizontal" style="margin-top:20px;"><p class="subtitulo">Tabla de proyectos</p></div>
  <table border="1">
   <thead>
-   <th>Nombre proyecto</th>
-   <th>Nombre asesor</th>
-   <th>Nombre empresa</th>
+   <th class="thfondo">Nombre proyecto</th>
+   <th class="thfondo">Nombre asesor</th>
+   <th class="thfondo">Nombre empresa</th>
   </thead>
   <tbody>
  @foreach ($proyectos as $proyecto)
@@ -33,9 +53,9 @@
         <input type="hidden" name="proyecto_id" value="{{$proyecto->id}}">
         @csrf
         @if( is_null($proyecto->asesor_id) )
-          <input type="submit" value="ASIGNAR.">          
+          <input type="submit" value="ASIGNAR." class="boton">          
         @else
-          <input type="submit" value="CAMBIAR.">          
+          <input type="submit" value="CAMBIAR." class="boton">          
         @endif
       </form>
 

@@ -17,6 +17,10 @@ class Periodo extends Model
     public function proyectos(){
         return $this->hasMany(Proyecto::class);
     }
+    public function coordinador()
+    {
+        return $this->belongsTo(Cordinador::class)->withDefault(['nombre'=>'No asignado']);
+    }
 
 
 

@@ -1,19 +1,42 @@
 @extends('plantillas.app')
+<style>
+.cmenor{background-color: rgb(40, 95, 139);}
+.cmayor{background-color: rgb(19, 46, 68);}
+.linea{background-color: rgb(10, 105, 163); height: 4px; border-radius: 2px; width: 90%;} 
+.hderecho {display: flex; justify-content: right; }
+.horizontal {display: flex; justify-content: center; width: 100%;}
+.centro{display: flex; justify-content: center;}
+.titulo{text-align:center; font-size: 50px; font-weight: bold;}
+.subtitulo{text-align:center; font-size: 45px; font-weight: bold; margin-top:20px; margin-bottom:20px;}
+.parrafo{font-size: 20px;  font-weight: bold;}
+.boton{background-color: rgb(25, 118, 210); padding: 15px; border-radius: 5px; color: white; border: none; cursor: pointer; margin-top:30px;}
+.boton:hover{background-color: rgb(74, 139, 204);}
+.llenar{margin-top:16px; font-size: 18px; margin-left:12px;}
+table{border: 2px solid rgb(19, 46, 68); border-collapse: collapse; }
+th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
+.thcontenido{font-weight: normal;}
+.thfondo{background-color: rgb(204, 216, 228);}
+.bodydiv{margin-left: 20px; margin-right: 20px;}
+textarea{padding: 10px;}
+</style>
 @section('encabezado')
     <a href="{{route('Cambiar_Contraseña')}}">Cambiar la Contraseña</a>
 @endsection
 @section('contenido')
-    <h1>EVALUACION POR EL ASESOR INTERNO</h1>
-    <p>Nombre del residente: {{$estudiante->nombre}}</p>
-    <p>Nombre del Proyecto: {{$estudiante->proyecto->nombre}}</p>
-    <p>Programa educativo: {{$estudiante->carrera->nombre}}</p>
-    <p>Periodo de realizacion:</p>
-    <p>Calificacion parcial: </p>
-    <h2>califiaciones del asesor externo</h2>
+
+<div class="horizontal"><p class="subtitulo">EVALUACION POR EL ASESOR INTERNO</p></div>
+<div class="bodydiv">
+        <div class="horizontal" style="margin-top:30px;"><p class="parrafo">Nombre del residente:</p> <p class="llenar"> {{$estudiante->nombre}} {{$estudiante->apellido_paterno}} {{$estudiante->apellido_materno}}</p> </div>
+        <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Nombre del Proyecto:</p> <p class="llenar">{{$estudiante->proyecto->nombre}}</p> </div>
+        <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Programa educativo:</p> <p class="llenar">{{$estudiante->carrera->nombre}}</p> </div>
+        <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Periodo de realizacion:</p> <p class="llenar">{{$estudiante->proyecto->periodo->nombre}}</p> </div>
+        <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Calificacion parcial: </p>
+    </div>  
+    <h2>Califiaciones del asesor externo</h2>
     <table border="1">
         <thead>
-            <th>Criterios a Evaluar</th>
-            <th>Valor</th>
+            <th class="thfondo">Criterios a Evaluar</th>
+            <th class="thfondo">Calificaciones dadas por el Asesor Externo</th>
         </thead>
         <tbody>
             <tr>
@@ -61,16 +84,16 @@
             </tr>
         </tbody>
     </table>
-    <h2>califiaciones del asesor interno</h2>
+    <h2 style="margin-top: 20px;">Califiaciones del asesor interno</h2>
 
     <form action="{{route('guardar-seguimientos',[$estudiante->id,$consecutivo])}}" method="post">
         @csrf
 
     <table border="1">
         <thead>
-            <th>Criterios a Evaluar</th>
-            <th>Valor</th>
-            <th>Evaluacion</th>
+            <th class="thfondo">Criterios a Evaluar</th>
+            <th class="thfondo">Valor</th>
+            <th class="thfondo">Evaluacion</th>
         </thead>
         <tbody>
             <tr>
@@ -132,7 +155,7 @@
         </tbody>
     </table>
 
-    <input type='submit'>
+    <input type='submit' class="boton" style="margin-bottom: 20px" value="Enviar calificacion">
     </form>
 
 

@@ -95,7 +95,7 @@
 
         <div class="horizontal" style="margin-top: 60px; "><input class="boton" type='submit' value="Registrar"></div>
     </form>
-</div>
+
 
 </body>
 </html>
