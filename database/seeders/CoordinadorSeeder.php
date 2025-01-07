@@ -14,19 +14,45 @@ class CoordinadorSeeder extends Seeder
     public function run(): void
     {
         $nueva = new Coordinador();
-        $nueva->nombre = "Mario";
-        $nueva->apellido_paterno = "de la Cruz";
-        $nueva->apellido_materno = "Padilla";
-        $nueva->correo_electronico = "cmecanica@gmail.com";
-        $nueva->carrera_id = 2;
-        $nueva->save();
-
-        $nueva = new Coordinador();
         $nueva->nombre = "Obdulia";
         $nueva->apellido_paterno = "Rios";
         $nueva->apellido_materno = "Coutiño";
-        $nueva->correo_electronico = "CSistemas@gmail.com";
+        $nueva->correo_electronico = "Csistemas@gmail.com";
         $nueva->carrera_id = 1;
+        $nueva->save();
+
+        $nueva = new Coordinador();
+        $nueva->nombre = "Mario";
+        $nueva->apellido_paterno = "de la Cruz";
+        $nueva->apellido_materno = "Padilla";
+        $nueva->correo_electronico = "Cmecanica@gmail.com";
+        $nueva->carrera_id = 2;
+        $nueva->save();
+
+        
+
+        $nueva = new Coordinador();
+        $nueva->nombre = "Juan";
+        $nueva->apellido_paterno = "Almeira";
+        $nueva->apellido_materno = "Perez";
+        $nueva->correo_electronico = "Celectronica@gmail.com";
+        $nueva->carrera_id = 3;
+        $nueva->save();
+
+        $nueva = new Coordinador();
+        $nueva->nombre = "Veronica";
+        $nueva->apellido_paterno = "Velasco";
+        $nueva->apellido_materno = "Martinez";
+        $nueva->correo_electronico = "CIndustrial@gmail.com";
+        $nueva->carrera_id = 4;
+        $nueva->save();
+
+        $nueva = new Coordinador();
+        $nueva->nombre = "Rogelio";
+        $nueva->apellido_paterno = "Bistrain";
+        $nueva->apellido_materno = "Gutierrez";
+        $nueva->correo_electronico = "CElectrica@gmail.com";
+        $nueva->carrera_id = 5;
         $nueva->save();
     }
 }

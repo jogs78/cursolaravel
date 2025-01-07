@@ -21,6 +21,18 @@ class CarreraSeeder extends Seeder
         $nueva = new Carrera();
         $nueva->nombre = "Mecanica";
         $nueva->save();
+
+        $nueva = new Carrera();
+        $nueva->nombre = "Electronica";
+        $nueva->save();
+
+        $nueva = new Carrera();
+        $nueva->nombre = "Industrial";
+        $nueva->save();
+
+        $nueva = new Carrera();
+        $nueva->nombre = "Electrica";
+        $nueva->save();
     }
 
     

@@ -15,7 +15,7 @@ class Coordinador extends Model
     {
         return $this->belongsTo(Carrera::class);
     }
-    public function periodos($periodo_id)
+    public function periodos()
     {
         return $this->hasMany(Periodo::class)/*->where('periodo_id', $periodo_id)*/;
     }

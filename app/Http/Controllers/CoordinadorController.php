@@ -99,4 +99,13 @@ class CoordinadorController extends Controller
     {
         //
     }
+
+    public function periodo()
+    {
+        $coordinador = Auth::getUser()->usa;
+        $periodo_id = ConfiguracionServiceProvider::get('periodo_id');
+
+
+        return view('coordinador.periodo.listar',compact('periodo_id')); 
+    }
 }

@@ -52,5 +52,65 @@ class ExternoSeeder extends Seeder
         $asesor->correo_electronico = "maria.ld@hotmail.com.mx";
         $asesor->puesto = "Secretaria asistente";
         $asesor->save(); 
+
+        $asesor = new Externo();
+        $asesor->id = 5;
+        $asesor->titulo = "Ing.";
+        $asesor->nombre = "Ana Paula";
+        $asesor->apellido_paterno = "Ramírez";
+        $asesor->apellido_materno = "Morales";
+        $asesor->correo_electronico = "Ana.RM@hotmail.com.mx";
+        $asesor->puesto = "Asistente de Desarrollo";
+        $asesor->save();
+
+        $asesor = new Externo();
+        $asesor->id = 6;
+        $asesor->titulo = "Ing.";
+        $asesor->nombre = "Javier Eduardo";
+        $asesor->apellido_paterno = "Salazar";
+        $asesor->apellido_materno = "Pérez";
+        $asesor->correo_electronico = "Javier_Eduardo@hotmail.com.mx";
+        $asesor->puesto = "Tesorero";
+        $asesor->save();
+
+        $asesor = new Externo();
+        $asesor->id = 7;
+        $asesor->titulo = "Ing.";
+        $asesor->nombre = "Nicolás Alejandro";
+        $asesor->apellido_paterno = "Fernández";
+        $asesor->apellido_materno = "Ruiz";
+        $asesor->correo_electronico = "Nicolás_Alejandro@hotmail.com.mx";
+        $asesor->puesto = "Asistente Admistrativo";
+        $asesor->save();
+
+        $asesor = new Externo();
+        $asesor->id = 8;
+        $asesor->titulo = "Ing.";
+        $asesor->nombre = "José Francisco";
+        $asesor->apellido_paterno = "Trujillo";
+        $asesor->apellido_materno = "Ochoa";
+        $asesor->correo_electronico = "Francisco_TO@hotmail.com.mx";
+        $asesor->puesto = "Consejero Asistente";
+        $asesor->save();
+
+        $asesor = new Externo();
+        $asesor->id = 9;
+        $asesor->titulo = "Ing.";
+        $asesor->nombre = "Daniela";
+        $asesor->apellido_paterno = "Robles";
+        $asesor->apellido_materno = "Cruz";
+        $asesor->correo_electronico = "DanielaRCruz@hotmail.com.mx";
+        $asesor->puesto = "Asesora financiera";
+        $asesor->save();
+
+        $asesor = new Externo();
+        $asesor->id = 10;
+        $asesor->titulo = "Ing.";
+        $asesor->nombre = "Alfonso";
+        $asesor->apellido_paterno = "Mena";
+        $asesor->apellido_materno = "Becerra";
+        $asesor->correo_electronico = "DanielaRCruz@hotmail.com.mx";
+        $asesor->puesto = "Asesor de Ventas e imagen";
+        $asesor->save();
     }
 }
