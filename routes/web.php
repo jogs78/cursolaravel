@@ -69,6 +69,9 @@ Route::get('listar-proyectos',[AsesorController::class,'proyecto'])->middleware(
 
 //rutas especificas del coordinador
 Route::get('coordinador.periodo.listar',[CoordinadorController::class,'periodo'])->middleware('auth')->name('coordinador.periodo.listar');
+Route::get('listar-estudiantes',[CoordinadorController::class,'estudiante'])->middleware('auth')->name('coordinador.listar-estudiantes');
+Route::get('listar-asesores',[CoordinadorController::class,'asesores'])->middleware('auth')->name('coordinador.listar-asesores');
+
 
 //rutas especificas de los segumientos (pueden entrar asesor, estudiante, coordinador)
 //faltan dos tipos de Read en el crud
@@ -94,6 +97,9 @@ Route::get('/asesores/{pagina}', [AsesorController::class, 'mostrar'])->middlewa
 Route::get('/carreras/{pagina}', [CarreraController::class, 'mostrar']);
 Route::get('/estudiantes/{pagina}', [EstudianteController::class, 'mostrar']);
 Route::post('/generar-pdf', [EmpresaController::class,'generarPdf'])->name('generar.pdf');
+Route::get('/generar-excel', [CoordinadorController::class,'exportarLista'])->name('generar-estudiantes.excel');
+Route::get('/generando-excel', [CoordinadorController::class,'exportandoLista'])->name('generar-asesores.excel');
+
 
 
 //Route::post('/subir', [EstudianteController::class, 'subirPDF'])->name('subir.pdf');

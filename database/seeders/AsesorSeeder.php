@@ -14,7 +14,7 @@ class AsesorSeeder extends Seeder
     public function run(): void
     {  
         $asesor = new Asesor();
-        $asesor->id = 1;
+        //$asesor->id = 1;
         $asesor->nombre = "Jorge Octavio";
         $asesor->apellido_paterno = "Guzman";
         $asesor->apellido_materno = "Sanchez";
@@ -25,7 +25,7 @@ class AsesorSeeder extends Seeder
         $asesor->save(); 
 
         $asesor = new Asesor();
-        $asesor->id = 2;
+        //$asesor->id = 2;
         $asesor->nombre = "Jesus Carlos";
         $asesor->apellido_paterno = "Sanchez";
         $asesor->apellido_materno = "Guzman";
@@ -36,7 +36,7 @@ class AsesorSeeder extends Seeder
         $asesor->save(); 
 
         $asesor = new Asesor();
-        $asesor->id = 3;
+        //$asesor->id = 3;
         $asesor->nombre = "Nestor Antonio";
         $asesor->apellido_paterno = "Morales";
         $asesor->apellido_materno = "Navarro";
@@ -47,7 +47,7 @@ class AsesorSeeder extends Seeder
         $asesor->save(); 
 
         $asesor = new Asesor();
-        $asesor->id = 4;
+        //$asesor->id = 4;
         $asesor->nombre = "Walter";
         $asesor->apellido_paterno = "Torres";
         $asesor->apellido_materno = "Robledo";
@@ -58,7 +58,7 @@ class AsesorSeeder extends Seeder
         $asesor->save(); 
 
         $asesor = new Asesor();
-        $asesor->id = 5;
+        //$asesor->id = 5;
         $asesor->nombre = "Hector";
         $asesor->apellido_paterno = "Guerra";
         $asesor->apellido_materno = "Crespo";
@@ -69,7 +69,7 @@ class AsesorSeeder extends Seeder
         $asesor->save(); 
 
         $asesor = new Asesor();
-        $asesor->id = 6;
+        //$asesor->id = 6;
         $asesor->nombre = "Margarita";
         $asesor->apellido_paterno = "Roblero";
         $asesor->apellido_materno = "Paredes";
@@ -80,7 +80,7 @@ class AsesorSeeder extends Seeder
         $asesor->save();
 
         $asesor = new Asesor();
-        $asesor->id = 6;
+        //$asesor->id = 7;
         $asesor->nombre = "Ariana";
         $asesor->apellido_paterno = "Esquinca";
         $asesor->apellido_materno = "Torres";
@@ -91,7 +91,7 @@ class AsesorSeeder extends Seeder
         $asesor->save();
 
         $asesor = new Asesor();
-        $asesor->id = 7;
+        //$asesor->id = 8;
         $asesor->nombre = "Uriel";
         $asesor->apellido_paterno = "Fernadez";
         $asesor->apellido_materno = "Mendez";
@@ -102,7 +102,7 @@ class AsesorSeeder extends Seeder
         $asesor->save();
 
         $asesor = new Asesor();
-        $asesor->id = 8;
+        //$asesor->id = 9;
         $asesor->nombre = "Jeremias";
         $asesor->apellido_paterno = "Camacho";
         $asesor->apellido_materno = "Faundez";
@@ -113,7 +113,7 @@ class AsesorSeeder extends Seeder
         $asesor->save();
 
         $asesor = new Asesor();
-        $asesor->id = 9;
+        //$asesor->id = 10;
         $asesor->nombre = "Ruth";
         $asesor->apellido_paterno = "Santiago";
         $asesor->apellido_materno = "Choc";
@@ -124,7 +124,7 @@ class AsesorSeeder extends Seeder
         $asesor->save();
 
         $asesor = new Asesor();
-        $asesor->id = 10;
+        //$asesor->id = 11;
         $asesor->nombre = "Martha";
         $asesor->apellido_paterno = "Narvez";
         $asesor->apellido_materno = "Guzman";

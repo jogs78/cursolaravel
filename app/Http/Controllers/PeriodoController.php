@@ -15,7 +15,7 @@ class PeriodoController extends Controller
     {
         //LISTAR
         $todos = Periodo::all();
-        return view('coordinador.periodo.listar',compact('todos'));
+       return view('coordinador.periodo.listar',compact('todos')); // return view('coordinador.periodo.listar', ['todos' => $todos]);
     }
 
     /**
@@ -67,7 +67,7 @@ class PeriodoController extends Controller
         //ACTUALIZAR LA BASE DE DATOS CON LOS DATOS QUE VIENEN DEL FORMULARIO DE EDITAR UN PERIODO
         $periodo->fill($request->all());
         $periodo->save();
-        return redirect()->route("periodos.index");
+        return redirect()->route("home"); //"periodos.index"
 
     }
 

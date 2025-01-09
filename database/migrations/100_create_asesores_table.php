@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('apellido_materno');
             $table->string('correo_electronico');
             $table->string('profesion');
+            $table->string('carrera');
             $table->bigInteger('numero_cedula');
             $table->timestamps();
         });

@@ -9,8 +9,12 @@ use App\Models\Proyecto;
 use App\Providers\ConfiguracionServiceProvider;
 use App\Models\Configuracion;
 use App\Models\Asesor;
+use App\Models\Periodo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\UsersExport;
+use App\Exports\UsuariosExportar;
 
 class CoordinadorController extends Controller
 {
@@ -107,5 +111,26 @@ class CoordinadorController extends Controller
 
 
         return view('coordinador.periodo.listar',compact('periodo_id')); 
+    }
+
+    public function estudiante()
+    {
+        $coordinador = Auth::getUser()->usa;
+        $estudiante_id = ConfiguracionServiceProvider::get('estudiante_id');
+        return view('coordinador.listar-estudiantes',compact('estudiante_id')); 
+    } 
+
+    public function asesores(){
+        $coordinador = Auth::getUser()->usa;
+        $asesor_id = ConfiguracionServiceProvider::get('asesor_id');
+        return view('coordinador.listar-asesores',compact('asesor_id')); 
+    }
+
+    public function exportarLista(){
+        return Excel::download(new UsersExport, 'Estudiantes.xlsx');
+    }
+
+    public function exportandoLista(){
+        return Excel::download(new UsuariosExportar, 'Asesores.xlsx');
     }
 }

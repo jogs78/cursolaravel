@@ -16,7 +16,8 @@ class AsesorController extends Controller
      */
     public function index()
     {
-        echo "mostar el listado de asesores";
+        $todos = Asesor::all();
+        return view('asesor.listar',compact('todos'));
     }
 
     /**
@@ -24,7 +25,8 @@ class AsesorController extends Controller
      */
     public function create()
     {
-        //
+        $asesores = Asesor::all();
+        return view('asesor.crear',compact('asesores'));
     }
 
     /**
@@ -32,7 +34,10 @@ class AsesorController extends Controller
      */
     public function store(StoreAsesorRequest $request)
     {
-        //
+        $nuevo = new Asesor;
+        $nuevo->fill($request->all());
+        $nuevo->save();
+        return redirect()->route("asesores.index");
     }
 
     /**
@@ -48,7 +53,7 @@ class AsesorController extends Controller
      */
     public function edit(Asesor $asesor)
     {
-        //
+        return view('asesor.editar',compact("asesor"));
     }
 
     /**
@@ -56,7 +61,9 @@ class AsesorController extends Controller
      */
     public function update(UpdateAsesorRequest $request, Asesor $asesor)
     {
-        //
+        $asesor->fill($request->all());
+        $asesor->save();
+        return redirect()->route("asesores.index");
     }
 
     /**
@@ -64,7 +71,8 @@ class AsesorController extends Controller
      */
     public function destroy(Asesor $asesor)
     {
-        //
+        $asesor->delete();
+        return redirect()->route("home");
     }
 
 public function mostrar($pagina)

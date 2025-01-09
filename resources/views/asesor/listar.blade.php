@@ -22,37 +22,41 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     
 @endsection
 @section('contenido')
-<div class="horizontal" style="margin-top:20px;"><p class="subtitulo">Lista de Periodos</p></div>
- <div style="margin-bottom: 40px;">
-  <table border="1" >
-  <thead>
-   <th class="thfondo">ID</th>
-   <th class="thfondo">NOMBRE</th>
-   <th class="thfondo">ACCIONES</th>
-  </thead>
-  <!-- @php
+<div class="horizontal" style="margin-top:20px;"><p class="subtitulo">Lista de Estudiantes Registrados</p></div>
+    <!--@php
     $todos = $todos ?? [];
-  @endphp -->
-  <tbody >
-  
-   @foreach ($todos as $periodo)     
-   <tr>
-    <td>{{$periodo->id}}</td>
-    <td>{{$periodo->nombre}}</td>
-    <td>
-     <a href="{{route("periodos.edit",$periodo->id)}}">EDITAR</a>, 
-     <form action="{{route("periodos.destroy",$periodo->id)}}" method="post">
-      @method('DELETE')
-      @csrf
-      <input type="submit" value="BORRAR">
-    </form>
+    @endphp-->
+    <div style="margin-bottom: 40px;">
+    <table border="1">
+        <thead>
+            <th class="thfondo">ID</th>
+            <th class="thfondo">NOMBRE</th>
+            <th class="thfondo">APELLIDO</th>
+        </thead>
+        <tbody>
+        @foreach ($todos as $estudiante)
+        <tr>
+            <td>{{$estudiante->id}}</td>
+            <td>{{$estudiante->nombre}}</td>
+            <td>
+                <a href="{{route("estudiantes.edit",$estudiante->id)}}">Editar</a>
+                <form action="{{route("estudiantes.destroy",$estudiante->id)}}" method="post">
+                @method('DELETE')
+                @csrf
+                <input type="submit" value="Borrar">
 
-    </td>
-   </tr>
-   @endforeach  
-  </tbody>
- </table>
-</div>
- <a href="{{route("periodos.create")}}" class="boton" >Agregar un periodo</a>
+                </form>
+            
 
-@endsection
+            </td>
+        </tr>
+
+        @endforeach
+        </tbody>
+    </table>
+    </div>
+    <a href="{{route("estudiantes.create")}}" class="boton">Agregar un Estudiante</a>
+
+    <a href="{{route('generar.excel')}}" class="boton">Descargar lista</a>
+
+    @endsection
