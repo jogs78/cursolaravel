@@ -37,7 +37,6 @@ class DatabaseSeeder extends Seeder
            CoordinadorSeeder::class,
            ParcialSeeder::class,
            //finales
-           //SeguimientoSeeder::class,
         ]);
     }
     

@@ -30,12 +30,10 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
    <th class="thfondo">NOMBRE</th>
    <th class="thfondo">ACCIONES</th>
   </thead>
-  <!-- @php
-    $todos = $todos ?? [];
-  @endphp -->
+  
   <tbody >
   
-   @foreach ($todos as $periodo)     
+   @foreach ($periodos as $periodo)     
    <tr>
     <td>{{$periodo->id}}</td>
     <td>{{$periodo->nombre}}</td>

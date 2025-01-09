@@ -62,9 +62,9 @@
                             
                             <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('coordinadores.tabla')}}">CONOCER LA TABLA</a></div>
                            <!-- <li class="opcion"><a  style="text-decoration: none;" href="{{route('coordinadores.asignarAsesor1')}}">ASIGANR ASESORES</a></li>-->
-                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('coordinador.listar-estudiantes')}}">LISTA DE ESTUDIANTES</a></div>
-                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('coordinador.periodo.listar')}}">GESTIONAR PERIODO</a></div>
-                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('coordinador.listar-asesores')}}">GESTIONAR ASESORES</a></div><!--(APARTE DE TENER LA OPCION DE AGREGAR, TENDRA LAS OPCIONES DE EXPORTAR e IMPORTAR)-->
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('estudiantes.index')}}">LISTA DE ESTUDIANTES</a></div>
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('periodos.index')}}">GESTIONAR PERIODO</a></div>
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('asesores.index')}}">GESTIONAR ASESORES</a></div><!--(APARTE DE TENER LA OPCION DE AGREGAR, TENDRA LAS OPCIONES DE EXPORTAR e IMPORTAR)-->
                             
 
                         

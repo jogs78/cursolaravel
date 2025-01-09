@@ -14,8 +14,8 @@ class PeriodoController extends Controller
     public function index()
     {
         //LISTAR
-        $todos = Periodo::all();
-       return view('coordinador.periodo.listar',compact('todos')); // return view('coordinador.periodo.listar', ['todos' => $todos]);
+        $periodos = Periodo::all();
+       return view('coordinador.periodo.listar',compact('periodos')); // return view('coordinador.periodo.listar', ['todos' => $todos]);
     }
 
     /**
