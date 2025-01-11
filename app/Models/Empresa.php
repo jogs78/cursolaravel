@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Empresa extends Model
 {
     use HasFactory;
-    protected $fillable = ["nombre", "giro", "rfc","direccion", "telefono", "correo","titular", "puesto_titular", 
-    "asesor_externo", "puesto_asesor","informacion"];   
+    protected $fillable = ["nombre", "giro", "rfc","direccion", "telefono", "correo","titular", "puesto_titular","informacion"];   
 
     public function proyectos(){
         return $this->hasMany(Proyecto::class);

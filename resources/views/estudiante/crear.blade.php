@@ -19,6 +19,15 @@
     </style>
 </head>
 <body>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="hderecho" style="width: 100%; height: 20px; ">
     <div class="cmenor" style="width: 20%;"></div>
     <div class="cmayor" style="width: 80%; "></div>
@@ -81,7 +90,7 @@
         <input type='text' name='direccion' id='direccion' value="{{old('direccion')}}" class="llenar"><br>
 
         <label for='institucion_seguiridad_social' class="parrafo">Institucion seguiridad social</label>
-        <select name="institucion_seguiridad_social" id="institucion_seguridad_social" size="3" class="llenar">
+        <select name="institucion_seguiridad_social" id="institucion_seguridad_social" size="3" >
             <option value="IMSS">IMSS</option>
             <option value="ISSSTE">ISSSTE</option>
             <option value="OTROS">OTROS</option>
@@ -93,7 +102,9 @@
         {{$errors->first("numero_de_seguridad_social")}}
         <input type='text' name='numero_de_seguridad_social' id='numero_de_seguridad_social' value="{{old('numero_de_seguridad_social')}}" class="llenar"><br>
 
-        <div class="horizontal" style="margin-top: 60px; "><input class="boton" type='submit' value="Registrar"></div>
+        <div class="horizontal" style="margin-top: 60px; ">
+        <input class="boton" type='submit' value="Registrar">
+    </div>
     </form>
 
 

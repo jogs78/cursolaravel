@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreEstudianteRequest;
 use App\Http\Requests\UpdateEstudianteRequest;
 use App\Models\Estudiante;
@@ -41,6 +42,7 @@ class EstudianteController extends Controller
      */
     public function store(StoreEstudianteRequest $request)
     {
+/* 
         //GUARDAR LOS DATOS QUE VIENEN DEL FORMULARIO DE CREAR
         $proyecto_nuevo = new Proyecto();
         $proyecto_nuevo->nombre = $request->input('nombre_del_proyecto');
@@ -48,11 +50,16 @@ class EstudianteController extends Controller
 
         $datos =$request->all();
         $datos['proyecto_id']= $proyecto_nuevo->id;
-
+*/
         $nuevo = new Estudiante;
-        $nuevo->fill($datos);
+        $nuevo->fill($request->all());
 
         $nuevo->save();
+//no tiene caso pedirle el nombre del proyecto   
+//falta preguntarle su nombre_usuario
+//falta preguntarle su contraseña
+//fata agregar en la tabla usuarios 
+
 
         return redirect()->route("estudiantes.index");
     }

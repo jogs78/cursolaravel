@@ -3,6 +3,15 @@
     
 @endsection
 @section('contenido')
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
 
     <p>Registra la empresa en la que tendras tu residencia</p>

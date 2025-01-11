@@ -13,6 +13,7 @@ use App\Http\Controllers\EmpresaController;
 use App\Http\Controllers\ActividadController;
 use App\Http\Controllers\CoordinadorController;
 use App\Http\Controllers\SeguimientoController;
+use App\Http\Controllers\ConfiguracionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,8 +70,11 @@ Route::get('listar-proyectos',[AsesorController::class,'proyecto'])->middleware(
 
 //rutas especificas del coordinador
 Route::resource('periodos',PeriodoController::class)->middleware('auth');
-Route::get('coordinador.periodo.listar',[CoordinadorController::class,'periodo'])->middleware('auth')->name('coordinador.periodo.listar');
-Route::resource('estudiantes',EstudianteController::class)->middleware('auth');
+Route::resource('configuraciones',ConfiguracionController::class)->middleware('auth');
+
+Route::resource('estudiantes',EstudianteController::class)->only(['create','store']);
+Route::resource('estudiantes',EstudianteController::class)->except(['create','store'])->middleware('auth');
+
 Route::resource('asesores',AsesorController::class)->middleware('auth');
 Route::get('listar-estudiantes',[CoordinadorController::class,'estudiante'])->middleware('auth')->name('coordinador.listar-estudiantes');
 Route::get('listar-asesores',[CoordinadorController::class,'asesores'])->middleware('auth')->name('coordinador.listar-asesores');
@@ -88,7 +92,7 @@ Route::put('actualizar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoCont
 //rutas de los CRUD 
 Route::resource('proyectos',ProyectoController::class);
 Route::resource('periodos',PeriodoController::class);
-Route::resource('estudiantes',EstudianteController::class)->except(['show']);
+//Route::resource('estudiantes',EstudianteController::class)->except(['show']);
 Route::resource('parciales',ParcialController::class);
 Route::resource('asesores',AsesorController::class)->except(['show'])->middleware('auth');
 Route::resource('carreras',CarreraController::class)->except(['show']);

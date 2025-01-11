@@ -37,9 +37,10 @@ class EmpresaController extends Controller
     {
         //GUARDAR LOS DATOS QUE VIENEN DEL FORMULARIO DE CREAR
         $nuevo = new Empresa;
+
         $nuevo->fill($request->all());
         $nuevo->save();
-        return redirect()->route("empresas.index");
+        return redirect()->route("home");
     }
 
     /**

@@ -31,10 +31,6 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     
 @endsection
 @section('contenido')
-
-
-
-
 <div class="horizontal" style="margin-top:20px;"><p class="subtitulo">Lista de Periodos</p></div>
  <div style="margin-bottom: 40px;">
   <table border="1" >
@@ -51,10 +47,10 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
    <tr @if ($periodo->id == $actual) class="actual"  @endif >
     <td>{{$periodo->id}}</td>
     <td>
-      <form action="{{route('configuraciones.update', $configuracion->id )}}" method="post"  id="formulario_actual_{{$periodo->id}}">
+      <form action="" method="post"  id="formulario_actual_{{$periodo->id}}">
+        <!-- {{route("periodos.update",$periodo->id)}} -->
         @method('PUT')
         @csrf
-        <input type="hidden" name="valor" value="{{$periodo->id}}">
         <input type="submit" value="ASIGNAR ACTUAL">
       </form>
     </td>

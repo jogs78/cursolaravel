@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StorePeriodoRequest;
 use App\Http\Requests\UpdatePeriodoRequest;
+use App\Models\Configuracion;
 use App\Models\Periodo;
+use App\Providers\ConfiguracionServiceProvider;
 use Illuminate\Support\Facades\Auth;
 class PeriodoController extends Controller
 {
@@ -15,7 +17,9 @@ class PeriodoController extends Controller
     {
         //LISTAR
         $periodos = Periodo::all();
-       return view('coordinador.periodo.listar',compact('periodos')); // return view('coordinador.periodo.listar', ['todos' => $todos]);
+        $actual = ConfiguracionServiceProvider::get('periodo_id');
+        $configuracion = Configuracion::where('variable','periodo_id')->first();
+        return view('coordinador.periodo.listar',compact('periodos','actual','configuracion')); // return view('coordinador.periodo.listar', ['todos' => $todos]);
     }
 
     /**

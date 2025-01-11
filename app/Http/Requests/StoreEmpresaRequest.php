@@ -26,7 +26,7 @@ class StoreEmpresaRequest extends FormRequest
             "giro"=>"required",
             "rfc"=>"required|max:13|min:12",
             "direccion"=>"required",
-            "telefono"=>"required|numeric|max:10|min:10",
+            "telefono"=>"required|numeric",
             "correo"=>"required|email",
             "titular"=>"required",
             "puesto_titular"=>"required",

@@ -53,7 +53,9 @@ class ConfiguracionController extends Controller
      */
     public function update(UpdateConfiguracionRequest $request, Configuracion $configuracion)
     {
-        //
+        $configuracion->valor= $request->valor;
+        $configuracion->save();
+        return redirect()->back();
     }
 
     /**

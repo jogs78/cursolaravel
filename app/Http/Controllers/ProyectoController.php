@@ -34,6 +34,9 @@ class ProyectoController extends Controller
     {
         //esto debe esta en una transaccion
         //GUARDAR LOS DATOS QUE VIENEN DEL FORMULARIO DE CREAR
+        //SI empresa_id = -1 es que la empresa no esta dadad de alta 
+        if($request->empresa_id == -1 ) return redirect(route('empresas.create'));      
+        
         $nuevo = new Proyecto;
         $nuevo->fill($request->all());
         $nuevo->save();
@@ -86,11 +89,15 @@ class ProyectoController extends Controller
 
         $estudiante = Auth::user()->usa;
         $proyecto = $estudiante->proyecto;
+
+
+
         //debe verificar si tiene un proyecto ya creado 
         if(! is_null( $proyecto )){
             return view ('proyecto.mostrar',compact('proyecto'));
 
         } 
+        
         //return view (vista que muestra el proyecto y con el enlace de "actividades del proyecto")
         //si no entonces que cargue el registro
         
