@@ -8,11 +8,15 @@
 .centro{display: flex; justify-content: center;}
 .titulo{text-align:center; font-size: 50px; font-weight: bold;}
 .subtitulo{text-align:center; font-size: 45px; font-weight: bold;}
-.parrafo{font-size: 30px; margin-top:30px;}
+.parrafo{font-size: 20px;  font-weight: bold;}
 .boton{background-color: rgb(25, 118, 210); padding: 15px; border-radius: 5px; color: white; border: none; cursor: pointer; margin-top:30px;}
 .boton:hover{background-color: rgb(74, 139, 204);}
-.llenar{height: 25px; font-size: 18px;  margin-top: 30px;}
-*{margin: 0; padding: 0;}
+.llenar{margin-top:16px; font-size: 18px; margin-left:12px;}
+table{border: 2px solid rgb(19, 46, 68); border-collapse: collapse; }
+th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
+.thcontenido{font-weight: normal;}
+.thfondo{background-color: rgb(204, 216, 228);}
+.bodydiv{margin-left: 20px; margin-right: 20px;}
 </style>
 @section('encabezado')
     
@@ -20,32 +24,31 @@
 @section('contenido')
 
 <div style="margin-top:20px;">
-    <p>Proyecto</p>
+<div class="horizontal"><p class="subtitulo">Proyecto</p></div>
 
     <form action="{{route("proyectos.store")}}" method="POST" enctype="application/x-www-form-urlencoded">
         @csrf
-        <label for='nombre'>Nombre/s</label>
+        <label for='nombre' class="parrafo">Nombre/s</label>
         {{$errors->first("nombre")}}
-        <input type='text' name='nombre' id='nombre' value="{{old('nombre')}}"><br>
+        <input type='text' name='nombre' id='nombre' value="{{old('nombre')}}" class="llenar"><br>
 
-        <label for='objetivo_general'>Objetivo General</label>
+        <label for='objetivo_general' class="parrafo">Objetivo General</label>
         {{$errors->first("objetivo_general")}}
-        <input type='text' name='objetivo_general' id='objetivo_general' value="{{old('objetivo_general')}}"><br>
+        <input type='text' name='objetivo_general' id='objetivo_general' value="{{old('objetivo_general')}}" class="llenar"><br>
 
-        <label for='lugar'>Lugar</label>
+        <label for='lugar' class="parrafo">Lugar</label>
         {{$errors->first("lugar")}}
-        <input type='text' name='lugar' id='lugar' value="{{old('lugar')}}"><br>
+        <input type='text' name='lugar' id='lugar' value="{{old('lugar')}}" class="llenar"><br>
 
-        <label for='informacion'>Informacion</label>
+        <label for='informacion' class="parrafo">Informacion</label>
         {{$errors->first("informacion")}}
-        <input type='text' name='informacion' id='informacion' value="{{old('informacion')}}"><br>
+        <input type='text' name='informacion' id='informacion' value="{{old('informacion')}}" class="llenar"><br>
 
-        <label for='justificacion'>Justificacion</label>
+        <label for='justificacion' class="parrafo">Justificacion </label>
         {{$errors->first("justificacion")}}
-        <input type='text' name='justificacion' id='justificacion' value="{{old('justificacion')}}"><br>
+        <textarea name='justificacion' id='justificacion' value="{{old('justificacion')}}"></textarea><br>
 
-
-        <label for='asesor_id'>Asesor</label>
+        <label for='asesor_id' class="parrafo">Asesor</label>
         <select name="asesor_id" id="asesor_id">
          
             @foreach ($asesores as $asesor)
@@ -53,20 +56,16 @@
             @endforeach
         </select>
         <br>
-        <label for='externo_id'>Asesor Externo</label>
-        <select name="asesor_externo" id="externo_id">
- 
-            @foreach ($externos as $externo)
-                <option value="{{$externo->id}}">{{$externo->titulo}} {{$externo->nombre}}</option>
-            @endforeach
-            <option value="-1">EL ASESOR EXTERNO NO ESTA DADA DE ALTA</option>
+        <label for='externo_id' class="parrafo">Asesor Externo</label>
+        <input type='text' name='externo_id' id='externo_id' value="{{old('externo_id')}}" class="llenar"><br>
+        <!--<option value="-1">EL ASESOR EXTERNO NO ESTA DADA DE ALTA</option>-->
 
         </select>
         <br>
 
         
 
-        <label for='empresa_id'>Empresa</label>
+        <label for='empresa_id' class="parrafo">Empresa</label>
         <select name="empresa_id" id="empresa_id">
          
             @foreach ($empresas as $empresa)
@@ -76,13 +75,13 @@
         </select>
         <br>
 
-        <label for='periodo_id'>Periodo:</label>
-        <input type="hidden" name="periodo_id" value="{{$periodo->id}}">
+        <label for='periodo_id' class="parrafo">Periodo:</label>
+        <input type="hidden" name="periodo_id" value="{{$periodo->id}}" class="llenar">
         {{$periodo->nombre}}
         <br>
         
        
-        <input type='submit'>
+        <input type='submit' class="boton">
     </form>
 </div>
 @endsection

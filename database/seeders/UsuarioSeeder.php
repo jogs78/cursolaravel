@@ -70,5 +70,6 @@ class UsuarioSeeder extends Seeder
         $nuevo->usa_type = "App\Models\Coordinador";
         $nuevo->save();
 
+
     }
 }

@@ -60,13 +60,13 @@
         {{$errors->first("puesto_titular")}}
         <input type='text' name='puesto_titular' id='puesto_titular' value="{{old('puesto_titular')}}"><br>
        
-        <label for='asesor_externo'>Nombre del Asesor externo</label>
+        <!--<label for='asesor_externo'>Nombre del Asesor externo</label>
         {{$errors->first("asesor_externo")}}
         <input type='text' name='asesor_externo' id='asesor_externo' value="{{old('asesor_externo')}}"><br>
 
         <label for='puesto_asesor'>Puesto del Asesor</label>
         {{$errors->first("puesto_asesor")}}
-        <input type='text' name='puesto_asesor' id='puesto_asesor' value="{{old('puesto_asesor')}}"><br>
+        <input type='text' name='puesto_asesor' id='puesto_asesor' value="{{old('puesto_asesor')}}"><br>-->
 
         <label for='informacion'>Informacion adicional de la empresa: </label>
         {{$errors->first("informacion")}}

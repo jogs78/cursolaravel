@@ -55,10 +55,10 @@ class EstudianteController extends Controller
         $nuevo->fill($request->all());
 
         $nuevo->save();
-//no tiene caso pedirle el nombre del proyecto   
+//no tiene caso pedirle el nombre del proyecto
 //falta preguntarle su nombre_usuario
 //falta preguntarle su contraseña
-//fata agregar en la tabla usuarios 
+//falta agregar en la tabla usuarios 
 
 
         return redirect()->route("estudiantes.index");

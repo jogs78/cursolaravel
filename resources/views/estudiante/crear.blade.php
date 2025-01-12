@@ -67,9 +67,9 @@
         @endforeach
         <input type='text' name='numero_de_control' id='numero_de_control' value="{{old('numero_de_control')}}" class="llenar"><br>
 
-        <label for='nombre_del_proyecto' class="parrafo">Nombre del Proyecto</label>
+        <!--<label for='nombre_del_proyecto' class="parrafo">Nombre del Proyecto</label>
         {{$errors->first("nombre_del_proyecto")}}
-        <input type='text' name='nombre_del_proyecto' id='nombre_del_proyecto' value="{{old('nombre_del_proyecto')}}" class="llenar"><br>
+        <input type='text' name='nombre_del_proyecto' id='nombre_del_proyecto' value="{{old('nombre_del_proyecto')}}" class="llenar"><br>-->
 
         <label for='telefono' class="parrafo">Telefono</label>
         @foreach ($errors->get('telefono') as $texto) 
