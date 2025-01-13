@@ -29,7 +29,11 @@ class UsuarioController extends Controller
      */
     public function store(StoreUsuarioRequest $request)
     {
-        //
+        $nuevo = new Usuario;
+
+        $nuevo->fill($request->all());
+        $nuevo->save();
+        return redirect()->route("home");
     }
 
     /**

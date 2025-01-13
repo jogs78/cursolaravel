@@ -10,10 +10,11 @@
         .linea{background-color: rgb(10, 105, 163); height: 4px; border-radius: 2px; width: 90%;} 
         .hderecho {display: flex; justify-content: right; }
         .horizontal {display: flex; justify-content: center; width: 100%;}
-        .centro{display: flex; justify-content: center;}
+        .centro{display: flex; justify-content: center; width: 100%;}
         .titulo{text-align:center; font-size: 50px; font-weight: bold;}
         .parrafo{font-size: 25px; margin-top: 20px;}
         .boton{background-color: rgb(25, 118, 210); width: 120px; height: 30px; border-radius: 5px; color: white; border: none; cursor: pointer;}
+        .boton:hover{background-color: rgb(74, 139, 204);}
         .llenar{height: 20px; font-size: 15px; margin-top: 20px;}
         *{margin: 0; padding: 0;}
     </style>
@@ -40,9 +41,10 @@
     <div class="linea"></div>
 </div>
 
-<div class="centro"; style="margin-top: 60px; ">
-    <form action="{{route("estudiantes.store")}}" method="POST" enctype="application/x-www-form-urlencoded">
+<div class="centro" style="margin-top: 60px; ">
+    <form action="{{route("estudiantes.store")}}" method="POST" enctype="application/x-www-form-urlencoded" id="form1">
         @csrf
+
         <label for='nombre' class="parrafo">Nombre/s</label>
         {{$errors->first("nombre")}}
         <input type='text' name='nombre' id='nombre' value="{{old('nombre')}}" class="llenar"><br>
@@ -66,10 +68,6 @@
             <li>{{$texto}}</li>
         @endforeach
         <input type='text' name='numero_de_control' id='numero_de_control' value="{{old('numero_de_control')}}" class="llenar"><br>
-
-        <!--<label for='nombre_del_proyecto' class="parrafo">Nombre del Proyecto</label>
-        {{$errors->first("nombre_del_proyecto")}}
-        <input type='text' name='nombre_del_proyecto' id='nombre_del_proyecto' value="{{old('nombre_del_proyecto')}}" class="llenar"><br>-->
 
         <label for='telefono' class="parrafo">Telefono</label>
         @foreach ($errors->get('telefono') as $texto) 
@@ -101,12 +99,59 @@
         <label for='numero_de_seguridad_social'class="parrafo">Numero de seguridad social</label>
         {{$errors->first("numero_de_seguridad_social")}}
         <input type='text' name='numero_de_seguridad_social' id='numero_de_seguridad_social' value="{{old('numero_de_seguridad_social')}}" class="llenar"><br>
-
-        <div class="horizontal" style="margin-top: 60px; ">
-        <input class="boton" type='submit' value="Registrar">
-    </div>
     </form>
+</div>
+<div class="centro" >
 
+    <form action="{{route("usuarios.store")}}" method="POST" enctype="application/x-www-form-urlencoded" id="form2" style="width: 36%;">
+            @csrf
 
+            <label for='nombre_usuario' class="parrafo">Nombre de Usuario</label>
+            {{$errors->first("nombre_usuario")}}
+            <input type='text' name='nombre_usuario' id='nombre_usuario' value="{{old('nombre_usuario')}}" class="llenar"><br>
+
+            <label for='contraseña' class="parrafo">Contraseña</label>
+            {{$errors->first("contraseña")}}
+            <input type='text' name='contraseña' id='contraseña' value="{{old('contraseña')}}" class="llenar"><br>
+        </form>
+
+</div>
+<div  class="centro" style="margin-top: 60px; ">
+        <button id="submitButton" class="boton" type='button' style="margin-bottom: 30px">Registrar</button>
+</div>
 </body>
 </html>
+
+<script>
+          document.getElementById('submitButton').addEventListener('click', function () {
+        const form1 = document.getElementById('form1');
+        const form2 = document.getElementById('form2');
+
+        // Enviar Formulario 1
+        fetch(form1.action, {
+            method: form1.method,
+            body: new FormData(form1),
+            headers: {
+                'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
+            }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Error al enviar Formulario 1');
+            return fetch(form2.action, {
+                method: form2.method,
+                body: new FormData(form2),
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
+                }
+            });
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Error al enviar Formulario 2');
+            alert('Ambos formularios enviados correctamente');
+        })
+        .catch(error => {
+            console.error(error);
+            alert('Hubo un error al enviar los formularios');
+        });
+    });
+</script>

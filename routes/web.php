@@ -97,6 +97,7 @@ Route::resource('parciales',ParcialController::class);
 Route::resource('asesores',AsesorController::class)->except(['show'])->middleware('auth');
 Route::resource('carreras',CarreraController::class)->except(['show']);
 Route::resource('empresas',EmpresaController::class);
+Route::resource('usuarios',UsuarioController::class);
 Route::resource('proyectos.actividades',ActividadController::class);
 
 //rutas de vistas para aviso o Extras al CRUD
