@@ -29,17 +29,18 @@ class StoreEstudianteRequest extends FormRequest
             "telefono"=>"required|numeric|max_digits:10|min_digits:10",
             "direccion"=>"required",
             "numero_de_seguridad_social"=>"required",
+            "contraseña"=>"required",
         ];
     }
 
     public function messages(): array
     {
         return [
-            "nombre.required"=>"Es necesario llenar este campo 1",
-            "apellido_paterno.required"=>"Es necesario llenar este campo 2",
-            "correo_electronico.required"=>"Es necesario llenar este campo 3",
+            "nombre.required"=>"Por favor, ingrese su nombre",
+            "apellido_paterno.required"=>"Por favor, ingrese su apellido paterno",
+            "correo_electronico.required"=>"Por favor, ingrese su correo electronico",
             "correo_electronico.email" => "Por favor, introduce un correo electrónico válido.",
-            "numero_de_control.required"=>"Es necesario llenar este campo 4",
+            "numero_de_control.required"=>"Por favor, ingrese su numero de control",
             "numero_de_control.numeric"=>"Este Campo debe ser un Numero",
             "numero_de_control.max_digits"=>"Este Campo admite maximo 8 digitos",
             "numero_de_control.min_digits"=>"Este Campo admite minimo 3 digitos",
@@ -48,8 +49,9 @@ class StoreEstudianteRequest extends FormRequest
             "telefono.numeric"=>"Este Campo debe ser un Numero",
             "telefono.max_digits"=>"Este Campo admite maximo 10 digitos",
             "telefono.min_digits"=>"Este Campo admite minimo 10 digitos",
-            "direccion.required"=>"Es necesario llenar este campo 7",
-            "numero_de_seguridad_social.required"=>"Es necesario llenar este campo 8",
+            "direccion.required"=>"Por favor, ingrese su direccion",
+            "numero_de_seguridad_social.required"=>"Por favor, ingrese su numero de seguridad social",
+            "contraseña"=>"Por favor, ingrese una contraseña",
         ];
     }
 }

@@ -37,8 +37,8 @@
  <form action="{{route('adentro')}}" method="POST">
   @csrf
     <div>
-        <label for='nombre' class="parrafo" >Nombre: </label>
-        <input class="llenar" type='text' name='nombre' id='nombre' placeholder="Ingresa tu usuario"><br>
+        <label for='nombre' class="parrafo" >Correo electronico: </label>
+        <input class="llenar" type='text' name='nombre' id='nombre' placeholder="Ingresa tu correo"><br>
     </div>
     <div style="margin-top: 20px;">
         <label for='contra'  class="parrafo">Contraseña: </label>

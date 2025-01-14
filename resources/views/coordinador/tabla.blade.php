@@ -33,8 +33,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
   <tbody>
  @foreach ($proyectos as $proyecto)
    <tr>
-    <td>{{$proyecto->nombre}}
-    </td>
+    <td style="padding:5px;">{{$proyecto->nombre}}</td>
     
     <td>
       <form action="{{route('coordinadores.asignarAsesor3',$proyecto->id)}}" method="post" style="display:flex " >
@@ -61,7 +60,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
 
     </td>
 
-    <td>{{$proyecto->empresa->nombre}}</td>
+    <td style="padding:5px;">{{$proyecto->empresa->nombre}}</td>
    </tr>
  @endforeach
 </tbody>

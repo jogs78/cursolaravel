@@ -27,7 +27,8 @@ class ExternoController extends Controller
      */
     public function create()
     {
-        //
+        $externos = Externo::all();
+        return view('externo.crear',compact('externos'));
     }
 
     /**
@@ -35,7 +36,10 @@ class ExternoController extends Controller
      */
     public function store(StoreExternoRequest $request)
     {
-        //
+        $nuevo = new Externo;
+        $nuevo->fill($request->all());
+        $nuevo->save();
+        return redirect()->route("externos.index");
     }
 
     /**
@@ -51,7 +55,7 @@ class ExternoController extends Controller
      */
     public function edit(Externo $externo)
     {
-        //
+        return view('asesor.editar',compact("asesor"));
     }
 
     /**
@@ -59,7 +63,9 @@ class ExternoController extends Controller
      */
     public function update(UpdateExternoRequest $request, Externo $externo)
     {
-        //
+        $externo->fill($request->all());
+        $externo->save();
+        return redirect()->route("externos.index");
     }
 
     /**
@@ -67,7 +73,8 @@ class ExternoController extends Controller
      */
     public function destroy(Externo $externo)
     {
-        //
+        $asesor->delete();
+        return redirect()->route("home");
     }
 
     public function crearCuenta(Externo $externo)

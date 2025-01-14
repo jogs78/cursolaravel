@@ -24,11 +24,11 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
 @section('contenido')
 
 <div style="margin-top:20px;">
-<div class="horizontal"><p class="subtitulo">Proyecto</p></div>
-
+<div class="horizontal"><p class="subtitulo">Proyecto</p></div><br>
+    <div class="centro">
     <form action="{{route("proyectos.store")}}" method="POST" enctype="application/x-www-form-urlencoded">
         @csrf
-        <label for='nombre' class="parrafo">Nombre/s</label>
+        <label for='nombre' class="parrafo">Nombre del proyecto</label>
         {{$errors->first("nombre")}}
         <input type='text' name='nombre' id='nombre' value="{{old('nombre')}}" class="llenar"><br>
 
@@ -42,11 +42,14 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
 
         <label for='informacion' class="parrafo">Informacion</label>
         {{$errors->first("informacion")}}
-        <input type='text' name='informacion' id='informacion' value="{{old('informacion')}}" class="llenar"><br>
+        <input type='text' name='informacion' id='informacion' value="{{old('informacion')}}" class="llenar">
 
-        <label for='justificacion' class="parrafo">Justificacion </label>
+        <div style="margin-top:15px; margin-bottom:8px;">
+        <label for='justificacion' class="parrafo" style="display: inline-block; vertical-align: top;">Justificacion </label>
         {{$errors->first("justificacion")}}
-        <textarea name='justificacion' id='justificacion' value="{{old('justificacion')}}" rows="4" ></textarea><br>
+        <textarea name='justificacion' id='justificacion' value="{{old('justificacion')}}" rows="4"></textarea>
+        <br>
+        </div>
 
         <label for='asesor_id' class="parrafo">Asesor</label>
         <select name="asesor_id" id="asesor_id">
@@ -55,21 +58,24 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
             @endforeach
         </select>
         <br>
-        <label for='titulo_ae' class="parrafo">Titulo Asesor Externo</label>
+        <label for='titulo_ae' class="parrafo">Titulo del Asesor Externo</label>
         <input type='text' name='titulo_ae' id='titulo_ae' value="{{old('titulo_ae')}}" class="llenar"><br>
         <br>
-        <label for='nombre_ae' class="parrafo">nombre Asesor Externo</label>
+        <label for='nombre_ae' class="parrafo">Nombre del Asesor Externo</label>
         <input type='text' name='nombre_ae' id='nombre_ae' value="{{old('nombre_ae')}}" class="llenar"><br>
         <br>
-        <label for='apellido_paterno_ae' class="parrafo">apellido_paterno Asesor Externo</label>
+        <label for='apellido_paterno_ae' class="parrafo">Apellido paterno del Asesor Externo</label>
         <input type='text' name='apellido_paterno_ae' id='apellido_paterno_ae' value="{{old('apellido_paterno_ae')}}" class="llenar"><br>
         <br>
-        <label for='apellido_materno_ae' class="parrafo">apellido_materno Asesor Externo</label>
+        <label for='apellido_materno_ae' class="parrafo">Apellido materno del Asesor Externo</label>
         <input type='text' name='apellido_materno_ae' id='apellido_materno_ae' value="{{old('apellido_materno_ae')}}" class="llenar"><br>
         <br>
         <label for='externo' class="parrafo">Asesor Externo</label>
         <input type='text' name='externo' id='externo' value="{{old('externo')}}" class="llenar"><br>
         <br>
+        <!--<label for='correo_electronico' class="parrafo">Correo electronico del asesor externo</label>
+        <input type='text' name='correo_electronico' id='correo_electronico' value="{{old('correo_electronico')}}" class="llenar"><br>
+        <br>-->
         <label for='externo_puesto' class="parrafo">Puesto del Asesor Externo</label>
         <input type='text' name='externo_puesto' id='externo_puesto' value="{{old('externo_puesto')}}" class="llenar"><br>
 
@@ -87,15 +93,16 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
             @endforeach
                 <option value="-1">LA EMPRESA NO ESTA DADA DE ALTA</option>
         </select>
-        <br>
+        <br><br>
 
-        <label for='periodo_id' class="parrafo">Periodo:</label>
+        <label for='periodo_id' class="parrafo" >Periodo:</label>
         <input type="hidden" name="periodo_id" value="{{$periodo->id}}" class="llenar">
         {{$periodo->nombre}}
         <br>
         
        
-        <input type='submit' class="boton">
+        <div class="centro"><input type='submit' class="boton"></div>
     </form>
+    </div>
 </div>
 @endsection

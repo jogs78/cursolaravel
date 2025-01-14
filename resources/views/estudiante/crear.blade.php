@@ -105,7 +105,7 @@
         <input type='text' name='contraseña' id='contraseña' value="{{old('contraseña')}}" class="llenar"><br>
 
         <div  class="centro" style="margin-top: 60px; ">
-            <input type='submit' id="submitButton" class="boton"  style="margin-bottom: 30px">Registrar</button>
+            <input type='submit' id="submitButton" class="boton"  style="margin-bottom: 30px">
         </div>
     
     </form>

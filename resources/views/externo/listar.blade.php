@@ -11,6 +11,10 @@
 .parrafo{font-size: 20px;  font-weight: bold;}
 .boton{background-color: rgb(25, 118, 210); color: white; border: none; cursor: pointer; margin-top:10px;margin-bottom:10px; margin-left:5px;  margin-right:5px;}
 .boton:hover{background-color: rgb(74, 139, 204);}
+.botonEditar{background-color: rgb(25, 118, 210); color: white; cursor: pointer; text-decoration: none; padding: 3px;  border-radius: 3px; border: none;}
+.botonEditar:hover{background-color: rgb(74, 139, 204);}
+.botonBorrar{background-color: rgb(210, 25, 25); color: white; cursor: pointer; text-decoration: none; padding: 3px;  border-radius: 3px; border: none;}
+.botonBorrar:hover{background-color: rgb(204, 74, 74);}
 .llenar{margin-top:16px; font-size: 18px; margin-left:12px;}
 table{border: 2px solid rgb(19, 46, 68); border-collapse: collapse; margin-top:20px; }
 th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
@@ -26,36 +30,38 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     <!--@php
     $todos = $todos ?? [];
     @endphp-->
-    <div style="margin-bottom: 40px;">
+    <div style="margin-bottom: 40px;" class="centro">
     <table border="1">
         <thead>
             <th class="thfondo">ID</th>
             <th class="thfondo">NOMBRE</th>
-            <th class="thfondo">APELLIDO</th>
+            <th class="thfondo">APELLIDOS</th>
+            <th class="thfondo">ACCIONES</th>
             <th class="thfondo">USUARIO</th>
         </thead>
         <tbody>
         @foreach ($todos as $externo)
         <tr>
-            <td>{{$externo->id}}</td>
-            <td>{{$externo->nombre}}</td>
-            <td>
-                <a href="{{route("externos.edit",$externo->id)}}">Editar</a>
+            <td style="padding:5px;">{{$externo->id}}</td>
+            <td style="padding:5px;">{{$externo->nombre}}</td>
+            <td style="padding:5px;">{{$externo->apellido_paterno}} {{$externo->apellido_materno}}</td>
+            <td style="padding:8px;">
+                <a href="{{route("externos.edit",$externo->id)}}" class="botonEditar">Editar</a>
                 <form action="{{route("externos.destroy",$externo->id)}}" method="post">
                 @method('DELETE')
                 @csrf
-                <input type="submit" value="Borrar">
+                <input type="submit" value="Borrar" class="botonBorrar" style="margin-top:5px;">
 
                 </form>
             
 
             </td>
-            <td>
+            <td style="padding:5px;">
                 @if ($externo->usuario->nombre_usuario == 'Sin cuenta')
                     <form action="{{route('externos.crearcuenta',$externo->id)}}" method="post">
                         @method('PUT')
                         @csrf
-                        <input type="submit" value="Crear Cuenta">
+                        <input type="submit" value="Crear Cuenta" class="botonEditar">
                     </form>
                 @else
                     {{$externo->usuario->nombre_usuario}}                
@@ -67,8 +73,5 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
         </tbody>
     </table>
     </div>
-    <a href="{{route("estudiantes.create")}}" class="boton">Agregar un Estudiante</a>
-
-    <a href="{{route('generar-asesores.excel')}}" class="boton">Descargar lista</a>
 
     @endsection
