@@ -13,7 +13,8 @@ class ConfiguracionController extends Controller
      */
     public function index()
     {
-        //
+        $todos = Configuracion::all();
+        return view('configuracion.listar',compact('todos'));
     }
 
     /**
@@ -21,7 +22,8 @@ class ConfiguracionController extends Controller
      */
     public function create()
     {
-        //
+        $configuraciones = Configuracion::all();
+        return view('configuracion.crear',compact('configuraciones'));
     }
 
     /**
@@ -29,7 +31,11 @@ class ConfiguracionController extends Controller
      */
     public function store(StoreConfiguracionRequest $request)
     {
-        //
+        $nuevo = new Configuracion;
+
+        $nuevo->fill($request->all());
+        $nuevo->save();
+        return redirect()->route("configuraciones.index");
     }
 
     /**
@@ -45,7 +51,7 @@ class ConfiguracionController extends Controller
      */
     public function edit(Configuracion $configuracion)
     {
-        //
+        return view('configuracion.editar',compact("configuracion"));
     }
 
     /**
@@ -53,9 +59,9 @@ class ConfiguracionController extends Controller
      */
     public function update(UpdateConfiguracionRequest $request, Configuracion $configuracion)
     {
-        $configuracion->valor= $request->valor;
+        $configuracion->fill($request->all());
         $configuracion->save();
-        return redirect()->back();
+        return redirect()->route("configuraciones.index");
     }
 
     /**
@@ -63,6 +69,7 @@ class ConfiguracionController extends Controller
      */
     public function destroy(Configuracion $configuracion)
     {
-        //
+        $configuracion->delete();
+        return redirect()->route("configuraciones.index");
     }
 }

@@ -66,7 +66,7 @@
                             <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('periodos.index')}}">GESTIONAR PERIODO</a></div>
                             <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('asesores.index')}}">ASESORES INTERNOS</a></div><!--(APARTE DE TENER LA OPCION DE AGREGAR, TENDRA LAS OPCIONES DE EXPORTAR e IMPORTAR)-->
                             <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('externos.index')}}">ASESORES EXTERNOS</a></div><!--(APARTE DE TENER LA OPCION DE AGREGAR, TENDRA LAS OPCIONES DE EXPORTAR e IMPORTAR)-->
-                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="#">CONFIGURACIONES</a></div><!--FALTA ESTE CRUD-->
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('configuraciones.index')}}">CONFIGURACIONES</a></div><!--FALTA ESTE CRUD-->
                             
 
                         

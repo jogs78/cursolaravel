@@ -150,9 +150,10 @@ class EstudianteController extends Controller
         $estudiante = Auth::getUser()->usa;
         $jefe = ConfiguracionServiceProvider::get('jefe_division');
 //        $periodo = Periodo::find(ConfiguracionServiceProvider::get('periodo_id'))->nombre;
-
+        $numeroControl = Auth::user()->numero_de_control; 
         $pdf = Pdf::loadview('estudiante.impresiones.solicitud',compact('jefe','estudiante')); 
-        return $pdf->download('Solicitud.pdf');
+        $nombreArchivo = 'Solicitud ' . $numeroControl . '.pdf';
+        return $pdf->download($nombreArchivo);
         return view('estudiante.impresiones.solicitud'); 
     }
 

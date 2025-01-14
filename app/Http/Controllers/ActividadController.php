@@ -56,7 +56,7 @@ class ActividadController extends Controller
      */
     public function edit(Proyecto $proyecto, Actividad $actividad)
     {
-        //
+        return view('actividad.editar',compact("actividad"));
     }
 
     /**
@@ -72,6 +72,7 @@ class ActividadController extends Controller
      */
     public function destroy(Proyecto $proyecto, Actividad $actividad)
     {
-        //
+        $actividad->delete();
+        return redirect()->route("actividad.index");
     }
 }

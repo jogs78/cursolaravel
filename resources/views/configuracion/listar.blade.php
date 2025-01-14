@@ -26,24 +26,24 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     
 @endsection
 @section('contenido')
-<div class="horizontal" style="margin-top:20px;"><p class="subtitulo">Asesores Internos Registrados</p></div>
+<div class="horizontal" style="margin-top:20px;"><p class="subtitulo">Configuraciones</p></div>
     <div style="margin-bottom: 40px;" class="centro">
     <table border="1">
         <thead>
             <th class="thfondo">ID</th>
-            <th class="thfondo">NOMBRE</th>
-            <th class="thfondo">APELLIDOS</th>
+            <th class="thfondo">VARIABLE</th>
+            <th class="thfondo">VALOR</th>
             <th class="thfondo">ACCIONES</th>
         </thead>
         <tbody>
-        @foreach ($todos as $asesor)
+        @foreach ($todos as $configuracion)
         <tr>
-            <td style="padding:5px;">{{$asesor->id}}</td>
-            <td style="padding:5px;">{{$asesor->nombre}}</td>
-            <td style="padding:5px;">{{$asesor->apellido_paterno}} {{$asesor->apellido_materno}}</td>
+            <td style="padding:5px;">{{$configuracion->id}}</td>
+            <td style="padding:5px;">{{$configuracion->variable}}</td>
+            <td style="padding:5px;">{{$configuracion->valor}}</td>
             <td style="padding:8px;">
-                <a href="{{route("asesores.edit",$asesor->id)}}" class="botonEditar">Editar</a>
-                <form action="{{route("asesores.destroy",$asesor->id)}}" method="post">
+                <a href="{{route("configuraciones.edit",$configuracion->id)}}" class="botonEditar">Editar</a>
+                <form action="{{route("configuraciones.destroy",$configuracion->id)}}" method="post">
                 @method('DELETE')
                 @csrf
                 <input type="submit" value="Borrar" class="botonBorrar" style="margin-top:5px;">
@@ -58,8 +58,8 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
         </tbody>
     </table>
     </div>
-    <div class="centro"><a href="{{route("asesores.create")}}" class="boton" >Agregar un Asesor</a></div>
+    <div class="centro"><a href="{{route("configuraciones.create")}}" class="boton" >Agregar una configuracion</a></div>
 
-    <!--<a href="{{route('generar-asesores.excel')}}" class="boton">Descargar lista</a>-->
+  
 
     @endsection

@@ -26,7 +26,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     
 @endsection
 @section('contenido')
-<div class="horizontal" style="margin-top:20px;"><p class="subtitulo">Lista de Estudiantes Registrados</p></div>
+<div class="horizontal" style="margin-top:20px;"><p class="subtitulo">Asesores Externos Registrados</p></div>
     <!--@php
     $todos = $todos ?? [];
     @endphp-->

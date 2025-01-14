@@ -9,10 +9,14 @@
 .titulo{text-align:center; font-size: 50px; font-weight: bold;}
 .subtitulo{text-align:center; font-size: 45px; font-weight: bold;}
 .parrafo{font-size: 20px;  font-weight: bold;}
-.boton{background-color: rgb(25, 118, 210); padding: 15px; border-radius: 5px; color: white; border: none; cursor: pointer; margin-top:30px;}
+.boton{background-color: rgb(25, 118, 210); color: white; border: none; cursor: pointer; margin-top:10px;margin-bottom:10px; margin-left:5px;  margin-right:5px;}
 .boton:hover{background-color: rgb(74, 139, 204);}
+.botonEditar{background-color: rgb(25, 118, 210); color: white; cursor: pointer; text-decoration: none; padding: 3px;  border-radius: 3px; border: none;}
+.botonEditar:hover{background-color: rgb(74, 139, 204);}
+.botonBorrar{background-color: rgb(210, 25, 25); color: white; cursor: pointer; text-decoration: none; padding: 3px;  border-radius: 3px; border: none;}
+.botonBorrar:hover{background-color: rgb(204, 74, 74);}
 .llenar{margin-top:16px; font-size: 18px; margin-left:12px;}
-table{border: 2px solid rgb(19, 46, 68); border-collapse: collapse; }
+table{border: 2px solid rgb(19, 46, 68); border-collapse: collapse; margin-top:20px; }
 th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
 .thcontenido{font-weight: normal;}
 .thfondo{background-color: rgb(204, 216, 228);}
@@ -46,7 +50,17 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
   <tr>
    <th class="thcontenido">{{$actividad->nombre}}</th>
    <th class="thcontenido">{{$actividad->semanas}}</th>
-   <th>Editar Borrar</th>
+   <th style="padding:8px;">
+                <a href="{{route("actividades.edit",$actividad->id)}}" class="botonEditar">Editar</a>
+                <form action="{{route("actividades.destroy",$actividad->id)}}" method="post">
+                @method('DELETE')
+                @csrf
+                <input type="submit" value="Borrar" class="botonBorrar" style="margin-top:5px;">
+
+                </form>
+            
+
+    </th>
   </tr>
   @empty
   <tr>

@@ -73,9 +73,6 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
         <label for='apellido_materno_ae' class="parrafo">Apellido materno del Asesor Externo</label>
         <input type='text' name='apellido_materno_ae' id='apellido_materno_ae' value="{{old('apellido_materno_ae')}}" class="llenar"><br>
         <br>
-        <!--<label for='correo_electronico' class="parrafo">Correo electronico del asesor externo</label>
-        <input type='text' name='correo_electronico' id='correo_electronico' value="{{old('correo_electronico')}}" class="llenar"><br>
-        <br>-->
         <label for='puesto_ae' class="parrafo">Puesto del Asesor Externo</label>
         <input type='text' name='puesto_ae' id='puesto_ae' value="{{old('puesto_ae')}}" class="llenar"><br>
 
