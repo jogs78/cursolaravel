@@ -35,5 +35,14 @@ class Estudiante extends Model
         //Parcial tiene estudiante_id
         return $this->hasMany(Parcial::class);
     }
+
+    public function parcial($cual){
+        //Parcial tiene estudiante_id
+        return $this->hasOne(Parcial::class)->where('consecutivo', $cual);
+    }
+    public function ultimo(){
+        //Parcial tiene estudiante_id
+        return $this->hasOne(Ultimo::class);
+    }
     
 }

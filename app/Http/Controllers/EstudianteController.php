@@ -15,6 +15,8 @@ use App\Models\Periodo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use App\Models\Parcial;
+use App\Models\Ultimo;
 
 class EstudianteController extends Controller
 {
@@ -107,7 +109,12 @@ class EstudianteController extends Controller
     }
 
     public function promedio(){
-            return view('estudiante.promedio');
+        $estudiante = Auth::getUser()->usa;
+        $primer = $estudiante->parcial('primer')->first();
+        $segundo = $estudiante->parcial('segundo')->first();
+        $ultimo = $estudiante->ultimo;
+
+            return view('estudiante.promedio',compact('primer','segundo','ultimo'));
     }
 
     public function mostrar($pagina)
@@ -169,7 +176,8 @@ class EstudianteController extends Controller
     public function primer()
     {
         $estudiante = Auth::getUser()->usa;
-        $pdf = Pdf::loadview('estudiante.impresiones.seguimientos.primer',compact('estudiante')); 
+        $primer = $estudiante->parcial('primer')->first();
+        $pdf = Pdf::loadview('estudiante.impresiones.seguimientos.primer',compact('estudiante','primer')); 
         return $pdf->download('Primer_Seguimiento.pdf');
         return view('estudiante.impresiones.seguimientos.primer'); 
     }

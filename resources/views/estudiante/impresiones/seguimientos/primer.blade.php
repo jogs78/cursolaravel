@@ -69,7 +69,7 @@
             <tr>
                 <th style="width: 70%;" class="cuadro dato">Asiste puntualmente en el horario establecido.</th>
                 <th style="width: 15%;" class="cuadro dato">5</th>
-                <th style="width: 15%;" class="cuadro dato"><!-- Cambiar --></th>
+                <th style="width: 15%;" class="cuadro dato">{{$primer->puntualidad_externo}}</th>
             </tr>
         </table>
         <table class="tabla">

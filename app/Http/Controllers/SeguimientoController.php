@@ -79,7 +79,8 @@ class SeguimientoController extends Controller
     {
         $usuario = Auth::getUser();
         //        dd($usuario->usa_type);
-        switch ($usuario->usa_type) {
+        $tipo = $usuario->usa_type;
+        switch ($tipo) {
             case 'App\Models\Asesor':
                 $campos = ['promedio','puntualidad_interno','conocimiento_interno','equipo_interno','dedicado_interno','orden_interno','mejoras_interno','comentarios_interno'];
                 break;
@@ -114,10 +115,30 @@ class SeguimientoController extends Controller
                 ['consecutivo' => $consecutivo ] 
             );
             //dd($request->all());
+            $promedio = 0;
             foreach ($campos as $campo) {
-                if($request->has($campo))
-                $parcial->$campo=$request->input($campo);
+                if($request->has($campo)){
+                    $parcial->$campo=$request->input($campo);
+                    $promedio +=$request->input($campo);
+                }
             }
+            $promedio = $promedio / count($campos);
+            switch ($tipo) {
+                case 'App\Models\Asesor':
+                    $parcial->promedio_interno =  $promedio;
+                    break;
+                case 'App\Models\Externo':
+                    $parcial->promedio_externo =  $promedio;
+                    break;
+                case 'App\Models\Estudiante':
+                    # code...
+                    break;                
+                default:
+                    # code...
+                    break;
+            }
+    
+
             $parcial->save();
         }
         return redirect()->route("home");

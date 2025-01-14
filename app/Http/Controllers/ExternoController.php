@@ -73,7 +73,7 @@ class ExternoController extends Controller
      */
     public function destroy(Externo $externo)
     {
-        $asesor->delete();
+        $externo->delete();
         return redirect()->route("home");
     }
 

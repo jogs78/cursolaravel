@@ -20,6 +20,12 @@ class Seguimiento extends Model
         //return $this->morphToMany(Seguimiento::class,'desglose',"tabla");
         return $this->morphMany(Parcial::class, 'desglose');
     }
+    public function parcial( $cual = 1)//model
+    {
+        //return $this->morphMany(Seguimiento::class, 'desglose');
+        //return $this->morphToMany(Seguimiento::class,'desglose',"tabla");
+        return $this->morphMany(Parcial::class, 'desglose')->where('orden',$cual);
+    }
 
 /*    public function desgloses()//model
     {

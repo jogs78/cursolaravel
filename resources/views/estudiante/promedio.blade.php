@@ -21,7 +21,13 @@
 <div style="margin-top:20px;">
      <div class="horizontal"><p class="subtitulo">Verifica aqui tus seguimientos</p></div>
     <div class="horizontal" style="margin-top:40px;">
-        <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.primer')}}" style="margin-right:80px;">Primer Seguimiento</a>
+        @if ( is_null($primer->promedio_interno) )
+            Sin calificaciones del asesor interno<br>
+        @elseif ( is_null($primer->promedio_externo) )
+            Sin calificaciones del asesor externo<br>
+        @else
+            <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.primer')}}" style="margin-right:80px;">Primer Seguimiento</a>
+        @endif
         <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.segundo')}}">Segundo Seguimiento</a>
         <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.ultimo')}}" style="margin-left:80px;">Ultimo Seguimiento</a>
     </div>
