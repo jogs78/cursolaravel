@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Externo extends Model
 {
     use HasFactory;
+    protected $fillable=['titulo','nombre', 'apellido_paterno', 'apellido_materno', 'correo_electronico', 'puesto'];
 
     public function proyectos($periodo_id)
     {

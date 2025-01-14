@@ -58,6 +58,9 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
             @endforeach
         </select>
         <br>
+        <label for='correo_ae' class="parrafo">Correo del Asesor Externo</label>
+        <input type='text' name='correo_ae' id='correo_ae' value="{{old('correo_ae')}}" class="llenar"><br>
+        <br>
         <label for='titulo_ae' class="parrafo">Titulo del Asesor Externo</label>
         <input type='text' name='titulo_ae' id='titulo_ae' value="{{old('titulo_ae')}}" class="llenar"><br>
         <br>
@@ -70,14 +73,11 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
         <label for='apellido_materno_ae' class="parrafo">Apellido materno del Asesor Externo</label>
         <input type='text' name='apellido_materno_ae' id='apellido_materno_ae' value="{{old('apellido_materno_ae')}}" class="llenar"><br>
         <br>
-        <label for='externo' class="parrafo">Asesor Externo</label>
-        <input type='text' name='externo' id='externo' value="{{old('externo')}}" class="llenar"><br>
-        <br>
         <!--<label for='correo_electronico' class="parrafo">Correo electronico del asesor externo</label>
         <input type='text' name='correo_electronico' id='correo_electronico' value="{{old('correo_electronico')}}" class="llenar"><br>
         <br>-->
-        <label for='externo_puesto' class="parrafo">Puesto del Asesor Externo</label>
-        <input type='text' name='externo_puesto' id='externo_puesto' value="{{old('externo_puesto')}}" class="llenar"><br>
+        <label for='puesto_ae' class="parrafo">Puesto del Asesor Externo</label>
+        <input type='text' name='puesto_ae' id='puesto_ae' value="{{old('puesto_ae')}}" class="llenar"><br>
 
         
         </select>

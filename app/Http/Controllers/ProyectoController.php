@@ -39,40 +39,50 @@ class ProyectoController extends Controller
         //GUARDAR LOS DATOS QUE VIENEN DEL FORMULARIO DE CREAR
         //SI empresa_id = -1 es que la empresa no esta dadad de alta 
         if($request->empresa_id == -1 ) return redirect(route('empresas.create'));      
-        
         DB::beginTransaction();
         try {
-            $nuevo = new Proyecto;
-            $nuevo->fill($request->all());
-            $nuevo->save();
+            $proyecto = new Proyecto;
+//            dd($request->all());
+            $proyecto->fill($request->all());
+            $proyecto->save();
     
             $estudiante = Auth::user()->usa;
-            $estudiante->proyecto_id = $nuevo->id;
+            $estudiante->proyecto_id = $proyecto->id;
             $estudiante->save();
 
 //            titulo | nombre             | apellido_paterno | apellido_materno | correo_electronico                | puesto
 
             //CREAR USUARIO PARA EL ASESOR EXTERNO
             $ae = Externo::firstOrCreate(
-                ['correo_electronico' => $request->correo_electronico_ae],
+                ['correo_electronico' => $request->correo_ae],
                 ['titulo' => $request->titulo_ae,
                 'nombre' => $request->nombre_ae,
                 'apellido_paterno' => $request->apellido_paterno_ae,
-                'apellido_materno' => $request->apellido_materno_ae ]
+                'apellido_materno' => $request->apellido_materno_ae,
+                'puesto' => $request->puesto_ae ]
             );
             $ae->save();
-            $nuevo->externo_id = $ae->id;
-            $usr = new Usuario();
-            $usr->usa_id=$ae->id;
-            $usr->usa_type = get_class($ae);
-            $usr->nombre_usuario = $ae->correo_electronico;
-            $usr->contraseña = Hash::make($ae->correo_electronico);
-            $usr->save();
+            $proyecto->externo_id = $ae->id;
+            $usr = Usuario::firstOrCreate(
+                ['nombre_usuario' => $ae->correo_electronico],
 
+                ['usa_id' => $ae->id,
+                'usa_type' => get_class($ae),
+                'contraseña' => Hash::make($ae->correo_electronico),    
+                ]
+            );
+            $usr->save();
+            $proyecto->externo_id = $ae->id;
+            $proyecto->periodo_id = ConfiguracionServiceProvider::get('periodo_id');
+            $proyecto->save();
 
             DB::commit();
         } catch (\Throwable $th) {
+
             DB::rollBack();
+            dump($th->getMessage());
+            dd($th);
+
         }
 
      
