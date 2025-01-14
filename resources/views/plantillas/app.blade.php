@@ -64,7 +64,9 @@
                            <!-- <li class="opcion"><a  style="text-decoration: none;" href="{{route('coordinadores.asignarAsesor1')}}">ASIGANR ASESORES</a></li>-->
                             <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('estudiantes.index')}}">LISTA DE ESTUDIANTES</a></div>
                             <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('periodos.index')}}">GESTIONAR PERIODO</a></div>
-                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('asesores.index')}}">GESTIONAR ASESORES</a></div><!--(APARTE DE TENER LA OPCION DE AGREGAR, TENDRA LAS OPCIONES DE EXPORTAR e IMPORTAR)-->
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('asesores.index')}}">ASESORES INTERNOS</a></div><!--(APARTE DE TENER LA OPCION DE AGREGAR, TENDRA LAS OPCIONES DE EXPORTAR e IMPORTAR)-->
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('externos.index')}}">ASESORES EXTERNOS</a></div><!--(APARTE DE TENER LA OPCION DE AGREGAR, TENDRA LAS OPCIONES DE EXPORTAR e IMPORTAR)-->
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="#">CONFIGURACIONES</a></div><!--FALTA ESTE CRUD-->
                             
 
                         

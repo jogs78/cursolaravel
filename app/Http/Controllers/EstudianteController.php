@@ -7,12 +7,14 @@ use App\Http\Requests\StoreEstudianteRequest;
 use App\Http\Requests\UpdateEstudianteRequest;
 use App\Models\Estudiante;
 use App\Models\Carrera;
+use App\Models\Usuario;
 use App\Models\Proyecto;
 use Barryvdh\DomPDF\Facade\Pdf;
 use App\Providers\ConfiguracionServiceProvider;
 use App\Models\Periodo;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class EstudianteController extends Controller
 {
@@ -42,24 +44,23 @@ class EstudianteController extends Controller
      */
     public function store(StoreEstudianteRequest $request)
     {
-/* 
-        //GUARDAR LOS DATOS QUE VIENEN DEL FORMULARIO DE CREAR
-        $proyecto_nuevo = new Proyecto();
-        $proyecto_nuevo->nombre = $request->input('nombre_del_proyecto');
-        $proyecto_nuevo->save();
+        DB::beginTransaction();
+        try {
+            $nuevo = new Estudiante;
+            $nuevo->fill($request->all());    
+            $nuevo->save();
+            $usr = new Usuario();
+            $usr->usa_id=$nuevo->id;
+            $usr->usa_type = get_class($nuevo);
+            $usr->nombre_usuario = $nuevo->correo_electronico;
+            $usr->contraseña = Hash::make($request->contraseña);
+            $usr->save();
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+        }
 
-        $datos =$request->all();
-        $datos['proyecto_id']= $proyecto_nuevo->id;
-*/
-        $nuevo = new Estudiante;
-        $nuevo->fill($request->all());
-
-        $nuevo->save();
-//no tiene caso pedirle el nombre del proyecto
-//falta preguntarle su nombre_usuario
-//falta preguntarle su contraseña
-//falta agregar en la tabla usuarios 
-
+        
 
         return redirect()->route("estudiantes.index");
     }

@@ -22,7 +22,6 @@ class StoreUsuarioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "nombre_usuario"=>"required",
             "contraseña"=>"required",
         ];
     }

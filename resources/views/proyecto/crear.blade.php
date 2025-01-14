@@ -46,20 +46,34 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
 
         <label for='justificacion' class="parrafo">Justificacion </label>
         {{$errors->first("justificacion")}}
-        <textarea name='justificacion' id='justificacion' value="{{old('justificacion')}}"></textarea><br>
+        <textarea name='justificacion' id='justificacion' value="{{old('justificacion')}}" rows="4" ></textarea><br>
 
         <label for='asesor_id' class="parrafo">Asesor</label>
         <select name="asesor_id" id="asesor_id">
-         
             @foreach ($asesores as $asesor)
                 <option value="{{$asesor->id}}">{{$asesor->nombre}}</option>
             @endforeach
         </select>
         <br>
-        <label for='externo_id' class="parrafo">Asesor Externo</label>
-        <input type='text' name='externo_id' id='externo_id' value="{{old('externo_id')}}" class="llenar"><br>
-        <!--<option value="-1">EL ASESOR EXTERNO NO ESTA DADA DE ALTA</option>-->
+        <label for='titulo_ae' class="parrafo">Titulo Asesor Externo</label>
+        <input type='text' name='titulo_ae' id='titulo_ae' value="{{old('titulo_ae')}}" class="llenar"><br>
+        <br>
+        <label for='nombre_ae' class="parrafo">nombre Asesor Externo</label>
+        <input type='text' name='nombre_ae' id='nombre_ae' value="{{old('nombre_ae')}}" class="llenar"><br>
+        <br>
+        <label for='apellido_paterno_ae' class="parrafo">apellido_paterno Asesor Externo</label>
+        <input type='text' name='apellido_paterno_ae' id='apellido_paterno_ae' value="{{old('apellido_paterno_ae')}}" class="llenar"><br>
+        <br>
+        <label for='apellido_materno_ae' class="parrafo">apellido_materno Asesor Externo</label>
+        <input type='text' name='apellido_materno_ae' id='apellido_materno_ae' value="{{old('apellido_materno_ae')}}" class="llenar"><br>
+        <br>
+        <label for='externo' class="parrafo">Asesor Externo</label>
+        <input type='text' name='externo' id='externo' value="{{old('externo')}}" class="llenar"><br>
+        <br>
+        <label for='externo_puesto' class="parrafo">Puesto del Asesor Externo</label>
+        <input type='text' name='externo_puesto' id='externo_puesto' value="{{old('externo_puesto')}}" class="llenar"><br>
 
+        
         </select>
         <br>
 

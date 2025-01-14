@@ -26,9 +26,8 @@ class StoreEstudianteRequest extends FormRequest
             "apellido_paterno"=>"required",
             "correo_electronico"=>"required|email",
             "numero_de_control"=>"required|max_digits:8|min_digits:3|gt:555",
-            "nombre_del_proyecto"=>"required",
             "telefono"=>"required|numeric|max_digits:10|min_digits:10",
-             "direccion"=>"required",
+            "direccion"=>"required",
             "numero_de_seguridad_social"=>"required",
         ];
     }
@@ -45,7 +44,6 @@ class StoreEstudianteRequest extends FormRequest
             "numero_de_control.max_digits"=>"Este Campo admite maximo 8 digitos",
             "numero_de_control.min_digits"=>"Este Campo admite minimo 3 digitos",
             "numero_de_control.gt"=>"Este Campo debe ser mayor que 555",
-            "nombre_del_proyecto.required"=>"Es necesario llenar este campo 5",
             "telefono.required"=>"Es necesario Poner el Numero de Telefono",
             "telefono.numeric"=>"Este Campo debe ser un Numero",
             "telefono.max_digits"=>"Este Campo admite maximo 10 digitos",

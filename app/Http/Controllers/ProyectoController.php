@@ -9,9 +9,12 @@ use App\Models\Periodo;
 use App\Models\Asesor;
 use App\Models\Externo;
 use App\Models\Empresa;
+use App\Models\Usuario;
 use App\Providers\ConfiguracionServiceProvider;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProyectoController extends Controller
 {
@@ -37,13 +40,43 @@ class ProyectoController extends Controller
         //SI empresa_id = -1 es que la empresa no esta dadad de alta 
         if($request->empresa_id == -1 ) return redirect(route('empresas.create'));      
         
-        $nuevo = new Proyecto;
-        $nuevo->fill($request->all());
-        $nuevo->save();
+        DB::beginTransaction();
+        try {
+            $nuevo = new Proyecto;
+            $nuevo->fill($request->all());
+            $nuevo->save();
+    
+            $estudiante = Auth::user()->usa;
+            $estudiante->proyecto_id = $nuevo->id;
+            $estudiante->save();
 
-        $estudiante = Auth::user()->usa;
-        $estudiante->proyecto_id = $nuevo->id;
-        $estudiante->save();
+//            titulo | nombre             | apellido_paterno | apellido_materno | correo_electronico                | puesto
+
+            //CREAR USUARIO PARA EL ASESOR EXTERNO
+            $ae = Externo::firstOrCreate(
+                ['correo_electronico' => $request->correo_electronico_ae],
+                ['titulo' => $request->titulo_ae,
+                'nombre' => $request->nombre_ae,
+                'apellido_paterno' => $request->apellido_paterno_ae,
+                'apellido_materno' => $request->apellido_materno_ae ]
+            );
+            $ae->save();
+            $nuevo->externo_id = $ae->id;
+            $usr = new Usuario();
+            $usr->usa_id=$ae->id;
+            $usr->usa_type = get_class($ae);
+            $usr->nombre_usuario = $ae->correo_electronico;
+            $usr->contraseña = Hash::make($ae->correo_electronico);
+            $usr->save();
+
+
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+        }
+
+     
+     
         return redirect()->route("home");
     }
 

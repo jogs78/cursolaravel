@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('variable');
             $table->string('valor');
+//            $table->enum('tipo',["numero","cadena","valor"])->default('cadena');
+            
             $table->timestamps();
         });
     }

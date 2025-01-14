@@ -4,6 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreExternoRequest;
 use App\Http\Requests\UpdateExternoRequest;
+use App\Models\Usuario;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use App\Providers\ConfiguracionServiceProvider;
+
 use App\Models\Externo;
 
 class ExternoController extends Controller
@@ -13,7 +18,8 @@ class ExternoController extends Controller
      */
     public function index()
     {
-        //
+        $todos = Externo::all();
+        return view('externo.listar',compact('todos'));
     }
 
     /**
@@ -63,4 +69,19 @@ class ExternoController extends Controller
     {
         //
     }
+
+    public function crearCuenta(Externo $externo)
+    {
+        $usr = new Usuario();
+        $usr->usa_id=$externo->id;
+        $usr->usa_type = get_class($externo);
+        $usr->nombre_usuario = $externo->correo_electronico;
+        $usr->contraseña = Hash::make($externo->correo_electronico);
+        $usr->save();
+        return redirect(route('externos.index'));
+
+
+    }
+
+    
 }

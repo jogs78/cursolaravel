@@ -32,15 +32,16 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
             <th class="thfondo">ID</th>
             <th class="thfondo">NOMBRE</th>
             <th class="thfondo">APELLIDO</th>
+            <th class="thfondo">USUARIO</th>
         </thead>
         <tbody>
-        @foreach ($todos as $asesor)
+        @foreach ($todos as $externo)
         <tr>
-            <td>{{$asesor->id}}</td>
-            <td>{{$asesor->nombre}}</td>
+            <td>{{$externo->id}}</td>
+            <td>{{$externo->nombre}}</td>
             <td>
-                <a href="{{route("asesores.edit",$asesor->id)}}">Editar</a>
-                <form action="{{route("asesores.destroy",$asesor->id)}}" method="post">
+                <a href="{{route("externos.edit",$externo->id)}}">Editar</a>
+                <form action="{{route("externos.destroy",$externo->id)}}" method="post">
                 @method('DELETE')
                 @csrf
                 <input type="submit" value="Borrar">
@@ -48,6 +49,17 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
                 </form>
             
 
+            </td>
+            <td>
+                @if ($externo->usuario->nombre_usuario == 'Sin cuenta')
+                    <form action="{{route('externos.crearcuenta',$externo->id)}}" method="post">
+                        @method('PUT')
+                        @csrf
+                        <input type="submit" value="Crear Cuenta">
+                    </form>
+                @else
+                    {{$externo->usuario->nombre_usuario}}                
+                @endif
             </td>
         </tr>
 

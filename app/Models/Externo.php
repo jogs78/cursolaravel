@@ -14,4 +14,10 @@ class Externo extends Model
         return $this->hasMany(Proyecto::class)->where('periodo_id', $periodo_id);
     }
 
+    public function usuario(){
+        return $this->belongsTo(Usuario::class,'id','usa_id')->where('usa_type',get_class($this))->withDefault([
+            'nombre_usuario' => 'Sin cuenta',
+        ]);;
+    }
+
 }

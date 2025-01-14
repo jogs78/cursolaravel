@@ -14,6 +14,8 @@ use App\Http\Controllers\ActividadController;
 use App\Http\Controllers\CoordinadorController;
 use App\Http\Controllers\SeguimientoController;
 use App\Http\Controllers\ConfiguracionController;
+use App\Http\Controllers\ExternoController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,7 +77,8 @@ Route::resource('configuraciones',ConfiguracionController::class)->middleware('a
 Route::resource('estudiantes',EstudianteController::class)->only(['create','store']);
 Route::resource('estudiantes',EstudianteController::class)->except(['create','store'])->middleware('auth');
 
-Route::resource('asesores',AsesorController::class)->middleware('auth');
+
+
 Route::get('listar-estudiantes',[CoordinadorController::class,'estudiante'])->middleware('auth')->name('coordinador.listar-estudiantes');
 Route::get('listar-asesores',[CoordinadorController::class,'asesores'])->middleware('auth')->name('coordinador.listar-asesores');
 
@@ -94,7 +97,10 @@ Route::resource('proyectos',ProyectoController::class);
 Route::resource('periodos',PeriodoController::class);
 //Route::resource('estudiantes',EstudianteController::class)->except(['show']);
 Route::resource('parciales',ParcialController::class);
-Route::resource('asesores',AsesorController::class)->except(['show'])->middleware('auth');
+
+Route::resource('asesores',AsesorController::class)->except(['show'])->middleware('auth'); //esto es para asesores internos
+Route::resource('externos',ExternoController::class)->except(['show','create'])->middleware('auth'); //esto es para asesores externos
+Route::put('externos/crearcuenta/{externo}',[ExternoController::class,'crearCuenta'])->middleware('auth')->name('externos.crearcuenta');
 Route::resource('carreras',CarreraController::class)->except(['show']);
 Route::resource('empresas',EmpresaController::class);
 Route::resource('usuarios',UsuarioController::class);
