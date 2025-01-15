@@ -110,8 +110,8 @@ class EstudianteController extends Controller
 
     public function promedio(){
         $estudiante = Auth::getUser()->usa;
-        $primer = $estudiante->parcial('primer')->first();
-        $segundo = $estudiante->parcial('segundo')->first();
+        $primer = $estudiante->primer;
+        $segundo = $estudiante->segundo;
         $ultimo = $estudiante->ultimo;
 
             return view('estudiante.promedio',compact('primer','segundo','ultimo'));
@@ -159,7 +159,7 @@ class EstudianteController extends Controller
 //        $periodo = Periodo::find(ConfiguracionServiceProvider::get('periodo_id'))->nombre;
         $numeroControl = Auth::user()->numero_de_control; 
         $pdf = Pdf::loadview('estudiante.impresiones.solicitud',compact('jefe','estudiante')); 
-        $nombreArchivo = 'Solicitud ' . $numeroControl . '.pdf';
+        $nombreArchivo = 'Solicitud ' . $estudiante->numeroControl . '.pdf';
         return $pdf->download($nombreArchivo);
         return view('estudiante.impresiones.solicitud'); 
     }
@@ -169,7 +169,7 @@ class EstudianteController extends Controller
         $estudiante = Auth::getUser()->usa;
        // $jefe = ConfiguracionServiceProvider::get('jefe_division');
         $pdf = Pdf::loadview('estudiante.impresiones.anteproyecto',compact('estudiante')); 
-        return $pdf->download('Anteproyecto.pdf');
+        return $pdf->download('Anteproyecto ' . $estudiante->numeroControl . '.pdf');
         return view('estudiante.impresiones.anteproyecto'); 
     }
 
@@ -178,16 +178,15 @@ class EstudianteController extends Controller
         $estudiante = Auth::getUser()->usa;
         $primer = $estudiante->parcial('primer')->first();
         $pdf = Pdf::loadview('estudiante.impresiones.seguimientos.primer',compact('estudiante','primer')); 
-        return $pdf->download('Primer_Seguimiento.pdf');
-        return view('estudiante.impresiones.seguimientos.primer'); 
+        return $pdf->download('Primer_Seguimiento ' . $estudiante->numero_de_control .'.pdf');
     }
 
     public function segundo()
     {
         $estudiante = Auth::getUser()->usa;
-        $pdf = Pdf::loadview('estudiante.impresiones.seguimientos.segundo',compact('estudiante')); 
-        return $pdf->download('Segundo_Seguimiento.pdf');
-        return view('estudiante.impresiones.seguimientos.segundo'); 
+        $segundo = $estudiante->parcial('segundo')->first();
+        $pdf = Pdf::loadview('estudiante.impresiones.seguimientos.segundo',compact('estudiante','segundo')); 
+        return $pdf->download('Segundo_Seguimiento ' . $estudiante->numero_de_control . '.pdf');      
     }
 
     public function ultimo()

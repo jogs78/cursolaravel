@@ -37,17 +37,17 @@
     </table>
     <table>
         <tr>
-            <th>Programa Educativo:  </th> <th class="dato">{{$carrera->nombre}}</th>
+            <th>Programa Educativo:  </th> <th class="dato">{{$estudiante->carrera->nombre}}</th>
         </tr>
     </table>
     <table>
         <tr>
-            <th>Periodo de realización de la Residencia Profesional: </th> <th class="dato">{{$periodo->nombre}}</th>
+            <th>Periodo de realización de la Residencia Profesional: </th> <th class="dato">{{$estudiante->proyecto->periodo->nombre}}</th>
         </tr>
     </table>
     <table>
         <tr>
-            <th>Calificación Parcial (Promedio de ambas evaluaciones):</th> <th class="dato"><!-- Cambiar --></th>
+            <th>Calificación Parcial (Promedio de ambas evaluaciones):</th> <th class="dato">{{ ($primer->promedio_interno + $primer->promedio_externo )/2 }} </th>
         </tr>
     </table>
 

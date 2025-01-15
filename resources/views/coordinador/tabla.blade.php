@@ -29,6 +29,10 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
    <th class="thfondo">Nombre proyecto</th>
    <th class="thfondo">Nombre asesor</th>
    <th class="thfondo">Nombre empresa</th>
+   <th class="thfondo">Nombre estudiante(s)</th>
+   <th class="thfondo">Seguimiento 1</th>
+   <th class="thfondo">Seguimiento 2</th>
+   <th class="thfondo">Seguimiento F</th>
   </thead>
   <tbody>
  @foreach ($proyectos as $proyecto)
@@ -61,6 +65,43 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     </td>
 
     <td style="padding:5px;">{{$proyecto->empresa->nombre}}</td>
+    <td>
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li> {{ $estudiante->numero_control }} {{ $estudiante->nombre }} {{ $estudiante->apellido_paterno }} {{ $estudiante->apellido_materno }}</li>
+      @endforeach
+    </td>
+
+
+    <td>
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li>@if (is_null($estudiante->primer))
+            NO
+          @else
+            SI            
+          @endif</li>
+      @endforeach
+    </td>
+    <td>
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li>@if (is_null($estudiante->segundo))
+            NO
+          @else
+            SI            
+          @endif</li>
+      @endforeach
+    </td>
+    <td>
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li>@if (is_null($estudiante->ultimo))
+            NO
+          @else
+            SI            
+          @endif</li>
+      @endforeach
+    </td>
+ 
+
+
    </tr>
  @endforeach
 </tbody>

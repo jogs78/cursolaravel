@@ -21,15 +21,39 @@
 <div style="margin-top:20px;">
      <div class="horizontal"><p class="subtitulo">Verifica aqui tus seguimientos</p></div>
     <div class="horizontal" style="margin-top:40px;">
-        @if ( is_null($primer->promedio_interno) )
-            Sin calificaciones del asesor interno<br>
-        @elseif ( is_null($primer->promedio_externo) )
-            Sin calificaciones del asesor externo<br>
-        @else
-            <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.primer')}}" style="margin-right:80px;">Primer Seguimiento</a>
-        @endif
-        <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.segundo')}}">Segundo Seguimiento</a>
-        <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.ultimo')}}" style="margin-left:80px;">Ultimo Seguimiento</a>
+        <div style="border: 2px solid black;">
+            @if(is_null($primer))
+                No hay primer seguimiento
+            @elseif ( is_null($primer->promedio_interno) )
+                Sin calificaciones del asesor interno<br>
+            @elseif ( is_null($primer->promedio_externo) )
+                Sin calificaciones del asesor externo<br>
+            @else
+                <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.primer')}}" style="margin-right:80px;">Primer Seguimiento</a>
+            @endif
+        </div>
+        <div style="border: 2px solid black;">
+            @if(is_null($segundo))
+                No hay segundo seguimiento
+            @elseif ( is_null($segundo->promedio_interno) )
+                Sin calificaciones del asesor interno<br>
+            @elseif ( is_null($segundo->promedio_externo) )
+                Sin calificaciones del asesor externo<br>
+            @else
+                <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.segundo')}}">Segundo Seguimiento</a>
+            @endif
+        </div>
+        <div style="border: 2px solid black;">
+            @if(is_null($ultimo))
+                No hay seguimiento final
+            @elseif ( is_null($ultimo->promedio_interno) )
+                Sin calificaciones del asesor interno<br>
+            @elseif ( is_null($ultimo->promedio_externo) )
+                Sin calificaciones del asesor externo<br>
+            @else
+                <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.ultimo')}}" style="margin-left:80px;">Ultimo Seguimiento</a>
+            @endif
+        </div>
     </div>
 </div>
 <!--<p>Seguimiento numero: </p><span></span> <br>

@@ -9,7 +9,7 @@
     <p>Periodo de realizacion:</p>
     <p>Calificacion parcial: </p>
 
-    <form action="{{route('asesor.guardar-seguimientos',[$estudiante->id,$consecutivo])}}" method="post">
+    <form action="{{route('guardar-seguimientos',[$estudiante->id,$consecutivo])}}" method="post">
         @csrf
 
     <table border="1">

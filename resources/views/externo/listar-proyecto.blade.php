@@ -30,6 +30,8 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
    <th class="thfondo">Nombre empresa</th>
    <th class="thfondo">Nombre Estudiante</th>
    <th class="thfondo">Primer Seguimiento</th>
+   <th class="thfondo">Segundo Seguimiento</th>
+   <th class="thfondo">Seguimiento Final</th>
 
   </thead>
   <tbody>
@@ -53,6 +55,16 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     <td>
       @foreach ($proyecto->estudiantes as $estudiante)
           <li><a href="{{route('realizar-seguimientos',[$estudiante->id,'primer'])}}">Realizar</a></li>
+      @endforeach
+    </td>
+    <td>
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li><a href="{{route('realizar-seguimientos',[$estudiante->id,'segundo'])}}">Realizar</a></li>
+      @endforeach
+    </td>
+    <td>
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li><a href="{{route('realizar-seguimientos',[$estudiante->id,'ultimo'])}}">Realizar</a></li>
       @endforeach
     </td>
    </tr>

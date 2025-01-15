@@ -24,14 +24,14 @@ class SeguimientoController extends Controller
     public function create(Estudiante $estudiante,$consecutivo)
     {
         $usuario = Auth::getUser();
-//        dd($usuario->usa_type);
+        //dd($usuario->usa_type);
         switch ($usuario->usa_type) {
             case 'App\Models\Asesor':
+                //dd("es asesor");
                 if($consecutivo == 'primer' or $consecutivo == 'segundo'){
                     
                     $parcial = Parcial::firstOrCreate(
-                        ['estudiante_id' => $estudiante->id ], 
-                        ['consecutivo' => $consecutivo ] 
+                        ['estudiante_id' => $estudiante->id,'consecutivo' => $consecutivo ], 
                     );
                     return view('seguimientos.parcial.calificar-interno',compact('estudiante','consecutivo','parcial'));                    
                 }
@@ -40,7 +40,8 @@ class SeguimientoController extends Controller
                     $ultimo = Parcial::firstOrCreate(
                         ['estudiante_id' => $estudiante->id ], 
                     );
-                    return view('seguimientos.parcial.calificar-interno',compact('estudiante','consecutivo','ultimo'));
+                    
+                    return view('seguimientos.ultimo.calificar',compact('estudiante','consecutivo','ultimo'));
 
                 }
                 break;
@@ -59,7 +60,7 @@ class SeguimientoController extends Controller
                     $ultimo = Parcial::firstOrCreate(
                         ['estudiante_id' => $estudiante->id ], 
                     );
-                    return view('seguimientos.parcial.calificar-externo',compact('estudiante','consecutivo','ultimo'));
+                    return view('seguimientos.ultimo.calificar',compact('estudiante','consecutivo','ultimo'));
 
                 }                break;
             
@@ -75,10 +76,9 @@ class SeguimientoController extends Controller
        // echo "le vamos a hacer su seguimiento $consecutivo al estudiante $estudiante->nombre"; 
     }
 
-    public function asesorInterno(SeguimientoRequest $request, Estudiante $estudiante, $consecutivo)
+    public function calificar(SeguimientoRequest $request, Estudiante $estudiante, $consecutivo)
     {
         $usuario = Auth::getUser();
-        //        dd($usuario->usa_type);
         $tipo = $usuario->usa_type;
         switch ($tipo) {
             case 'App\Models\Asesor':
@@ -111,24 +111,24 @@ class SeguimientoController extends Controller
 
         if($consecutivo=='primer' or $consecutivo=='segundo'){
             $parcial = Parcial::firstOrCreate(
-                ['estudiante_id' => $estudiante->id ], 
+                ['estudiante_id' => $estudiante->id, 'consecutivo' => $consecutivo ], 
                 ['consecutivo' => $consecutivo ] 
             );
             //dd($request->all());
-            $promedio = 0;
+            $suma = 0;
             foreach ($campos as $campo) {
                 if($request->has($campo)){
                     $parcial->$campo=$request->input($campo);
-                    $promedio +=$request->input($campo);
+                    $suma += (int) $request->input($campo);
                 }
             }
-            $promedio = $promedio / count($campos);
+            $suma = $suma;
             switch ($tipo) {
                 case 'App\Models\Asesor':
-                    $parcial->promedio_interno =  $promedio;
+                    $parcial->promedio_interno =  $suma;
                     break;
                 case 'App\Models\Externo':
-                    $parcial->promedio_externo =  $promedio;
+                    $parcial->promedio_externo =  $suma;
                     break;
                 case 'App\Models\Estudiante':
                     # code...
