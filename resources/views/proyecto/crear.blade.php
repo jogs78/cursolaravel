@@ -22,6 +22,17 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     
 @endsection
 @section('contenido')
+@if ($errors->any())
+<div class="alert alert-danger">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
+
 
 <div style="margin-top:20px;">
 <div class="horizontal"><p class="subtitulo">Proyecto</p></div><br>
@@ -47,7 +58,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
         <div style="margin-top:15px; margin-bottom:8px;">
         <label for='justificacion' class="parrafo" style="display: inline-block; vertical-align: top;">Justificacion </label>
         {{$errors->first("justificacion")}}
-        <textarea name='justificacion' id='justificacion' value="{{old('justificacion')}}" rows="4"></textarea>
+        <textarea name='justificacion' id='justificacion' rows="4">{{old('justificacion')}}</textarea>
         <br>
         </div>
 
@@ -82,17 +93,91 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
 
         
 
-        <label for='empresa_id' class="parrafo">Empresa</label>
-        <select name="empresa_id" id="empresa_id">
-         
+        <label for="empresa_id" class="parrafo">Empresa</label>
+        <select name="empresa_id" id="empresa_id" onchange="mostrarDatosEmpresa()">
             @foreach ($empresas as $empresa)
-                <option value="{{$empresa->id}}">{{$empresa->nombre}}</option>
+                <option value="{{ $empresa->id }}">{{ $empresa->nombre }}</option>
             @endforeach
-                <option value="-1">LA EMPRESA NO ESTA DADA DE ALTA</option>
+            <option value="-1">LA EMPRESA NO ESTA DADA DE ALTA</option>
         </select>
         <br><br>
+        <div id="datos_empresa" style="display: none;">
+            <!-- Contenido adicional para datos de la empresa -->
+            
+            <label for='nombre_e' class="parrafo">Nombre de la Empresa</label>
+            {{$errors->first("nombre_e")}}
+            <input type='text' name='nombre_e' id='nombre_e' value="{{old('nombre_e')}}" class="llenar"><br>
+            
+            <label class="parrafo">Escoge el Giro, Ramo o Sector</label> <br>
+            {{$errors->first("giro")}}    
+            <div style="margin-top:5px;">
 
-        <label for='periodo_id' class="parrafo" >Periodo:</label>
+            <input type='radio' name='giro' id='industrial' value='industrial' >
+            <label for="industrial" class="giro">Industrial</label>
+
+            <input type='radio' name='giro' id='servicios' value='servicios'style="margin-left:12px;">
+            <label for="servicios" class="giro2">Servicios</label> <br>
+
+            <input type='radio' name='giro' id='publico' value='publico' >
+            <label for="publico" class="giro">Publico</label>
+
+            <input type='radio' name='giro' id='privado' value='privado' style="margin-left:12px;" checked>
+            <label for="privado" class="giro">Privado</label>
+
+            <input type='radio' name='giro' id='otro' value='otro' style="margin-left:12px;">
+            <label for="otro" class="giro5">Otro</label><br>
+            </div>
+            
+            <label for='rfc'  class="parrafo">RFC</label>
+            {{$errors->first("rfc")}}
+            <input type='text' name='rfc' id='rfc' value="{{old('rfc')}}" class="llenar"><br>
+    
+            <label for='direccion'  class="parrafo">Direccion</label>
+            {{$errors->first("direccion")}}
+            <input type='text' name='direccion' id='direccion' value="{{old('direccion')}}" class="llenar"><br>
+    
+            <label for='telefono'  class="parrafo">Telefono</label>
+            {{$errors->first("telefono")}}
+            <input type='tel' name='telefono' id='telefono' value="{{old('telefono')}}" class="llenar"><br>
+    
+            <label for='correo'  class="parrafo">Correo Electronico</label>
+            {{$errors->first("correo")}}
+            <input type='email' name='correo' id='correo' value="{{old('correo')}}" class="llenar"><br>
+    
+            <label for='titular'  class="parrafo">Nombre del Titular de la empresa</label>
+            {{$errors->first("titular")}}
+            <input type='text' name='titular' id='titular' value="{{old('titular')}}" class="llenar"><br>
+    
+            <label for='puesto_titular'  class="parrafo">Puesto del Titular</label>
+            {{$errors->first("puesto_titular")}}
+            <input type='text' name='puesto_titular' id='puesto_titular' value="{{old('puesto_titular')}}" class="llenar"><br>
+           
+            <!--<label for='asesor_externo'>Nombre del Asesor externo</label>
+            {{$errors->first("asesor_externo")}}
+            <input type='text' name='asesor_externo' id='asesor_externo' value="{{old('asesor_externo')}}"><br>
+    
+            <label for='puesto_asesor'>Puesto del Asesor</label>
+            {{$errors->first("puesto_asesor")}}
+            <input type='text' name='puesto_asesor' id='puesto_asesor' value="{{old('puesto_asesor')}}"><br>-->
+    
+            <label for='informacion_e'  class="parrafo">Informacion adicional de la empresa: </label>
+            {{$errors->first("informacion")}}
+            <input type='text' name='informacion_e' id='informacion_e' value="{{old('informacion_e')}}" class="llenar"><br>
+
+
+        </div>
+        <script>
+            function mostrarDatosEmpresa() {
+                const selectElement = document.getElementById('empresa_id');
+                if (selectElement.value === '-1') {
+                    selectElement.style.display = 'none';
+                    document.getElementById('datos_empresa').style.display = 'block';
+                }
+            }
+        </script>
+        <br><br>
+
+        <label class="parrafo" >Periodo:</label>
         <input type="hidden" name="periodo_id" value="{{$periodo->id}}" class="llenar">
         {{$periodo->nombre}}
         <br>

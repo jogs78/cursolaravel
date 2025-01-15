@@ -38,17 +38,37 @@ class ProyectoController extends Controller
         //esto debe esta en una transaccion
         //GUARDAR LOS DATOS QUE VIENEN DEL FORMULARIO DE CREAR
         //SI empresa_id = -1 es que la empresa no esta dadad de alta 
-        if($request->empresa_id == -1 ) return redirect(route('empresas.create'));      
         DB::beginTransaction();
         try {
+
             $proyecto = new Proyecto;
 //            dd($request->all());
-            $proyecto->fill($request->all());
+            $datos = $request->all();
+            unset($datos['empresa_id']);
+            $proyecto->fill($datos);
             $proyecto->save();
     
+            if($request->empresa_id == -1 ) {
+                $empresa = new Empresa();
+                $empresa->nombre = $request->nombre_e;
+                $empresa->giro = $request->giro;
+                $empresa->rfc = $request->rfc;
+                $empresa->direccion = $request->direccion;
+                $empresa->telefono = $request->telefono;
+                $empresa->correo = $request->correo;
+                $empresa->titular = $request->titular;
+                $empresa->puesto_titular = $request->puesto_titular;
+                $empresa->informacion = $request->informacion_e;
+                $empresa->save();
+                $proyecto->empresa_id = $empresa->id;
+            };      
+
+
             $estudiante = Auth::user()->usa;
             $estudiante->proyecto_id = $proyecto->id;
             $estudiante->save();
+
+
 
 //            titulo | nombre             | apellido_paterno | apellido_materno | correo_electronico                | puesto
 

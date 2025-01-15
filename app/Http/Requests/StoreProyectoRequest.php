@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+use Illuminate\Support\Facades\DB;
 class StoreProyectoRequest extends FormRequest
 {
     /**
@@ -28,22 +28,28 @@ class StoreProyectoRequest extends FormRequest
             "informacion"=>"required",
             "justificacion"=>"required",
             "asesor_id"=>"required",
-            "empresa_id"=>"required",
-            "periodo_id"=>"required",
+            "empresa_id" => [
+                'required',
+                function ($attribute, $value, $fail) {
+                    if ($value !== '-1' && !\DB::table('empresas')->where('id', $value)->exists()) {
+                        $fail('El campo empresa_id debe ser un ID válido o -1.');
+                    }
+                },
+            ],            "periodo_id"=>"required",
         ];
     }
 
     public function messages(): array
     {
         return [
-            "nombre.required"=>"Es necesario llenar este campo",
-            "objetivo_general.required"=>"Es necesario llenar este campo",
-            "lugar.required"=>"Es necesario llenar este campo",
-            "informacion.required"=>"Es necesario llenar este campo",
-            "justificacion.required"=>"Es necesario llenar este campo",
-            "asesor_id.required"=>"Es necesario llenar este campo",
-            "empresa_id.required"=>"Es necesario llenar este campo",
-            "periodo_id.required"=>"Es necesario llenar este campo",
+            "nombre.required"=>"El nombre del proyecto es requerido",
+            "objetivo_general.required"=>"objetivo_general Es necesario llenar este campo",
+            "lugar.required"=>"lugar Es necesario llenar este campo",
+            "informacion.required"=>"informacion Es necesario llenar este campo",
+            "justificacion.required"=>"justificacion Es necesario llenar este campo",
+            "asesor_id.required"=>"asesor_id Es necesario llenar este campo",
+            "empresa_id.required"=>"empresa_id Es necesario llenar este campo",
+            "periodo_id.required"=>"periodo_id Es necesario llenar este campo",
         ];
     }
 }
