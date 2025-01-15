@@ -11,6 +11,8 @@
 .boton{background-color: rgb(25, 118, 210); padding: 15px; border-radius: 5px; color: white; text-decoration: none; cursor: pointer; }
 .boton:hover{background-color: rgb(74, 139, 204);}
 .llenar{height: 25px; font-size: 18px;}
+.tercio { border: 2px solid rgb(19, 46, 68); width: 30%; height: 33%; border-radius: 10px; margin: 15px; display: flex; justify-content: center; align-items: center;}
+
 *{margin: 0; padding: 0;}
 </style>
 @section('encabezado')
@@ -18,10 +20,10 @@
 @endsection
 @section('contenido')
 
-<div style="margin-top:20px;">
-     <div class="horizontal"><p class="subtitulo">Verifica aqui tus seguimientos</p></div>
-    <div class="horizontal" style="margin-top:40px;">
-        <div style="border: 2px solid black;">
+<div style="margin-top:20px; height: 20%;">
+    <div class="horizontal"><p class="subtitulo">Verifica aqui tus seguimientos</p></div>
+    <div class="horizontal" style="margin-top:40px; height: 100%;">
+        <div class="tercio">
             @if(is_null($primer))
                 No hay primer seguimiento
             @elseif ( is_null($primer->promedio_interno) )
@@ -32,7 +34,7 @@
                 <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.primer')}}" style="margin-right:80px;">Primer Seguimiento</a>
             @endif
         </div>
-        <div style="border: 2px solid black;">
+        <div class="tercio">
             @if(is_null($segundo))
                 No hay segundo seguimiento
             @elseif ( is_null($segundo->promedio_interno) )
@@ -43,7 +45,7 @@
                 <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.segundo')}}">Segundo Seguimiento</a>
             @endif
         </div>
-        <div style="border: 2px solid black;">
+        <div class="tercio">
             @if(is_null($ultimo))
                 No hay seguimiento final
             @elseif ( is_null($ultimo->promedio_interno) )

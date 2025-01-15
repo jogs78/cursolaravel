@@ -132,10 +132,10 @@ textarea{padding: 10px;}
             <tr>
                 <td>Es ordenado y cumple satisfactoriamente con las actividades encomendadas en los tiempos 
                 establecidos en el cronograma.</td>
-                <td>10</td>
+                <td>20</td>
                 <td> 
-                    <input type="range" name="orden_interno" class="rangeInput" id="rangeInput5" min="0" max="10" value="{{$parcial->orden_interno}}"><br>
-                    <span id="rangeValue5">10</span>
+                    <input type="range" name="orden_interno" class="rangeInput" id="rangeInput5" min="0" max="20" value="{{$parcial->orden_interno}}"><br>
+                    <span id="rangeValue5">20</span>
                 </td>
             </tr>
             <tr>
