@@ -31,6 +31,7 @@ return new class extends Migration
             $table->integer('conclusiones_externo')->nullable()->default(null);
             $table->integer('competencias_externo')->nullable()->default(null);
             $table->integer('fuentes_externo')->nullable()->default(null);
+            $table->float  ('promedio_externo')->nullable()->default(null);
             $table->text('comentarios_externo')->nullable()->default(null);
 
             $table->integer('portada_interno')->nullable()->default(null);
@@ -47,6 +48,7 @@ return new class extends Migration
             $table->integer('conclusiones_interno')->nullable()->default(null);
             $table->integer('competencias_interno')->nullable()->default(null);
             $table->integer('fuentes_interno')->nullable()->default(null);
+            $table->float  ('promedio_interno')->nullable()->default(null);
             $table->text('comentarios_interno')->nullable()->default(null);
             //$table->string('ruta'); 
             $table->timestamps();

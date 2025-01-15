@@ -120,7 +120,7 @@ class SeguimientoController extends Controller
                 ['estudiante_id' => $estudiante->id ], 
             );
         }
-            dd(get_class($segui));
+            //dd(get_class($segui));
             $suma = 0;
             foreach ($campos as $campo) {
                 if($request->has($campo)){

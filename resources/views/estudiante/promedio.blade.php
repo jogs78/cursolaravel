@@ -31,7 +31,7 @@
             @elseif ( is_null($primer->promedio_externo) )
                 Sin calificaciones del asesor externo<br>
             @else
-                <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.primer')}}" style="margin-right:80px;">Primer Seguimiento</a>
+                <a  class="boton" style="margin-left: 0px;" href="{{route('estudiante.impresiones.seguimientos.primer')}}" style="margin-right:80px;">Primer Seguimiento</a>
             @endif
         </div>
         <div class="tercio">
@@ -42,10 +42,10 @@
             @elseif ( is_null($segundo->promedio_externo) )
                 Sin calificaciones del asesor externo<br>
             @else
-                <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.segundo')}}">Segundo Seguimiento</a>
+                <a  class="boton" style="margin-right: 0px;" href="{{route('estudiante.impresiones.seguimientos.segundo')}}">Segundo Seguimiento</a>
             @endif
         </div>
-        <div class="tercio">
+        <div class="tercio" >
             @if(is_null($ultimo))
                 No hay seguimiento final
             @elseif ( is_null($ultimo->promedio_interno) )
@@ -53,7 +53,7 @@
             @elseif ( is_null($ultimo->promedio_externo) )
                 Sin calificaciones del asesor externo<br>
             @else
-                <a  class="boton" href="{{route('estudiante.impresiones.seguimientos.ultimo')}}" style="margin-left:80px;">Ultimo Seguimiento</a>
+                <a  class="boton" style="margin-right: 0px;" href="{{route('estudiante.impresiones.seguimientos.ultimo')}}" style="margin-left:80px;">Ultimo Seguimiento</a>
             @endif
         </div>
     </div>
