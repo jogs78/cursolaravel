@@ -30,7 +30,7 @@ textarea{padding: 10px;}
         <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Nombre del Proyecto:</p> <p class="llenar">{{$estudiante->proyecto->nombre}}</p> </div>
         <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Programa educativo:</p> <p class="llenar">{{$estudiante->carrera->nombre}}</p> </div>
         <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Periodo de realizacion:</p> <p class="llenar">{{$estudiante->proyecto->periodo->nombre}}</p> </div>
-        <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Calificacion parcial: </p>
+        <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Calificacion Parcial: </p>
     </div>  
     <h2>Califiaciones del asesor externo</h2>
     <table border="1">
@@ -41,45 +41,45 @@ textarea{padding: 10px;}
         <tbody>
             <tr>
                 <td>Asiste puntualmente en el horario establecido.</td>
-                <td>{{$parcial->puntualidad_externo}}</td>
+                <td>{{$segui->puntualidad_externo}}</td>
             </tr>
             <tr>
                 <td>Trabaja en equipo y se comunica de forma efectiva (oral y escrita).</td>
-                <td>{{$parcial->equipo_externo}}</td>
+                <td>{{$segui->equipo_externo}}</td>
             </tr>
             <tr>
                 <td>Tiene iniciativa para colaborar.</td>
-                <td>{{$parcial->iniciativa_externo}}</td>
+                <td>{{$segui->iniciativa_externo}}</td>
             </tr>
             <tr>
                 <td>Propone mejoras al proyecto.</td>
-                <td>{{$parcial->mejoras_externo}}</td>
+                <td>{{$segui->mejoras_externo}}</td>
             </tr>
             <tr>
                 <td>Cumple con los objetivos correspondientes al proyecto.</td>
-                <td>{{$parcial->objetivos_externo}}</td>
+                <td>{{$segui->objetivos_externo}}</td>
             </tr>
             <tr>
                 <td>Es ordenado y cumple satisfactoriamente con las actividades encomendadas en los tiempos 
                 establecidos en el cronograma.</td>
-                <td>{{$parcial->orden_externo}}</td>
+                <td>{{$segui->orden_externo}}</td>
             </tr>
             <tr>
                 <td>Demuestra liderazgo en su actuar.</td>
-                <td>{{$parcial->liderazgo_externo}}</td>
+                <td>{{$segui->liderazgo_externo}}</td>
             </tr>
             <tr>
                 <td>Demuestra conocimiento en el área de su especialidad.</td>
-                <td>{{$parcial->conocimiento_externo}}</td>
+                <td>{{$segui->conocimiento_externo}}</td>
             </tr>
             <tr>
                 <td>Demuestra un comportamiento ético (es disciplinado, acata órdenes, respeta a sus compañeros de trabajo, entre otros).</td>
-                <td>{{$parcial->etico_externo}}</td>
+                <td>{{$segui->etico_externo}}</td>
             </tr>
             <tr>
                 <td>Observaciones</td>
                 <td>
-                    {{$parcial->comentarios_externo}}
+                    {{$segui->comentarios_externo}}
                 </td>
             </tr>
         </tbody>
@@ -100,7 +100,7 @@ textarea{padding: 10px;}
                 <td>Asistió puntualmente a las reuniones de asesoría.</td>
                 <td>10</td>
                 <td> 
-                    <input type="range" name="puntualidad_interno" class="rangeInput" id="rangeInput1" min="0" max="10" value="{{$parcial->puntualidad_interno}}"> <br>
+                    <input type="range" name="puntualidad_interno" class="rangeInput" id="rangeInput1" min="0" max="10" value="{{$segui->puntualidad_interno}}"> <br>
                     <span id="rangeValue1">10</span>
                 </td>
             </tr>
@@ -108,7 +108,7 @@ textarea{padding: 10px;}
                 <td>Demuestra conocimiento en el área de su especialidad.</td>
                 <td>20</td>
                 <td> 
-                    <input type="range" name="conocimiento_interno" class="rangeInput" id="rangeInput2" min="0" max="20" value="{{$parcial->conocimiento_interno}}"> <br>
+                    <input type="range" name="conocimiento_interno" class="rangeInput" id="rangeInput2" min="0" max="20" value="{{$segui->conocimiento_interno}}"> <br>
                     <span id="rangeValue2">20</span>
                 </td>
             </tr>
@@ -116,7 +116,7 @@ textarea{padding: 10px;}
                 <td>Trabaja en equipo y se comunica de forma efectiva (oral y escrita).</td>
                 <td>15</td>
                 <td> 
-                    <input type="range" name="equipo_interno" class="rangeInput" id="rangeInput3" min="0" max="15" value="{{$parcial->equipo_interno}}"> <br>
+                    <input type="range" name="equipo_interno" class="rangeInput" id="rangeInput3" min="0" max="15" value="{{$segui->equipo_interno}}"> <br>
                     <span id="rangeValue3">15</span>
 
                 </td>
@@ -125,7 +125,7 @@ textarea{padding: 10px;}
                 <td>Es dedicado y proactivo en las actividades encomendadas.</td>
                 <td>20</td>
                 <td> 
-                    <input type="range" name="dedicado_interno" class="rangeInput" id="rangeInput4" min="0" max="20" value="{{$parcial->dedicado_interno}}"><br>
+                    <input type="range" name="dedicado_interno" class="rangeInput" id="rangeInput4" min="0" max="20" value="{{$segui->dedicado_interno}}"><br>
                     <span id="rangeValue4">20</span>
                 </td>
             </tr>
@@ -134,7 +134,7 @@ textarea{padding: 10px;}
                 establecidos en el cronograma.</td>
                 <td>20</td>
                 <td> 
-                    <input type="range" name="orden_interno" class="rangeInput" id="rangeInput5" min="0" max="20" value="{{$parcial->orden_interno}}"><br>
+                    <input type="range" name="orden_interno" class="rangeInput" id="rangeInput5" min="0" max="20" value="{{$segui->orden_interno}}"><br>
                     <span id="rangeValue5">20</span>
                 </td>
             </tr>
@@ -142,14 +142,14 @@ textarea{padding: 10px;}
                 <td>Propone mejoras al proyecto.</td>
                 <td>15</td>
                 <td> 
-                    <input type="range" name="mejoras_interno" class="rangeInput" id="rangeInput6" min="0" max="15" value="{{$parcial->mejoras_interno}}"><br>
+                    <input type="range" name="mejoras_interno" class="rangeInput" id="rangeInput6" min="0" max="15" value="{{$segui->mejoras_interno}}"><br>
                     <span id="rangeValue6">15</span>
                 </td>
             </tr>
             <tr>
                 <td>Observaciones</td>
                 <td colspan="2">
-                    <textarea name="comentarios_interno" id="" cols="30" rows="10">{{$parcial->comentarios_interno}}</textarea>
+                    <textarea name="comentarios_interno" id="" cols="30" rows="10">{{$segui->comentarios_interno}}</textarea>
                 </td>
             </tr>
         </tbody>

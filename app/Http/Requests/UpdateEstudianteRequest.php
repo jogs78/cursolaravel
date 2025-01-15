@@ -25,4 +25,11 @@ class UpdateEstudianteRequest extends FormRequest
             "nombre"=>"required",
         ];
     }
+    public function messages(): array
+    {
+        return [
+            "nombre.required"=>"Por favor ingresa un nombre",
+            
+        ];
+    }
 }

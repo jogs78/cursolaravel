@@ -193,8 +193,8 @@ class EstudianteController extends Controller
     {
         $estudiante = Auth::getUser()->usa;
         $pdf = Pdf::loadview('estudiante.impresiones.seguimientos.ultimo',compact('estudiante')); 
-        return $pdf->download('Ultimo_Seguimiento.pdf');
-        return view('estudiante.impresiones.seguimientos.ultimo'); 
+        return $pdf->download('Ultimo_Seguimiento ' . $estudiante->numero_de_control .'.pdf');
+        //return view('estudiante.impresiones.seguimientos.ultimo'); 
     }
 
     public function pdf(Request $request)

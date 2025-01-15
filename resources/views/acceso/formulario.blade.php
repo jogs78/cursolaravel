@@ -19,8 +19,10 @@
 .llenar{height: 25px; font-size: 18px;}
 *{margin: 0; padding: 0;}
 </style>
+
 </head>
 <body>
+
 <div class="hderecho" style="width: 100%; height: 20px; ">
     <div class="cmenor" style="width: 20%;"></div>
     <div class="cmayor" style="width: 80%; "></div>
@@ -38,10 +40,16 @@
   @csrf
     <div>
         <label for='nombre' class="parrafo" >Correo electronico: </label>
+        <div>
+            <span class="error-message">{{ $errors->first("nombre") }}</span>
+        </div>
         <input class="llenar" type='text' name='nombre' id='nombre' placeholder="Ingresa tu correo"><br>
     </div>
     <div style="margin-top: 20px;">
         <label for='contra'  class="parrafo">Contraseña: </label>
+        <div>
+            <span class="error-message">{{ $errors->first("contra") }}</span>
+        </div>
         <input  class="llenar" type="password"  name='contra' id='contra' placeholder="Ingresa tu Contraseña"><br>
     </div>
   <div class="horizontal" style="margin-top: 60px; "><input class="boton" type='submit' value="Entrar"></div>

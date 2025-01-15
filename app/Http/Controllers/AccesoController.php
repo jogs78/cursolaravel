@@ -26,10 +26,18 @@ class AccesoController extends Controller
         return view('acceso.adentro');
     }
     public function adentro(Request $peticion){
+
+        $peticion->validate([
+            'nombre' => 'required',
+            'contra' => 'required', // o la longitud que desees para la contraseña
+        ], [
+            'nombre.required' => 'Ingrese su correo.',
+            'contra.required' => 'La contraseña es obligatoria.',
+        ]);
 /*
         echo "<br>N:" . $peticion->input("nombre");
         echo "<br>C:" . $peticion->input("contra");
-*/
+*/      
         $datos = $peticion->all();
 //        echo "<br>N" . $datos["nombre"];
 //        echo "<br>C" . $datos["contra"];

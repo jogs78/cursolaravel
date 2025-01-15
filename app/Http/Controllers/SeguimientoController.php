@@ -34,7 +34,7 @@ class SeguimientoController extends Controller
                     $segui = Parcial::firstOrCreate(
                         ['estudiante_id' => $estudiante->id,'consecutivo' => $consecutivo ], 
                     );
-                    return view('seguimientos.parcial.calificar-interno',compact('estudiante','consecutivo','parcial'));                    
+                    return view('seguimientos.parcial.calificar-interno',compact('estudiante','consecutivo','segui'));                    
                 }
                 
                 if($consecutivo == 'ultimo' ){
@@ -42,7 +42,7 @@ class SeguimientoController extends Controller
                         ['estudiante_id' => $estudiante->id ], 
                     );
                     
-                    return view('seguimientos.ultimo.calificar',compact('estudiante','consecutivo','ultimo'));
+                    return view('seguimientos.ultimo.calificar-interno',compact('estudiante','consecutivo','ultimo'));
 
                 }
                 break;
@@ -54,14 +54,14 @@ class SeguimientoController extends Controller
                         ['estudiante_id' => $estudiante->id ], 
                         ['consecutivo' => $consecutivo ] 
                     );
-                    return view('seguimientos.parcial.calificar-externo',compact('estudiante','consecutivo','parcial'));                    
+                    return view('seguimientos.parcial.calificar-externo',compact('estudiante','consecutivo','segui'));                    
                 }
                 
                 if($consecutivo == 'ultimo' ){
                     $ultimo = Parcial::firstOrCreate(
                         ['estudiante_id' => $estudiante->id ], 
                     );
-                    return view('seguimientos.ultimo.calificar',compact('estudiante','consecutivo','ultimo'));
+                    return view('seguimientos.ultimo.calificar-externo',compact('estudiante','consecutivo','ultimo'));
 
                 }                break;
             
