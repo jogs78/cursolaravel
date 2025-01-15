@@ -86,7 +86,7 @@ textarea{padding: 10px;}
     </table>
     <h2 style="margin-top: 20px;">Califiaciones del asesor interno</h2>
 
-    <form action="{{route('guardar-seguimientos',[$estudiante->id,$ultimo])}}" method="post"><!-- <form action="{{route('guardar-seguimientos',[$estudiante->id,$consecutivo])}}" method="post">-->
+    <form action="{{route('guardar-seguimientos',[$estudiante->id,'ultimo'])}}" method="post"><!-- <form action="{{route('guardar-seguimientos',[$estudiante->id,$consecutivo])}}" method="post">-->
         @csrf
 
     <table border="1">

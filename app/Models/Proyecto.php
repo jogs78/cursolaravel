@@ -12,9 +12,10 @@ class Proyecto extends Model
 
     public function empresa()
     {
-        return $this->belongsTo(Empresa::class);
+        return $this->belongsTo(Empresa::class)->withDefault([
+            'nombre' => 'Empresa No Definida',
+        ]);
     }
-
     public function asesor()
     {
         return $this->belongsTo(Asesor::class)->withDefault(['nombre'=>'No asignado']);

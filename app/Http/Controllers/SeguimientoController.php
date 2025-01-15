@@ -6,6 +6,7 @@ use App\Models\Seguimiento;
 use App\Http\Requests\SeguimientoRequest;
 use App\Models\Estudiante;
 use App\Models\Parcial;
+use App\Models\Ultimo;
 use Illuminate\Support\Facades\Auth;
 
 class SeguimientoController extends Controller
@@ -30,7 +31,7 @@ class SeguimientoController extends Controller
                 //dd("es asesor");
                 if($consecutivo == 'primer' or $consecutivo == 'segundo'){
                     
-                    $parcial = Parcial::firstOrCreate(
+                    $segui = Parcial::firstOrCreate(
                         ['estudiante_id' => $estudiante->id,'consecutivo' => $consecutivo ], 
                     );
                     return view('seguimientos.parcial.calificar-interno',compact('estudiante','consecutivo','parcial'));                    
@@ -49,7 +50,7 @@ class SeguimientoController extends Controller
             case 'App\Models\Externo':
                 if($consecutivo == 'primer' or $consecutivo == 'segundo'){
                     
-                    $parcial = Parcial::firstOrCreate(
+                    $segui = Parcial::firstOrCreate(
                         ['estudiante_id' => $estudiante->id ], 
                         ['consecutivo' => $consecutivo ] 
                     );
@@ -110,25 +111,30 @@ class SeguimientoController extends Controller
         }
 
         if($consecutivo=='primer' or $consecutivo=='segundo'){
-            $parcial = Parcial::firstOrCreate(
+            $segui = Parcial::firstOrCreate(
                 ['estudiante_id' => $estudiante->id, 'consecutivo' => $consecutivo ], 
                 ['consecutivo' => $consecutivo ] 
             );
-            //dd($request->all());
+        }else{
+            $segui = Ultimo::firstOrCreate(
+                ['estudiante_id' => $estudiante->id ], 
+            );
+        }
+            dd(get_class($segui));
             $suma = 0;
             foreach ($campos as $campo) {
                 if($request->has($campo)){
-                    $parcial->$campo=$request->input($campo);
+                    $segui->$campo=$request->input($campo);
                     $suma += (int) $request->input($campo);
                 }
             }
             $suma = $suma;
             switch ($tipo) {
                 case 'App\Models\Asesor':
-                    $parcial->promedio_interno =  $suma;
+                    $segui->promedio_interno =  $suma;
                     break;
                 case 'App\Models\Externo':
-                    $parcial->promedio_externo =  $suma;
+                    $segui->promedio_externo =  $suma;
                     break;
                 case 'App\Models\Estudiante':
                     # code...
@@ -137,10 +143,9 @@ class SeguimientoController extends Controller
                     # code...
                     break;
             }
-    
 
-            $parcial->save();
-        }
+            $segui->save();
+        
         return redirect()->route("home");
     }
 
@@ -167,13 +172,13 @@ class SeguimientoController extends Controller
     public function update(UpdateSeguimientoRequest $request, Estudiante $estudiante, $consecutivo)
     {
         //encontrar ese parcial
-        $parcial = Parcial::where('estudiante_id', $estudiante->id)
+        $segui = Parcial::where('estudiante_id', $estudiante->id)
                           ->where('consecutivo',$consecutivo)
                           ->first();
 
-        $parcial->promedio_parcial = $request->promedio;
+        $segui->promedio_parcial = $request->promedio;
         //guardar el archivo
-        $parcial->save(); 
+        $segui->save(); 
                                             
     }
 
