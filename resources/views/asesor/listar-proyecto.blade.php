@@ -53,7 +53,13 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     </td>
     <td>
       @foreach ($proyecto->estudiantes as $estudiante)
-          <li><a href="{{route('realizar-seguimientos',[$estudiante->id,'primer'])}}">Realizar</a></li>
+          <li>
+            @if (is_null($estudiante->primer))
+              <a href="{{route('realizar-seguimientos',[$estudiante->id,'primer'])}}">Realizar</a>
+            @else
+              Realizado
+            @endif
+          </li>
       @endforeach
     </td>
     <td>
