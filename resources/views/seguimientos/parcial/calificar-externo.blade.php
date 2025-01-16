@@ -163,10 +163,12 @@ textarea{padding: 10px;}
                 <td>{{$segui->mejoras_interno}}</td>
             </tr>
             <tr>
+            
                 <td>Observaciones</td>
-                <td colspan="2">
+                <td>
                     {{$segui->comentarios_interno}}
                 </td>
+            
             </tr>
         </tbody>
     </table>

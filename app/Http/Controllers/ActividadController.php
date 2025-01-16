@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Actividad;
 use App\Models\Proyecto;
+use App\Models\Periodo;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreActividadRequest;
 use App\Http\Requests\UpdateActividadRequest;
@@ -17,7 +18,8 @@ class ActividadController extends Controller
     public function index(Proyecto $proyecto)
     {
         $todos = $proyecto->actividades;
-        return view('actividad.listar',compact('todos'));
+        return view('proyecto.mostrar',compact('todos'));
+
     }
 
     /**
@@ -64,7 +66,9 @@ class ActividadController extends Controller
      */
     public function update(Request $request, Proyecto $proyecto, Actividad $actividad)
     {
-        //
+        $actividad->fill($request->all());
+        $actividad->save();
+        return redirect()->route("home");
     }
 
     /**
@@ -73,6 +77,6 @@ class ActividadController extends Controller
     public function destroy(Proyecto $proyecto, Actividad $actividad)
     {
         $actividad->delete();
-        return redirect()->route("actividad.index");
+        return redirect()->route("actividades.index");
     }
 }

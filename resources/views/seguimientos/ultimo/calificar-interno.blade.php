@@ -40,41 +40,62 @@ textarea{padding: 10px;}
         </thead>
         <tbody>
             <tr>
-                <td>Asiste puntualmente en el horario establecido.</td>
-                <td>{{$ultimo->puntualidad_externo}}</td>
+                <td>Portada</td>
+                <td>{{$ultimo->portada_externo}}</td>
             </tr>
             <tr>
-                <td>Trabaja en equipo y se comunica de forma efectiva (oral y escrita).</td>
-                <td>{{$ultimo->equipo_externo}}</td>
+                <td>Agradecimientos</td>
+                <td>{{$ultimo->agradecimientos_externo}}</td>
             </tr>
             <tr>
-                <td>Tiene iniciativa para colaborar.</td>
-                <td>{{$ultimo->iniciativa_externo}}</td>
+                <td>Resumen</td>
+                <td>{{$ultimo->resumen_externo}}</td>
             </tr>
             <tr>
-                <td>Propone mejoras al proyecto.</td>
-                <td>{{$ultimo->mejoras_externo}}</td>
+                <td>Índice</td>
+                <td>{{$ultimo->indice_externo}}</td>
             </tr>
             <tr>
-                <td>Cumple con los objetivos correspondientes al proyecto.</td>
+                <td>Introducción</td>
+                <td>{{$ultimo->introduccion_externo}}</td>
+            </tr>
+            <tr>
+                <td>Problemas a resolver (priorizándolos)</td>
+                <td>{{$ultimo->problemas_externo}}</td>
+            </tr>
+            <tr>
+                <td>Objetivos</td>
                 <td>{{$ultimo->objetivos_externo}}</td>
             </tr>
             <tr>
-                <td>Es ordenado y cumple satisfactoriamente con las actividades encomendadas en los tiempos 
-                establecidos en el cronograma.</td>
-                <td>{{$ultimo->orden_externo}}</td>
+                <td>Justificación</td>
+                <td>{{$ultimo->justificacion_externo}}</td>
             </tr>
             <tr>
-                <td>Demuestra liderazgo en su actuar.</td>
-                <td>{{$ultimo->liderazgo_externo}}</td>
+                <td>Marco Teórico (fundamentos teóricos)</td>
+                <td>{{$ultimo->marco_teorico_externo}}</td>
             </tr>
             <tr>
-                <td>Demuestra conocimiento en el área de su especialidad.</td>
-                <td>{{$ultimo->conocimiento_externo}}</td>
+                <td>Procedimiento, descripción de las actividades realizadas</td>
+                <td>{{$ultimo->procedimiento_externo}}</td>
             </tr>
             <tr>
-                <td>Demuestra un comportamiento ético (es disciplinado, acata órdenes, respeta a sus compañeros de trabajo, entre otros).</td>
-                <td>{{$ultimo->etico_externo}}</td>
+                <td>Resultados: planos, gráficas, prototipos, manuales, programas, análisis estadísticos, 
+                    modelos matemáticos, simulaciones, normativas, regulaciones y restricciones, entre otros. 
+                    Solo para proyectos que lo requieran, estudios de mercado, estudio técnico y estudio económico. **</td>
+                <td>{{$ultimo->resultados_externo}}</td>
+            </tr>
+            <tr>
+                <td>Conclusiones, recomendaciones, y experiencia profesional adquirida.</td>
+                <td>{{$ultimo->conclusiones_externo}}</td>
+            </tr>
+            <tr>
+                <td>Competencias desarrolladas y/o aplicadas</td>
+                <td>{{$ultimo->competencias_externo}}</td>
+            </tr>
+            <tr>
+                <td>Fuentes de información</td>
+                <td>{{$ultimo->fuentes_externo}}</td>
             </tr>
             <tr>
                 <td>Observaciones</td>

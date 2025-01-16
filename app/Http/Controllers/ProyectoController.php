@@ -10,6 +10,7 @@ use App\Models\Asesor;
 use App\Models\Externo;
 use App\Models\Empresa;
 use App\Models\Usuario;
+use App\Models\Actividad;
 use App\Providers\ConfiguracionServiceProvider;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;

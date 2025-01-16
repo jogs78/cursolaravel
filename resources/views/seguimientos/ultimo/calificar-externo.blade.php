@@ -48,7 +48,7 @@ textarea{padding: 10px;}
                 <td>Portada</td>
                 <td>2</td>
                 <td> 
-                    <input type="range" name="portada_externo" class="rangeInput" id="rangeInput1" min="0" max="2" value="{{$ultimo->portada_externo}}"> <br>
+                    <input type="range" name="portada_externo" class="rangeInput" id="rangeInput1" min="0" max="2" value="{{$ultimo->portadaportada_externo}}"> <br>
                     <span id="rangeValue1">2</span>
                 </td>
             </tr>
@@ -162,12 +162,14 @@ textarea{padding: 10px;}
             <tr>
                 <td>Observaciones</td>
                 <td colspan="2">
-                    <textarea name="comentarios_externo" id="" cols="30" rows="10">{{$ultimo->comentarios_externo}}</textarea>
+                    <textarea name="comentarios_interno" id="" cols="30" rows="10">{{$ultimo->comentarios_interno}}</textarea>
                 </td>
             </tr>
         </tbody>
     </table>
+
     <input type='submit' class="boton" style="margin-bottom: 20px" value="Enviar calificacion">
+    </form>
 
     <h2>Califiaciones del asesor interno</h2>
     <table border="1">
@@ -176,42 +178,63 @@ textarea{padding: 10px;}
             <th class="thfondo">Calificaciones dadas por el Asesor Externo</th>
         </thead>
         <tbody>
-            <tr>
-                <td>Asiste puntualmente en el horario establecido.</td>
-                <td>{{$ultimo->puntualidad_interno}}</td>
+        <tr>
+                <td>Portada</td>
+                <td>{{$ultimo->portada_interno}}</td>
             </tr>
             <tr>
-                <td>Trabaja en equipo y se comunica de forma efectiva (oral y escrita).</td>
-                <td>{{$ultimo->equipo_interno}}</td>
+                <td>Agradecimientos</td>
+                <td>{{$ultimo->agradecimientos_interno}}</td>
             </tr>
             <tr>
-                <td>Tiene iniciativa para colaborar.</td>
-                <td>{{$ultimo->iniciativa_interno}}</td>
+                <td>Resumen</td>
+                <td>{{$ultimo->resumen_interno}}</td>
             </tr>
             <tr>
-                <td>Propone mejoras al proyecto.</td>
-                <td>{{$ultimo->mejoras_interno}}</td>
+                <td>Índice</td>
+                <td>{{$ultimo->indice_interno}}</td>
             </tr>
             <tr>
-                <td>Cumple con los objetivos correspondientes al proyecto.</td>
+                <td>Introducción</td>
+                <td>{{$ultimo->introduccion_interno}}</td>
+            </tr>
+            <tr>
+                <td>Problemas a resolver (priorizándolos)</td>
+                <td>{{$ultimo->problemas_interno}}</td>
+            </tr>
+            <tr>
+                <td>Objetivos</td>
                 <td>{{$ultimo->objetivos_interno}}</td>
             </tr>
             <tr>
-                <td>Es ordenado y cumple satisfactoriamente con las actividades encomendadas en los tiempos 
-                establecidos en el cronograma.</td>
-                <td>{{$ultimo->orden_interno}}</td>
+                <td>Justificación</td>
+                <td>{{$ultimo->justificacion_interno}}</td>
             </tr>
             <tr>
-                <td>Demuestra liderazgo en su actuar.</td>
-                <td>{{$ultimo->liderazgo_interno}}</td>
+                <td>Marco Teórico (fundamentos teóricos)</td>
+                <td>{{$ultimo->marco_teorico_interno}}</td>
             </tr>
             <tr>
-                <td>Demuestra conocimiento en el área de su especialidad.</td>
-                <td>{{$ultimo->conocimiento_interno}}</td>
+                <td>Procedimiento, descripción de las actividades realizadas</td>
+                <td>{{$ultimo->procedimiento_interno}}</td>
             </tr>
             <tr>
-                <td>Demuestra un comportamiento ético (es disciplinado, acata órdenes, respeta a sus compañeros de trabajo, entre otros).</td>
-                <td>{{$ultimo->etico_interno}}</td>
+                <td>Resultados: planos, gráficas, prototipos, manuales, programas, análisis estadísticos, 
+                    modelos matemáticos, simulaciones, normativas, regulaciones y restricciones, entre otros. 
+                    Solo para proyectos que lo requieran, estudios de mercado, estudio técnico y estudio económico. **</td>
+                <td>{{$ultimo->resultados_interno}}</td>
+            </tr>
+            <tr>
+                <td>Conclusiones, recomendaciones, y experiencia profesional adquirida.</td>
+                <td>{{$ultimo->conclusiones_interno}}</td>
+            </tr>
+            <tr>
+                <td>Competencias desarrolladas y/o aplicadas</td>
+                <td>{{$ultimo->competencias_interno}}</td>
+            </tr>
+            <tr>
+                <td>Fuentes de información</td>
+                <td>{{$ultimo->fuentes_interno}}</td>
             </tr>
             <tr>
                 <td>Observaciones</td>
@@ -223,7 +246,7 @@ textarea{padding: 10px;}
     </table>
 
     
-    </form>
+    
 
 
 
