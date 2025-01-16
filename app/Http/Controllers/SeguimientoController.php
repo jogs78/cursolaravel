@@ -83,34 +83,32 @@ class SeguimientoController extends Controller
         $tipo = $usuario->usa_type;
         switch ($tipo) {
             case 'App\Models\Asesor':
-                     $campos = [
-                     'puntualidad_interno',
-                     'conocimiento_interno',
-                     'equipo_interno',
-                     'dedicado_interno',
-                     'orden_interno',
-                     'mejoras_interno',
-                     //'promedio_interno', está en linea 110
-                    //'comentarios_interno', está en linea 111
+                    $campos = [
+                    'puntualidad_interno',
+                    'conocimiento_interno',
+                    'equipo_interno',
+                    'dedicado_interno',
+                    'orden_interno',
+                    'mejoras_interno',
 
-                     'portada_interno',
-                     'agradecimientos_interno',
-                     'resumen_interno',
-                     'indice_interno',
-                     'introduccion_interno',
-                     'problemas_interno',
-                     'objetivos_interno',
-                     'justificacion_interno',
-                     'marco_teorico_interno',
-                     'procedimiento_interno',
-                     'resultados_interno',
-                     'conclusiones_interno',
-                     'competencias_interno',
-                     'fuentes_interno',
-                     'promedio_interno',//
-                     'comentarios_interno',//
-
-                 ];
+                    'portada_interno',
+                    'agradecimientos_interno',
+                    'resumen_interno',
+                    'indice_interno',
+                    'introduccion_interno',
+                    'problemas_interno',
+                    'objetivos_interno',
+                    'justificacion_interno',
+                    'marco_teorico_interno',
+                    'procedimiento_interno',
+                    'resultados_interno',
+                    'conclusiones_interno',
+                    'competencias_interno',
+                    'fuentes_interno'
+                ];
+                $campos2 = [
+                    'comentarios_interno',
+                ];
                 break;
             
             case 'App\Models\Externo':
@@ -124,16 +122,12 @@ class SeguimientoController extends Controller
                     'liderazgo_externo', 
                     'conocimiento_externo',
                     'etico_externo', 
-                    //'promedio_externo', está en linea 144
-                    //'comentarios_externo', está en linea 145
-                    
                     'portada_externo',
                     'agradecimientos_externo',
                     'resumen_externo',
                     'indice_externo',
                     'introduccion_externo',
                     'problemas_externo',
-                    'objetivos_externo',
                     'justificacion_externo',
                     'marco_teorico_externo',
                     'procedimiento_externo',
@@ -141,9 +135,9 @@ class SeguimientoController extends Controller
                     'conclusiones_externo',
                     'competencias_externo',
                     'fuentes_externo',
-                    'promedio_externo',//
-                    'comentarios_externo',//
-
+                ];
+                $campos2 = [
+                    'comentarios_externo',
                 ];
                 break;
             case 'App\Models\Estudiante':
@@ -170,7 +164,13 @@ class SeguimientoController extends Controller
             foreach ($campos as $campo) {
                 if($request->has($campo)){
                     $segui->$campo=$request->input($campo);
+                    
                     $suma += (int) $request->input($campo);
+                }
+            }
+            foreach ($campos2 as $campo) {
+                if($request->has($campo)){
+                    $segui->$campo=$request->input($campo);
                 }
             }
             $suma = $suma;

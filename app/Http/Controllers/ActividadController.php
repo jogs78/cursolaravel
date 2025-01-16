@@ -75,8 +75,8 @@ class ActividadController extends Controller
      * Remove the specified resource from storage.
      */
     public function destroy(Proyecto $proyecto, Actividad $actividad)
-    {
+    {   
         $actividad->delete();
-        return redirect()->route("actividades.index");
+        return redirect()->route("proyectos.actividades.index",$proyecto->id);
     }
 }

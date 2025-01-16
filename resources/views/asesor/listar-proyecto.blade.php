@@ -54,7 +54,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     <td>
       @foreach ($proyecto->estudiantes as $estudiante)
           <li>
-            @if (is_null($estudiante->primer))
+            @if (is_null($estudiante->primer?->puntualidad_interno))
               <a href="{{route('realizar-seguimientos',[$estudiante->id,'primer'])}}">Realizar</a>
             @else
               Realizado

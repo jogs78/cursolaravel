@@ -93,7 +93,7 @@ Route::put('actualizar-seguimientos/{estudiante}/{consecutivo}',[SeguimientoCont
 //no implmentaremos el D puesto que es para borrar y no veo la necesidad de borrar un seguimiento
 
 //rutas de los CRUD 
-Route::resource('actividades',ActividadController::class);
+//Route::resource('actividades',ActividadController::class);
 Route::resource('configuraciones',ConfiguracionController::class);
 Route::resource('proyectos',ProyectoController::class);
 Route::resource('periodos',PeriodoController::class);

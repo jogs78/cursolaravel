@@ -24,29 +24,28 @@
     <table class="marriba" style="width: 100%;">
             <tr>
                 <th style="width: 20%;">Lugar: </th>
-                <td style="width: 30%;" class="subrayado">Tuxtla Gutiérrez, Chiapas</th><!--Cambiar-->
+                <td style="width: 30%;" class="subrayado">Tuxtla Gutiérrez, Chiapas</th><!--Cambiar??-->
                 <th style="width: 20%;">Fecha: </th>
-                <td style="width: 30%;"  class="subrayado">09 de Agosto del 2024</td>
+                <td style="width: 30%;"  >________________________</td>
             </tr>
     </table>
     <table class="marriba" style="width: 100%;">
         <tr>
             <th style="width: 50%;">{{$jefe}}</th>
-            <th style="width: 50%;">AT’N: C. MTRA. OBDULIA RIOS COUTIÑO</th>
+            <th style="width: 50%;">AT’N: C. {{$estudiante->carrera->coordinador->nombre}} {{$estudiante->carrera->coordinador->apellido_paterno}} {{$estudiante->carrera->coordinador->apellido_materno}}</th>
         </tr>
     </table>
     <table style="width: 100%;">
         <tr>
             <td class="centro" style="width: 50%;">Jefe de la Div. de Estudios Profesionales</td>
-            <td class="centro" style="width: 50%;">Coord. de la Carrera de Ing. En Sistemas Computacionales</td>
-        </tr>
+            <td class="centro" style="width: 50%;">Coord. de la Carrera de Ing. En {{$estudiante->carrera->nombre}}</td>
     </table>
 
         <table class="marriba" style="width: 100%;">
             <tr>
             <th class="cuadro" style="width: 25%;">NOMBRE DEL PROYECTO: </th>
             <th style="width: 5%;"></th>
-            <td class="cuadro" style="width: 70%;">{{$estudiante->proyecto->nombre}}</td><!--Cambiar-->
+            <td class="cuadro" style="width: 70%;">{{$estudiante->proyecto->nombre}}</td>
             </tr>
         </table>
         <div class="horizontal marriba">
@@ -57,7 +56,7 @@
         </div>
         <div class="horizontal marriba">
             <p class="bold cuadro marginr">PERIODO PROYECTADO: </p>
-            <p class="marginr">AGOSTO – DICIEMBRE 2024</p><!--Cambiar-->
+            <p class="marginr">{{$estudiante->proyecto->periodo->nombre}}</p>
             <p>Número de Residentes: </p>
             <p>1</p><!--Cambiar-->
         </div>
@@ -67,22 +66,22 @@
             <table class="tabla">
                 <tr>
                     <th style="width: 10%; border: 1px solid black;">Nombre: </th>
-                    <th style="width: 90%; border: 1px solid black;" >Tecnológico Nacional de México Campus Tuxtla Gutiérrez</th><!--Cambiar-->
+                    <th style="width: 90%; border: 1px solid black;" >{{$estudiante->proyecto->empresa->nombre}}</th>
                 </tr>
             </table>
                 <table class="tabla">
                     <tr>
                         <th class="cuadro" style="width: 20%;">Giro, Ramo o Sector: </th>
-                        <th class="cuadro" style="width: 50%;">Industrial (   ) Servicios (   ) Otro  (   )  Público (  x ) Privado (    ) </th><!--Cambiar-->
+                        <th class="cuadro" style="width: 50%;">{{$estudiante->proyecto->empresa->giro}} </th>
                         <th class="cuadro" style="width: 40%;">R.F.C. </th>
-                        <th class="cuadro" style="width: 30%;">TNM140723GFA </th>
+                        <th class="cuadro" style="width: 30%;">{{$estudiante->proyecto->empresa->rfc}} </th>
                     </tr>
                 </table>
                 <table class="tabla">
                     <tr>
                         <th class="cuadro" style="width: 15%;">Dirección: </th>
                         <th class="cuadro nsemanas">Calle: </th>
-                        <th class="cuadro" style="width: 35%;">Carretera Panamericana, Boulevares. KM 1080 </th> <!-- Cambiar -->
+                        <th class="cuadro" style="width: 35%;">{{$estudiante->proyecto->empresa->direccion}} </th>
                         <th class="cuadro nsemanas">Número: </th>
                         <th class="cuadro" style="width: 30%;">S/N </th> <!-- Cambiar -->
                     </tr>
@@ -98,25 +97,25 @@
                 <table class="tabla">
                     <tr>
                     <th class="cuadro nsemanas">Teléfono / Fax </th>
-                    <th class="cuadro" style="width: 40%;">96161500461 </th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->proyecto->empresa->telefono}} </th>
                     <th class="cuadro nsemanas">Email </th>
-                    <th class="cuadro" style="width: 40%;">contacto@ittg.edu.mx </th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->proyecto->empresa->correo}} </th>
                     </tr>
                 </table>
                 <table class="tabla">
                     <tr>
                     <th class="cuadro nsemanas">Nombre del Titular de la empresa: </th>
-                    <th class="cuadro" style="width: 40%;">José Manuel Rosado Pérez</th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->proyecto->empresa->titular}}</th>
                     <th class="cuadro nsemanas">Puesto: </th>
-                    <th class="cuadro" style="width: 40%;">Director del ITTG  </th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->proyecto->empresa->puesto_titular}} </th>
                     </tr>
                 </table>
                 <table class="tabla">
                     <tr>
                     <th class="cuadro nsemanas">Nombre del Asesor Externo:  </th>
-                    <th class="cuadro" style="width: 40%;">Gabriela Alejandra Ríos Zúñiga</th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->proyecto->externo->titulo}} {{$estudiante->proyecto->externo->nombre}} {{$estudiante->proyecto->externo->apellido_paterno}} {{$estudiante->proyecto->externo->apellido_materno}}</th>
                     <th class="cuadro nsemanas">Puesto: </th>
-                    <th class="cuadro" style="width: 40%;">Jefa del Departamento de Departamento de Ingenierías</th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->proyecto->externo->puesto}}</th>
                     </tr>
                 </table>
             </div>
@@ -128,29 +127,29 @@
                 <table class="tabla">
                     <tr>
                     <th class="cuadro nsemanas">Nombre: </th>
-                    <th class="cuadro" style="width: 40%;">Jorge Omner Arias Olea</th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->nombre}} {{$estudiante->apellido_paterno}} {{$estudiante->apellido_materno}}</th>
                     <th class="cuadro nsemanas">Telefono: </th>
-                    <th class="cuadro" style="width: 40%;">9613599215</th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->telefono}}</th>
                     </tr>
                 </table>
                 <table class="tabla">
                     <tr>
                     <th class="cuadro nsemanas">Carrera: </th>
-                    <th class="cuadro" style="width: 40%;">Ingenieria en Sistemas Computacionales </th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->carrera->nombre}} </th>
                     <th class="cuadro nsemanas">No. de Control: </th>
-                    <th class="cuadro" style="width: 40%;">20270264</th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->numero_de_control}}</th>
                     </tr>
                 </table>
                 <table class="tabla">
                     <tr>
                         <th class="cuadro nsemanas">Direccion:  </th>
-                        <th class="cuadro" style="width: 90%;">Blvd. Paseo de las Gargolas Edif. 380 – B</th><!--Cambiar-->
+                        <th class="cuadro" style="width: 90%;">{{$estudiante->direccion}}</th>
                     </tr>
                 </table>
                 <table class="tabla">
                     <tr>
                     <th class="cuadro nsemanas">Email: </th>
-                    <th class="cuadro" style="width: 40%;">L20270264@tuxtla.tecnm.mx</th><!--Cambiar-->
+                    <th class="cuadro" style="width: 40%;">{{$estudiante->correo_electronico}}</th>
                     </tr>
                 </table>
                     <table class="tabla">
@@ -159,7 +158,7 @@
                             <th class="cuadro" style="width: 25%;">IMSS <p>(X)</p></th><!--Cambiar-->
                             <th class="cuadro" style="width: 25%;">ISSSTE <p>( )</p></th><!--Cambiar-->
                             <th class="cuadro" style="width: 25%;"> OTROS <p>( )</p></th><!--Cambiar-->
-                            <th class="cuadro" style="width: 25%;">No. :  <p>25169967004</p> </th><!--Cambiar-->
+                            <th class="cuadro" style="width: 25%;">No. :  <p>{{$estudiante->numero_de_seguridad_social}}</p> </th><!--Cambiar-->
                         </tr>
                     </table> 
                 </div>

@@ -31,6 +31,13 @@
     </style>       
 </head>
 <body>
+@php
+    $types = [
+        'App\Models\Estudiante' => 'Estudiante',
+        'App\Models\Asesor' => 'Asesor Interno',
+        'App\Models\Externo' => 'Asesor Externo',
+    ];
+@endphp
     @auth
         <div style="width: 100%; margin-bottom:10px;">
             <div class="hderecho" style="width: 100%; height: 20px; margin-bottom:10px; ">
@@ -44,7 +51,7 @@
                     <a class="boton" href="{{route('Cambiar_Contraseña')}}">Cambiar la Contraseña</a>
                 </div>
                 <div style="width:50%; margin-right: 10px;" class="hderecho">
-                    <p style="margin-right: 10px; margin-bottom: 10px;" class="parrafo">Bienvenido:</p><p class="parrafo">{{Auth::user()->usa->nombre}}</p>
+                    <p style="margin-right: 10px; margin-bottom: 10px;" class="parrafo">Bienvenido:</p><p class="parrafo">{{Auth::user()->usa->nombre}} {{Auth::user()->usa->apellido_paterno}}  {{Auth::user()->usa->apellido_materno}} ({{ $types[Auth::user()->usa_type] ?? Auth::user()->usa_type }})</p>
                     <!--<div class="parrafo" style="text-align: right; margin-right: 10px;"><p>Bienvenido:</p>{{Auth::user()->usa->nombre}}</div>-->
                 </div>
             </div>

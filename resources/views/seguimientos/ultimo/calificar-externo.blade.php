@@ -162,7 +162,7 @@ textarea{padding: 10px;}
             <tr>
                 <td>Observaciones</td>
                 <td colspan="2">
-                    <textarea name="comentarios_interno" id="" cols="30" rows="10">{{$ultimo->comentarios_interno}}</textarea>
+                    <textarea name="comentarios_externo" id="" cols="30" rows="10">{{$ultimo->comentarios_externo}}</textarea>
                 </td>
             </tr>
         </tbody>

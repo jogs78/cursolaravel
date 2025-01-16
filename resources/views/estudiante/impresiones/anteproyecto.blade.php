@@ -98,7 +98,7 @@
         <table class="tabla" style="margin-top: 60px;">
             <tr>
                 <th style="width: 50%;">{{$estudiante->nombre}} {{$estudiante->apellido_paterno}} {{$estudiante->apellido_materno}}</th>
-                <th style="width: 50%;">Jorge Octavio Guzmán Sánchez</th>
+                <th style="width: 50%;">{{$estudiante->proyecto->asesor->nombre}} {{$estudiante->proyecto->asesor->apellido_paterno}} {{$estudiante->proyecto->asesor->apellido_materno}}</th>
             </tr>
         </table>
         <table class="tabla">
