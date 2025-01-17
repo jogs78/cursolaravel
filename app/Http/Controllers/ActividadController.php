@@ -18,7 +18,7 @@ class ActividadController extends Controller
     public function index(Proyecto $proyecto)
     {
         $todos = $proyecto->actividades;
-        return view('proyecto.mostrar',compact('todos'));
+        return view('proyecto.mostrar',compact('todos','proyecto'));
 
     }
 
@@ -57,8 +57,9 @@ class ActividadController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Proyecto $proyecto, Actividad $actividad)
-    {
-        return view('actividad.editar',compact("actividad"));
+    {   
+        $actividad = $proyecto->actividades->first();
+        return view('actividad.editar',compact("actividad","proyecto"));
     }
 
     /**

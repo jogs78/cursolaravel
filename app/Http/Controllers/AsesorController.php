@@ -72,7 +72,7 @@ class AsesorController extends Controller
     public function destroy(Asesor $asesor)
     {
         $asesor->delete();
-        return redirect()->route("home");
+        return redirect()->route("asesores.index");
     }
 
 public function mostrar($pagina)

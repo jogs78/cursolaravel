@@ -43,7 +43,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
         @foreach ($todos as $externo)
         <tr>
             <td style="padding:5px;">{{$externo->id}}</td>
-            <td style="padding:5px;">{{$externo->nombre}}</td>
+            <td style="padding:5px;">{{$externo->titulo}} {{$externo->nombre}}</td>
             <td style="padding:5px;">{{$externo->apellido_paterno}} {{$externo->apellido_materno}}</td>
             <td style="padding:8px;">
                 <a href="{{route("externos.edit",$externo->id)}}" class="botonEditar">Editar</a>

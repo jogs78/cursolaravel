@@ -57,6 +57,7 @@ Route::put('asignar-asesores/{proyecto_id}',[CoordinadorController::class,'asign
 
 //rutas especificas del estudiante
 Route::get('edit',[EstudianteController::class,'edit'])->middleware('auth')->name('estudiante.editar');
+Route::get('index',[EstudianteController::class,'index'])->middleware('auth')->name('estudiante.index');
 //Route::put('update',[EstudianteController::class,'update'])->middleware('auth')->name('estudiante.update');
 //Route::put('update/{estudiante}', [EstudianteController::class, 'update'])->name('estudiantes.update');
 Route::get('solicitud',[EstudianteController::class,'solicitud'])->middleware('auth')->name('estudiante.impresiones.solicitud');

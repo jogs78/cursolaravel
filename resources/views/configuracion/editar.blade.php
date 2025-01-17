@@ -31,11 +31,11 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
         @method('PUT')
         <label for='variable' class="parrafo">Variable</label>
         {{$errors->first("variable")}}
-        <input type='text' name='variable' id='variable' value="{{old('variable')}}" class="llenar"><br>
+        <input type='text' name='variable' id='variable' value="{{$configuracion->variable}}" class="llenar"><br>
 
         <label for='valor' class="parrafo">Valor</label>
         {{$errors->first("valor")}}
-        <input type='text' name='valor' id='valor' value="{{old('valor')}}" class="llenar"><br>
+        <input type='text' name='valor' id='valor' value="{{$configuracion->valor}}" class="llenar"><br>
 
         <div class="centro"><input type='submit' class="boton"></div>
     </form>

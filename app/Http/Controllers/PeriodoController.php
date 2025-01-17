@@ -57,10 +57,9 @@ class PeriodoController extends Controller
     public function edit(Periodo $periodo)
     {
         //MOSTRAR EL FORMULARIO PARA EDITAR UN PERIODO
-        $usuario = Auth::user();
-
-        echo  $usuario->usa->nombre .  "quiere modificar el periodo";
-//        return view('coordinador.periodo.editar',compact("periodo"));
+       // $usuario = Auth::user();
+        //echo  $usuario->usa->nombre .  "quiere modificar el periodo";
+        return view('coordinador.periodo.editar',compact("periodo"));
     }
 
     /**
@@ -71,7 +70,7 @@ class PeriodoController extends Controller
         //ACTUALIZAR LA BASE DE DATOS CON LOS DATOS QUE VIENEN DEL FORMULARIO DE EDITAR UN PERIODO
         $periodo->fill($request->all());
         $periodo->save();
-        return redirect()->route("home"); //"periodos.index"
+        return redirect()->route("periodos.index"); //""
 
     }
 

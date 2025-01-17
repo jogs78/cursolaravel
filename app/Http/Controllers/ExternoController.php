@@ -55,7 +55,7 @@ class ExternoController extends Controller
      */
     public function edit(Externo $externo)
     {
-        return view('asesor.editar',compact("asesor"));
+        return view('externo.editar',compact("externo"));
     }
 
     /**
@@ -74,7 +74,7 @@ class ExternoController extends Controller
     public function destroy(Externo $externo)
     {
         $externo->delete();
-        return redirect()->route("home");
+        return redirect()->route("externos.index");
     }
 
     public function crearCuenta(Externo $externo)
