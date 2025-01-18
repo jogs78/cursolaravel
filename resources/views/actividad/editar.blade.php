@@ -24,18 +24,26 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
 @section('contenido')
 
 <div style="margin-top:20px;">
-<div class="horizontal"><p class="subtitulo">Actualize una configuracion</p></div><br>
+<div class="horizontal"><p class="subtitulo">Actualize una Actividad</p></div><br>
     <div class="centro">
     <form action="{{route("proyectos.actividades.update",[$proyecto->id,$actividad->id])}}" enctype="application/x-www-form-urlencoded" >
         @csrf
         @method('PUT')
-        <label for='variable' class="parrafo">Variable</label>
-        {{$errors->first("variable")}}
-        <input type='text' name='variable' id='variable' value="{{old('variable')}}" class="llenar"><br>
+        <label for='nombre' class="parrafo">Nombre de la actividad</label>
+        {{$errors->first("nombre")}}
+        <input type='text' name='nombre' id='nombre' value="{{$actividad->nombre}}" class="llenar"><br>
+        
+        <label for='descripcion' class="parrafo">Describe como realizaras tal actividad </label>
+        {{$errors->first("descripcion")}}
+        <textarea name='descripcion' id='descripcion' class="llenar">{{$actividad->descripcion}}</textarea><br>
 
-        <label for='valor' class="parrafo">Valor</label>
-        {{$errors->first("valor")}}
-        <input type='text' name='valor' id='valor' value="{{old('valor')}}" class="llenar"><br>
+        <label for='semanas' class="parrafo">En cuantas semanas reliazaras tal actividad</label>
+        {{$errors->first("semanas")}}
+        <input type='number' name='semanas' id='semanas' value="{{$actividad->semanas}}" class="llenar"><br>
+
+        <label for='orden' class="parrafo">Cual es el orden de esta actividad</label>
+        {{$errors->first("orden")}}
+        <input type='number' name='orden' id='orden' value="{{$actividad->orden}}" class="llenar"><br>
 
         <div class="centro"><input type='submit' class="boton"></div>
     </form>

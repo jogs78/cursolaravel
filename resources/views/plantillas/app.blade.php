@@ -104,7 +104,7 @@
                     @case("App\Models\Externo")
                     <div>
                             
-                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('asesor.listar-proyectos')}}">PROYECTOS ASIGNADOS</a></div>
+                            <div style="margin-top: 25px;"><a  style="text-decoration: none;" class="opcion" href="{{route('externo.lista-de-proyectos')}}">PROYECTOS ASIGNADOS</a></div>
                             <!-- <li class="opcion"><a  style="text-decoration: none;" href="#">CALIFICAR PROYECTO</a></li> -->
                         </div>
                     @break

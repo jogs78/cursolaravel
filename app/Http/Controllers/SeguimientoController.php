@@ -39,9 +39,8 @@ class SeguimientoController extends Controller
                 
                 if($consecutivo == 'ultimo' ){
                     $ultimo = Parcial::firstOrCreate(
-                        ['estudiante_id' => $estudiante->id ], 
+                        ['estudiante_id' => $estudiante->id], 
                     );
-                    
                     return view('seguimientos.ultimo.calificar-interno',compact('estudiante','consecutivo','ultimo'));
 
                 }
@@ -51,15 +50,13 @@ class SeguimientoController extends Controller
                 if($consecutivo == 'primer' or $consecutivo == 'segundo'){
                     
                     $segui = Parcial::firstOrCreate(
-                        ['estudiante_id' => $estudiante->id ], 
-                        ['consecutivo' => $consecutivo ] 
+                        ['estudiante_id' => $estudiante->id, 'consecutivo' => $consecutivo ],
                     );
                     return view('seguimientos.parcial.calificar-externo',compact('estudiante','consecutivo','segui'));                    
                 }
-                
                 if($consecutivo == 'ultimo' ){
                     $ultimo = Parcial::firstOrCreate(
-                        ['estudiante_id' => $estudiante->id ], 
+                        ['estudiante_id' => $estudiante->id],
                     );
                     return view('seguimientos.ultimo.calificar-externo',compact('estudiante','consecutivo','ultimo'));
 

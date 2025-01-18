@@ -68,8 +68,11 @@ Route::get('segundo',[EstudianteController::class,'segundo'])->middleware('auth'
 Route::get('ultimo',[EstudianteController::class,'ultimo'])->middleware('auth')->name('estudiante.impresiones.seguimientos.ultimo');
 //Route::get('/proyecto/crear', [ProyectoController::class, 'registrarProyecto'])->name('proyecto.crear');
 
-//rutas especificas del asesor
+//rutas especificas del asesor interno
 Route::get('listar-proyectos',[AsesorController::class,'proyecto'])->middleware('auth')->name('asesor.listar-proyectos');
+
+//rutas especificas del asesor Externo
+Route::get('lista-de-proyectos',[ExternoController::class,'proyecto'])->middleware('auth')->name('externo.lista-de-proyectos');
 
 //rutas especificas del coordinador
 Route::resource('periodos',PeriodoController::class)->middleware('auth');

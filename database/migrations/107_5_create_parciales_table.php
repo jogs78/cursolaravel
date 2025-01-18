@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('estudiante_id')->nullable()->default(null)->constrained('estudiantes');
             $table->float  ('promedio_parcial')->nullable()->default(null); 
-            $table->enum('consecutivo',['primer','segundo'])->nullable()->default(null);
+            $table->enum('consecutivo',['primer','segundo',])->nullable()->default(null);
 
             $table->integer('puntualidad_externo')->nullable()->default(null);
             $table->integer('equipo_externo')->nullable()->default(null);

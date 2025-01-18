@@ -53,23 +53,35 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
     </td>
     <td>
       @foreach ($proyecto->estudiantes as $estudiante)
-          <li>
-            @if (is_null($estudiante->primer?->puntualidad_interno))
-              <a href="{{route('realizar-seguimientos',[$estudiante->id,'primer'])}}">Realizar</a>
+          
+          @if (is_null($estudiante->primer?->puntualidad_interno))
+          <li><a href="{{route('realizar-seguimientos',[$estudiante->id,'primer'])}}">Realizar</a></li>
             @else
+              <li>Realizado</li>
+            @endif
+          
+      @endforeach
+    </td>
+    <td>
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li>
+          @if (is_null($estudiante->segundo?->puntualidad_interno))
+          <a href="{{route('realizar-seguimientos',[$estudiante->id,'segundo'])}}">Realizar</a>
+          @else
+              Realizado
+            @endif
+        </li>
+      @endforeach
+    </td>
+    <td>
+      @foreach ($proyecto->estudiantes as $estudiante)
+          <li>
+          @if (is_null($estudiante->ultimo?->portada_interno))
+          <a href="{{route('realizar-seguimientos',[$estudiante->id,'ultimo'])}}">Realizar</a>
+          @else
               Realizado
             @endif
           </li>
-      @endforeach
-    </td>
-    <td>
-      @foreach ($proyecto->estudiantes as $estudiante)
-          <li><a href="{{route('realizar-seguimientos',[$estudiante->id,'segundo'])}}">Realizar</a></li>
-      @endforeach
-    </td>
-    <td>
-      @foreach ($proyecto->estudiantes as $estudiante)
-          <li><a href="{{route('realizar-seguimientos',[$estudiante->id,'ultimo'])}}">Realizar</a></li>
       @endforeach
     </td>
    </tr>

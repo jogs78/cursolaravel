@@ -23,10 +23,21 @@ class ParcialSeeder extends Seeder
         $parcial->dedicado_interno = 20;
         $parcial->orden_interno = 20;
         $parcial->mejoras_interno = 15;
-        $parcial->promedio_interno = 15;        
-        $parcial->ruta = "C:\\Users\\omner\\Desktop";
+        $parcial->promedio_interno = 15;  
+        $parcial->comentarios_interno = "primer interno comentario";        
+        $parcial->puntualidad_externo = 5;
+        $parcial->equipo_externo = 10;
+        $parcial->iniciativa_externo = 5;
+        $parcial->mejoras_externo = 10;
+        $parcial->objetivos_externo = 15;
+        $parcial->orden_externo = 15;
+        $parcial->liderazgo_externo = 10;  
+        $parcial->conocimiento_externo = 20;
+        $parcial->etico_externo = 10;
+        $parcial->promedio_externo = 100;
+        $parcial->comentarios_externo = "primer externo comentario";        
         $parcial->save(); 
-
+////////////////
         $parcial = new Parcial();
         $parcial->estudiante_id = 1;
         $parcial->promedio_parcial = 100;
@@ -37,9 +48,21 @@ class ParcialSeeder extends Seeder
         $parcial->dedicado_interno = 20;
         $parcial->orden_interno = 20;
         $parcial->mejoras_interno = 15;
-        $parcial->promedio_interno = 15;        
-        $parcial->ruta = "C:\\Users\\omner\\Desktop";
+        $parcial->promedio_interno = 15;  
+        $parcial->comentarios_interno = "segundo interno comentario";        
+        $parcial->puntualidad_externo = 5;
+        $parcial->equipo_externo = 10;
+        $parcial->iniciativa_externo = 5;
+        $parcial->mejoras_externo = 10;
+        $parcial->objetivos_externo = 15;
+        $parcial->orden_externo = 15;
+        $parcial->liderazgo_externo = 10;  
+        $parcial->conocimiento_externo = 20;
+        $parcial->etico_externo = 10;
+        $parcial->promedio_externo = 100;
+        $parcial->comentarios_externo = "segundo externo comentario";        
         $parcial->save(); 
+ 
 ////////////////
         $parcial = new Parcial();
         $parcial->estudiante_id = 2;
@@ -51,51 +74,22 @@ class ParcialSeeder extends Seeder
         $parcial->dedicado_interno = 20;
         $parcial->orden_interno = 20;
         $parcial->mejoras_interno = 15;
-        $parcial->promedio_interno = 15;        
-        $parcial->ruta = "C:\\Users\\omner\\Desktop";
+        $parcial->promedio_interno = 15;  
+        $parcial->comentarios_interno = "segundo interno comentario";        
+        $parcial->puntualidad_externo = 5;
+        $parcial->equipo_externo = 10;
+        $parcial->iniciativa_externo = 5;
+        $parcial->mejoras_externo = 10;
+        $parcial->objetivos_externo = 15;
+        $parcial->orden_externo = 15;
+        $parcial->liderazgo_externo = 10;  
+        $parcial->conocimiento_externo = 20;
+        $parcial->etico_externo = 10;
+        $parcial->promedio_externo = 100;
+        $parcial->comentarios_externo = "segundo externo comentario";        
         $parcial->save(); 
 
-        $parcial = new Parcial();
-        $parcial->estudiante_id = 2;
-        $parcial->promedio_parcial = 100;
-        $parcial->consecutivo = 2;
-        $parcial->puntualidad_interno = 10;
-        $parcial->conocimiento_interno = 20;
-        $parcial->equipo_interno = 15;
-        $parcial->dedicado_interno = 20;
-        $parcial->orden_interno = 20;
-        $parcial->mejoras_interno = 15;
-        $parcial->promedio_interno = 15;        
-        $parcial->ruta = "C:\\Users\\omner\\Desktop";
-        $parcial->save(); 
-////////////////
-        $parcial = new Parcial();
-        $parcial->estudiante_id = 3;
-        $parcial->promedio_parcial = 100;
-        $parcial->consecutivo = 1;
-        $parcial->puntualidad_interno = 10;
-        $parcial->conocimiento_interno = 20;
-        $parcial->equipo_interno = 15;
-        $parcial->dedicado_interno = 20;
-        $parcial->orden_interno = 20;
-        $parcial->mejoras_interno = 15;
-        $parcial->promedio_interno = 15;        
-        $parcial->ruta = "C:\\Users\\omner\\Desktop";
-        $parcial->save(); 
-
-        $parcial = new Parcial();
-        $parcial->estudiante_id = 3;
-        $parcial->promedio_parcial = 100;
-        $parcial->consecutivo = 2;
-        $parcial->puntualidad_interno = 10;
-        $parcial->conocimiento_interno = 20;
-        $parcial->equipo_interno = 15;
-        $parcial->dedicado_interno = 20;
-        $parcial->orden_interno = 20;
-        $parcial->mejoras_interno = 15;
-        $parcial->promedio_interno = 15;        
-        $parcial->ruta = "C:\\Users\\omner\\Desktop";
-        $parcial->save(); 
+         
 ////////////////
      }
 }

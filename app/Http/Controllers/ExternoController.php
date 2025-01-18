@@ -90,5 +90,19 @@ class ExternoController extends Controller
 
     }
 
+    public function proyecto()
+    {
+        $asesor = Auth::getUser()->usa;
+        $periodo_id = ConfiguracionServiceProvider::get('periodo_id');
+
+        $proyectos= $asesor->proyectos($periodo_id)->get();
+//        dd(get_class($asesor));
+        if(get_class($asesor)=="App\Models\Asesor" )
+            return view('asesor.listar-proyecto',compact('proyectos')); 
+        else
+            return view('externo.listar-proyecto',compact('proyectos')); 
+
+    }
+
     
 }

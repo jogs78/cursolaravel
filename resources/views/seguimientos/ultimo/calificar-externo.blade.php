@@ -24,7 +24,7 @@ textarea{padding: 10px;}
 @endsection
 @section('contenido')
    
-<div class="horizontal"><p class="subtitulo">EVALUACION POR EL ASESOR INTERNO</p></div>
+<div class="horizontal"><p class="subtitulo">EVALUACION POR EL ASESOR EXTERNO</p></div>
 <div class="bodydiv">
         <div class="horizontal" style="margin-top:30px;"><p class="parrafo">Nombre del residente:</p> <p class="llenar"> {{$estudiante->nombre}} {{$estudiante->apellido_paterno}} {{$estudiante->apellido_materno}}</p> </div>
         <div class="horizontal" style="margin-top:15px;"><p class="parrafo">Nombre del Proyecto:</p> <p class="llenar">{{$estudiante->proyecto->nombre}}</p> </div>
