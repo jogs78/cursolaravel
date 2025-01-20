@@ -67,9 +67,18 @@ class ActividadController extends Controller
      */
     public function update(Request $request, Proyecto $proyecto, Actividad $actividad)
     {
-        $actividad->fill($request->all());
+        $proyecto = Proyecto::with('actividades')->find($proyecto->id);
+        $validated = $request->validate([
+            'nombre' => 'required',
+            'descripcion' => 'required',
+            'semanas' => 'required',
+            'orden' => 'required',
+
+        ]);
+
+        $actividad->fill($validated);
         $actividad->save();
-        return redirect()->route("home");
+        return redirect()->route("proyectos.actividades.index",$proyecto->id);
     }
 
     /**
@@ -77,7 +86,13 @@ class ActividadController extends Controller
      */
     public function destroy(Proyecto $proyecto, Actividad $actividad)
     {   
+        $actividad = $proyecto->actividades()->where('id', $actividad->id)->first();
+
+    if (!$actividad) {
+        abort(404, 'La actividad no se encontró o no pertenece a este proyecto.');
+    }
         $actividad->delete();
+        dd($actividad);
         return redirect()->route("proyectos.actividades.index",$proyecto->id);
     }
 }

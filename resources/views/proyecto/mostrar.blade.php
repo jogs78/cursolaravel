@@ -52,7 +52,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
    <th class="thcontenido">{{$actividad->semanas}}</th>
    <th style="padding:8px;">
                 <a href="{{route("proyectos.actividades.edit",[$proyecto->id,$actividad->id])}}" class="botonEditar">Editar</a>
-                <form action="{{route("proyectos.actividades.destroy",[$proyecto->id,$actividad->id])}}" method="post">
+                <form action="{{route("proyectos.actividades.destroy",[$proyecto->id,$actividad->id])}}" method="POST">
                 @method('DELETE')
                 @csrf
                 <input type="submit" value="Borrar" class="botonBorrar" style="margin-top:5px;">

@@ -14,10 +14,10 @@ class CoordinadorSeeder extends Seeder
     public function run(): void
     {
         $nueva = new Coordinador();
-        $nueva->nombre = "Mario";
-        $nueva->apellido_paterno = "de la Cruz";
-        $nueva->apellido_materno = "Padilla";
-        $nueva->correo_electronico = "cmecanica@gmail.com";
+        $nueva->nombre = "Elin Enrique";
+        $nueva->apellido_paterno = "Aguilar";
+        $nueva->apellido_materno = "Molina";
+        $nueva->correo_electronico = "elin.am@tuxtla.tecnm.mx";
         $nueva->carrera_id = 2;
         $nueva->save();
 

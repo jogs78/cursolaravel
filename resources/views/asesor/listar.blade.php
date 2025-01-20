@@ -43,13 +43,16 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
             <td style="padding:5px;">{{$asesor->apellido_paterno}} {{$asesor->apellido_materno}}</td>
             <td style="padding:8px;">
                 <a href="{{route("asesores.edit",$asesor->id)}}" class="botonEditar">Editar</a>
+                @if (empty($asesor->proyecto?->nombre))
                 <form action="{{route("asesores.destroy",$asesor->id)}}" method="post">
                 @method('DELETE')
                 @csrf
                 <input type="submit" value="Borrar" class="botonBorrar" style="margin-top:5px;">
 
                 </form>
-            
+                @else
+                Asesor asigando al proyecto: <br> {{$asesor->proyecto->nombre}}
+                 @endif
 
             </td>
         </tr>

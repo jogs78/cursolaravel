@@ -70,6 +70,7 @@ class ConfiguracionController extends Controller
     public function destroy(Configuracion $configuracion)
     {
         $configuracion->delete();
+        dd($configuracion);
         return redirect()->route("configuraciones.index");
     }
 }

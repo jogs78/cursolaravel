@@ -155,9 +155,9 @@
                     <table class="tabla">
                         <tr>
                         <th class="cuadro nsemanas">Para Seguridad <br>Social Acudir: </th>
-                            <th class="cuadro" style="width: 25%;">IMSS <p>(X)</p></th><!--Cambiar-->
-                            <th class="cuadro" style="width: 25%;">ISSSTE <p>( )</p></th><!--Cambiar-->
-                            <th class="cuadro" style="width: 25%;"> OTROS <p>( )</p></th><!--Cambiar-->
+                            <th class="cuadro" style="width: 25%;">IMSS <br><input type="checkbox" {{ $estudiante->institucion_seguridad_social === 'IMSS' ? 'checked' : '' }}></th><!--Cambiar-->
+                            <th class="cuadro" style="width: 25%;">ISSSTE <br><input type="checkbox" {{ $estudiante->institucion_seguridad_social === 'ISSSTE' ? 'checked' : '' }}></th><!--Cambiar-->
+                            <th class="cuadro" style="width: 25%;"> OTROS <br><input type="checkbox" {{ $estudiante->institucion_seguridad_social === 'OTROS' ? 'checked' : '' }}></th><!--Cambiar-->
                             <th class="cuadro" style="width: 25%;">No. :  <p>{{$estudiante->numero_de_seguridad_social}}</p> </th><!--Cambiar-->
                         </tr>
                     </table> 

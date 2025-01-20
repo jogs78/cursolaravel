@@ -47,13 +47,17 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
             <td style="padding:5px;">{{$externo->apellido_paterno}} {{$externo->apellido_materno}}</td>
             <td style="padding:8px;">
                 <a href="{{route("externos.edit",$externo->id)}}" class="botonEditar">Editar</a>
+                @if (empty($externo->proyecto->id))
                 <form action="{{route("externos.destroy",$externo->id)}}" method="post">
                 @method('DELETE')
                 @csrf
                 <input type="submit" value="Borrar" class="botonBorrar" style="margin-top:5px;">
 
                 </form>
-            
+                @else
+                Asesor asigando al proyecto: <br> {{$externo->proyecto->nombre}}
+                 @endif
+            </td>
 
             </td>
             <td style="padding:5px;">

@@ -26,7 +26,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
 <div style="margin-top:20px;">
 <div class="horizontal"><p class="subtitulo">Actualize una Actividad</p></div><br>
     <div class="centro">
-    <form action="{{route("proyectos.actividades.update",[$proyecto->id,$actividad->id])}}" enctype="application/x-www-form-urlencoded" >
+    <form action="{{route("proyectos.actividades.update",[$proyecto->id, $actividad->id])}}" method="POST" enctype="application/x-www-form-urlencoded">
         @csrf
         @method('PUT')
         <label for='nombre' class="parrafo">Nombre de la actividad</label>

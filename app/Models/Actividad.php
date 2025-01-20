@@ -9,6 +9,7 @@ class Actividad extends Model
 {
     use HasFactory;
     protected $table = "actividades";
+    protected $connection = 'mysql';
     protected $fillable = ["id", "orden", "nombre", "semanas","descripcion", "proyecto_id"];
 
 

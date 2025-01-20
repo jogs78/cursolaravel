@@ -41,6 +41,7 @@ class SeguimientoController extends Controller
                     $ultimo = Parcial::firstOrCreate(
                         ['estudiante_id' => $estudiante->id], 
                     );
+                    
                     return view('seguimientos.ultimo.calificar-interno',compact('estudiante','consecutivo','ultimo'));
 
                 }
