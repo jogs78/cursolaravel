@@ -35,7 +35,9 @@ class StoreProyectoRequest extends FormRequest
                         $fail('El campo empresa_id debe ser un ID válido o -1.');
                     }
                 },
-            ],            "periodo_id"=>"required",
+            ],
+            "rfc"=>"nullable|max:15|min:12",
+            "periodo_id"=>"required",
         ];
     }
 
@@ -50,6 +52,8 @@ class StoreProyectoRequest extends FormRequest
             "asesor_id.required"=>"asesor_id Es necesario llenar este campo",
             "empresa_id.required"=>"empresa_id Es necesario llenar este campo",
             "periodo_id.required"=>"periodo_id Es necesario llenar este campo",
+            "rfc.max" => "El RFC no puede tener más de 13 caracteres.",
+            "rfc.min" => "El RFC no puede tener menos de 12 caracteres.",
         ];
     }
 }

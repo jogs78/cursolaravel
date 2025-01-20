@@ -130,7 +130,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
             
             <label for='rfc'  class="parrafo">RFC</label>
             {{$errors->first("rfc")}}
-            <input type='text' name='rfc' id='rfc' value="{{old('rfc')}}" class="llenar"><br>
+            <input type='text' name='rfc' id='rfc' value="{{old('rfc')}}" placeholder="_______" class="llenar"><br>
     
             <label for='direccion'  class="parrafo">Direccion</label>
             {{$errors->first("direccion")}}
