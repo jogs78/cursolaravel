@@ -22,7 +22,16 @@ class UpdateEmpresaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+           "rfc"=>"required|max:15|min:12",
+        ];
+    }
+    public function messages(): array
+    {
+        return [
+            "rfc.required"=>"Es necesario poner un rfc",
+            "rfc.max" => "El RFC no puede tener más de 13 caracteres.",
+            "rfc.min" => "El RFC no puede tener menos de 12 caracteres.",
+            
         ];
     }
 }

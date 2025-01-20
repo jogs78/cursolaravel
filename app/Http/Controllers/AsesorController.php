@@ -104,7 +104,7 @@ public function mostrar($pagina)
         if(get_class($asesor)=="App\Models\Externo" )
             return view('externo.listar-proyecto',compact('proyectos')); 
         else
-            return view('asesor.listar-proyecto',compact('proyectos')); 
+            return view('asesor.lista-de-proyecto',compact('proyectos')); 
 
     }
 

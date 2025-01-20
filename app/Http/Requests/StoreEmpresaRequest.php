@@ -24,7 +24,7 @@ class StoreEmpresaRequest extends FormRequest
         return [
             "nombre"=>"required",
             "giro"=>"required",
-            "rfc"=>"required|max:13|min:12",
+            "rfc"=>"required|max:15|min:12",
             "direccion"=>"required",
             "telefono"=>"required|numeric",
             "correo"=>"required|email",

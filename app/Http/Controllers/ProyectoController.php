@@ -26,7 +26,8 @@ class ProyectoController extends Controller
     {
         //Listar
         $todos = Proyecto::all();
-        return view('proyecto.listar',compact('todos'));
+        //return view('proyecto.listar',compact('todos'));
+        return view ('proyecto.mostrar',compact('todos')); // ,compact('proyecto'));
     }
 
 
