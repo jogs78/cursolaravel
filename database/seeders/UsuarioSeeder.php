@@ -70,6 +70,13 @@ class UsuarioSeeder extends Seeder
         $nuevo->usa_type = "App\Models\Coordinador";
         $nuevo->save();
 
+        $nuevo = new Usuario();
+        $nuevo->nombre_usuario = "mauricio";
+        $nuevo->contraseña = Hash::make('1234');
+        $nuevo->usa_id=3;
+        $nuevo->usa_type = "App\Models\Externo";
+        $nuevo->save();
+
 
     }
 }

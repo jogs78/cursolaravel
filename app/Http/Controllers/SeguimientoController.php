@@ -8,6 +8,8 @@ use App\Models\Estudiante;
 use App\Models\Parcial;
 use App\Models\Ultimo;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Log;
 
 class SeguimientoController extends Controller
 {
@@ -24,6 +26,12 @@ class SeguimientoController extends Controller
      */
     public function create(Estudiante $estudiante,$consecutivo)
     {
+        
+        Log::channel('debug')->info('checar');
+        if( ! Gate::allows('calificar', [Seguimiento::class, $estudiante->proyecto ])){
+            echo "No puede";
+            return;
+        }
         $usuario = Auth::getUser();
         //dd($usuario->usa_type);
         switch ($usuario->usa_type) {
@@ -63,12 +71,9 @@ class SeguimientoController extends Controller
 
                 }                break;
             
-            case 'App\Models\Estudiante':
-                # code...
-                break;
             
             default:
-                # code...
+                echo "este usuario no puede crear segumientos";
                 break;
         }
         //ahorita solo estamos trabajando con parciales no con ultimo

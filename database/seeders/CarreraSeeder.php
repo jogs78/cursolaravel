@@ -15,7 +15,6 @@ class CarreraSeeder extends Seeder
     {
         $nueva = new Carrera();
         $nueva->nombre = "Ingenierias";
-        
         $nueva->save();
 
         $nueva = new Carrera();

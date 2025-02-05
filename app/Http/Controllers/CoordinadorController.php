@@ -23,8 +23,13 @@ class CoordinadorController extends Controller
     public function tabla(){
         $coordinador = Auth::getUser()->usa;
         $periodo_id = ConfiguracionServiceProvider::get('periodo_id');
+        $proyectos = $coordinador->proyectos( $periodo_id);
 
-        $proyectos = Proyecto::where('periodo_id', $periodo_id)->get();
+
+
+//        $proyectos = Proyecto::where('periodo_id', $periodo_id)->get();
+
+
         $asesores = Asesor::all();
         return view ('coordinador.tabla', compact('proyectos','asesores'));
     }
