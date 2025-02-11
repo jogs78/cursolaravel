@@ -15,6 +15,9 @@ use Illuminate\Support\Facades\Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\UsersExport;
 use App\Exports\UsuariosExportar;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Gate;
+
 
 class CoordinadorController extends Controller
 {
@@ -47,6 +50,16 @@ class CoordinadorController extends Controller
     }
     public function asignarAsesor3(Request $request, $proyecto_id){
         
+
+        //aqui debemos implementar el chequedo
+        Log::channel('debug')->info('checar');
+        $proyecto = Proyecto::find($proyecto_id);
+        if (! Gate::allows('update',$proyecto)){
+            return "NO PUEDE ACTUALIZAR";
+
+        }
+
+
         $proyecto = Proyecto::find($proyecto_id);
         $proyecto->asesor_id = $request->asesor_id;
         $proyecto->save();

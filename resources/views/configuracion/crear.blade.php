@@ -36,6 +36,16 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
         {{$errors->first("valor")}}
         <input type='text' name='valor' id='valor' value="{{old('valor')}}" class="llenar"><br>
 
+
+        <label for='tipo' class="parrafo">Tipo</label>
+        {{$errors->first("valor")}}
+        <select name="tipo" id="tipo">
+            <option value="numero">numero</option>
+            <option value="cadena">cadena</option>
+            <option value="bd">bd</option>
+        </select>
+
+
         <div class="centro"><input type='submit' class="boton"></div>
     </form>
     </div>

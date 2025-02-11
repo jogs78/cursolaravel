@@ -15,7 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('variable');
             $table->string('valor');
-            $table->enum('tipo',["numero","cadena","valor"])->default('cadena');    
+            $table->enum('tipo',["numero","cadena","bd"])->default('cadena');  
+            $table->string('tabla')->nullable()->default(null);
+            $table->string('campo')->nullable()->default(null);
+            
+            
             $table->timestamps();
         });
     }

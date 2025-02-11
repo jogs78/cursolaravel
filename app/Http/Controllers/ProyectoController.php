@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Log;
 
 class ProyectoController extends Controller
 {
@@ -134,9 +135,11 @@ class ProyectoController extends Controller
      */
     public function update(UpdateProyectoRequest $request, Proyecto $proyecto)
     {
+        Log::channel('debug')->info('checar');
+        if (! Gate::allows('update',$proyecto)){
+            return "NO PUEDE ACTUALIZAR";
 
-        if (Gate::allows('update',))
-
+        }
         //ACTUALIZAR LA BASE DE DATOS CON LOS DATOS QUE VIENEN DEL FORMULARIO DE EDITAR UN PERIODO
         $proyecto->fill($request->all());
         $proyecto->save();
