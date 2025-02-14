@@ -9,5 +9,5 @@ class Configuracion extends Model
 {
     use HasFactory;
     protected $table = "configuraciones";
-    protected $fillable = ["id", "variable", "valor"];
+    protected $fillable = ["id", "variable", "valor", "tipo", "tabla", "campo"];
 }

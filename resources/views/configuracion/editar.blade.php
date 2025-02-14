@@ -37,6 +37,43 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
         {{$errors->first("valor")}}
         <input type='text' name='valor' id='valor' value="{{$configuracion->valor}}" class="llenar"><br>
 
+        <label for='tipo' class="parrafo">Tipo</label>
+        {{$errors->first("tipo")}}
+        <select name="tipo" id="tipo" class="llenar" >
+            <option value="Numero">Numero</option>
+            <option value="Cadena">Cadena</option>
+            <option value="Bd">Bd</option>
+        </select>
+
+        <div id="campos-bd" style="display: none;">
+        <div>
+        <label for="tabla" class="parrafo">Tabla</label>
+        <input type="text" name="tabla" id="tabla" class="llenar" value="{{$configuracion->tabla}}">
+        </div>
+
+        <div>
+        <label for="campo" class="parrafo">Campo</label>
+        <input type="text" name="campo" id="campo" class="llenar" value="{{$configuracion->campo}}">
+        </div>
+    </div>
+
+    <script>
+        // Selecciona el elemento <select> y el contenedor de los campos adicionales
+        const selectTipo = document.getElementById('tipo');
+        const camposBd = document.getElementById('campos-bd');
+
+        // Escucha el evento 'change' en el <select>
+        selectTipo.addEventListener('change', function() {
+            // Si el valor seleccionado es "Bd", muestra los campos adicionales
+            if (selectTipo.value === 'Bd') {
+                camposBd.style.display = 'block';
+            } else {
+                // Si no, oculta los campos adicionales
+                camposBd.style.display = 'none';
+            }
+        });
+    </script>
+
         <div class="centro"><input type='submit' class="boton"></div>
     </form>
     </div>

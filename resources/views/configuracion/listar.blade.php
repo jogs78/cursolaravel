@@ -33,6 +33,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
             <th class="thfondo">ID</th>
             <th class="thfondo">VARIABLE</th>
             <th class="thfondo">VALOR</th>
+            <th class="thfondo">TIPO</th>
             <th class="thfondo">ACCIONES</th>
         </thead>
         <tbody>
@@ -41,6 +42,7 @@ th{border: 1px solid rgb(40, 95, 139);padding: 8px; }
             <td style="padding:5px;">{{$configuracion->id}}</td>
             <td style="padding:5px;">{{$configuracion->variable}}</td>
             <td style="padding:5px;">{{$configuracion->valor}}</td>
+            <td style="padding:5px;">{{$configuracion->tipo}}</td>
             <td style="padding:8px;">
                 <a href="{{route("configuraciones.edit",$configuracion->id)}}" class="botonEditar">Editar</a>
                 <form action="{{route("configuraciones.destroy",$configuracion->id)}}" method="post">
