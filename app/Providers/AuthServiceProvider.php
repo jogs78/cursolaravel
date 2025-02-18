@@ -16,7 +16,9 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         Seguimiento::class => SeguimientoPolicy::class,
+        Estudiante::class => EstudiantePolicy::class,
     ];
+    
 
     /**
      * Register any authentication / authorization services.

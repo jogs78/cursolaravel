@@ -2,8 +2,10 @@
 
 namespace App\Policies;
 
+use Illuminate\Support\Facades\Log;
+use App\Models\Proyecto;
 use App\Models\Ultimo;
-use App\Models\User;
+use App\Models\Usuario;
 use Illuminate\Auth\Access\Response;
 
 class UltimoPolicy
@@ -22,6 +24,17 @@ class UltimoPolicy
     public function view(User $user, Ultimo $ultimo): bool
     {
         //
+    }
+    public function calificar(Usuario $actual, Proyecto $proyecto): bool
+    {
+        Log::channel('debug')->info("Entra en la habilidad de calificar, puede $actual->nombre_usuario($actual->usa_id)  , al proyecto $proyecto->id ($proyecto->externo_id)  ");
+        Log::channel('debug')->info("tengo $actual->use_type   , $proyecto->asesor_id  y $actual->usa_id  ");
+
+        if ($actual->usa_type == "App\Models\Asesor"  && $proyecto->asesor_id ==  $actual->usa_id ){
+            return true;
+        }         
+        if ($actual->usa_type == "App\Models\Externo" && $proyecto->externo_id == $actual->usa_id ) return true;
+        return false; 
     }
 
     /**
